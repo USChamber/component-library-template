@@ -1,0 +1,20 @@
+{% if items is defined %}
+    <ul data-component="block:stat" class="
+    {{ customClasses is defined ? ' ' ~ customClasses }}
+    {% if hideBorder is defined and hideBorder %}{% else %}border-t border-primary pt-24{% endif %}
+    grid grid-cols-1 {% if fullWidth is defined and fullWidth == false %}lg:grid-cols-2 print:grid-cols-2{% endif %}
+    gap-x-gutter gap-y-48 grid-line-x-24
+    grid-line-y grid-line-y-primary
+    grid-line-xfull grid-line-x-primary
+  ">
+        {% for item in items %}
+            <li>
+                {% include "@card:stat" with {
+                    multiple: items|length > 2,
+                    text: item.text is defined ? item.text : null,
+                    value: item.stat is defined ? item.stat : null,
+                } %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

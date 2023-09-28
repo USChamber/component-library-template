@@ -1,0 +1,52 @@
+{
+    "title": "features-e",
+    "handle": "listing:features-e",
+    "status": "wip",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "items": [
+            {
+                "topic": {
+                    "title": "Topic",
+                    "url": "#"
+                },
+                "label": {
+                    "title": "Label",
+                    "href": "#"
+                },
+                "title": "Lorem ipsum dolor",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ut sed quis congue fringilla. Pharetra morbireet.",
+                "href": "#",
+                "timeStamp": "3:15",
+                "img": {
+                    "src": "https://via.placeholder.com/300x200",
+                    "alt": "image alt tag",
+                    "ratio": "16:9"
+                }
+            },
+            {
+                "topic": {
+                    "title": "Topic",
+                    "url": "#"
+                },
+                "label": {
+                    "title": "Label",
+                    "href": "#"
+                },
+                "title": "Lorem ipsum dolor",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ut sed quis congue fringilla. Pharetra morbireet.",
+                "href": "#",
+                "timeStamp": "6:12",
+                "img": {
+                    "src": "https://via.placeholder.com/300x200",
+                    "alt": "image alt tag",
+                    "ratio": "16:9"
+                }
+            }
+        ]
+    },
+    "variants": [
+    ]
+}

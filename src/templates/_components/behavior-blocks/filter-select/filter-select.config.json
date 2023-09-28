@@ -1,0 +1,111 @@
+{
+    "title": "filter select",
+    "handle": "behavior-block:filter-select",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "bar": {
+            "title": "filter select"
+        },
+        "components": [
+            {
+                "type": "@form:select-filter",
+                "data": {
+                    "title": "Filter by type",
+                    "customClasses": "",
+                    "attrs": {
+                        "data-filterblock-filterselect": null
+                    },
+                    "options": [
+                        {
+                            "label": "Option 1",
+                            "value": "1"
+                        },
+                        {
+                            "label": "Option 2",
+                            "value": "2"
+                        },
+                        {
+                            "label": "Option 3",
+                            "value": "3"
+                        },
+                        {
+                            "label": "Option 4",
+                            "value": "4"
+                        },
+                        {
+                            "label": "Option 5",
+                            "value": "5"
+                        }
+                    ]
+                }
+            }
+        ],
+        "rowList": {
+            "type": "@listing:row",
+            "data": {
+                "attrs": {
+                    "data-filterblock-content": null
+                },
+                "items": [
+                    {
+                        "type": "@card:feed",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "Europe’s Gamble on AI Regulation",
+                            "topic": "Topic",
+                            "label": "Label",
+                            "date": "8/04/21"
+                        }
+                    },
+                    {
+                        "type": "@card:feed",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "U.S. Chamber Letter on Antitrust Legislation",
+                            "topic": "Topic",
+                            "label": "Label",
+                            "date": "8/04/21"
+                        }
+                    },
+                    {
+                        "type": "@card:feed",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "The Benefits of International Investment",
+                            "topic": "Topic",
+                            "label": "Label",
+                            "date": "8/04/21"
+                        }
+                    },
+                    {
+                        "type": "@card:feed",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "Is your company compliant with the new tax legislation?",
+                            "topic": "Topic",
+                            "label": "Label",
+                            "date": "8/04/21"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "variants": [
+    ]
+}

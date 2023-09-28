@@ -1,0 +1,26 @@
+{% set statFont = 'f-heading-expressive-6' %}
+{% if (multiple) %}
+    {% set statFont = 'f-heading-expressive-4' %}
+{% endif %}
+
+<span
+    data-component="card:stat"
+    class="{{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+>
+    {% if label is defined %}
+        <label>
+        {% include "@atom:label" with {
+            text: label,
+        } only %}
+    </label>
+    {% endif %}
+    <em
+        class="block not-italic {{ statFont }}"
+    >
+        {{ value }}
+    </em>
+    {% if text is defined %}
+        <div class="f-body-1 mt-space-3">{{ text }}</div>
+    {% endif %}
+</span>

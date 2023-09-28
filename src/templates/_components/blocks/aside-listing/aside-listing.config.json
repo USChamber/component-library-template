@@ -1,0 +1,43 @@
+{
+    "title": "Aside listing",
+    "label": "Aside listing",
+    "handle": "block:aside-listing",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Single item",
+            "context": {
+                "title": "Report",
+                "items": [
+                    {
+                        "href": "#",
+                        "title": "Huey Lewis is Back in Time"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "multiple",
+            "label": "Multiple items",
+            "context": {
+                "title": "Related Features",
+                "items": [
+                    {
+                        "href": "#",
+                        "title": "Huey Lewis is Back in Time"
+                    },
+                    {
+                        "href": "#",
+                        "title": "Biff Tannen - the luckiest man alive?"
+                    }
+                ]
+            }
+        }
+    ]
+}

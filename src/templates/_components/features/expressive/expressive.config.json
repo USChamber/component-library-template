@@ -1,0 +1,100 @@
+{
+    "title": "expressive",
+    "handle": "feature:expressive",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "label": "Label",
+        "title": "Lorem ipsum dolor",
+        "invert": false,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ut sed quis congue fringilla. Pharetra morbireet.",
+        "href": "#",
+        "cta": "View Collection"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "credit": "Vestibulum posuere, enim eu dignissim condimentum. © 2021 Getty Images",
+                    "ratio": "1:1"
+                }
+            }
+        },
+        {
+            "name": "no link",
+            "label": "no link",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "credit": "Vestibulum posuere, enim eu dignissim condimentum. © 2021 Getty Images",
+                    "ratio": "1:1"
+                },
+                "href": null
+            }
+        },
+        {
+            "name": "invert",
+            "label": "Invert",
+            "context": {
+                "invert": true,
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "credit": "Vestibulum posuere, enim eu dignissim condimentum. © 2021 Getty Images",
+                    "ratio": "1:1"
+                }
+            }
+        },
+        {
+            "name": "Ratio [3x2]",
+            "label": "Ratio [3x2]",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "credit": "Vestibulum posuere, enim eu dignissim condimentum. © 2021 Getty Images",
+                    "ratio": "3:2"
+                }
+            }
+        },
+        {
+            "name": "Ratio [4x5]",
+            "label": "Ratio [4x5]",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "credit": "Vestibulum posuere, enim eu dignissim condimentum. © 2021 Getty Images",
+                    "ratio": {
+                        "sm": "1:1",
+                        "lg": "4:5"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Video",
+            "label": "Video",
+            "context": {
+                "video": {
+                    "videoId": "qvsgGtivCgs",
+                    "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                    "img": {
+                        "src": "https://via.placeholder.com/300x200",
+                        "alt": "image alt tag",
+                        "ratio": "16:9",
+                        "playIcon": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "no image",
+            "label": "Logo splash",
+            "context": {
+            }
+        }
+    ]
+}

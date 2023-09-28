@@ -1,0 +1,25 @@
+{
+    "title": "video",
+    "handle": "card:video",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "display": {
+        "max-width": "450px"
+    },
+    "context": {
+        "title": "Title goes here",
+        "img": {
+            "src": "https://via.placeholder.com/400x500"
+        },
+        "href": "#",
+        "label": "Category",
+        "topic": "Economy",
+        "cta": "Learn more",
+        "teaser": "Helping your company and our country solve our workforce challenges",
+        "timeStamp": "3:15"
+    },
+    "variants": []
+}
+

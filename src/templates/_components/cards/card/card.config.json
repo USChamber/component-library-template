@@ -1,0 +1,108 @@
+{
+    "title": "Card",
+    "handle": "card:card",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "display": {
+        "max-width": "450px"
+    },
+    "context": {
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/300x200"
+                },
+                "href": "#",
+                "title": "Europe’s Gamble on AI Regulation",
+                "topic": {
+                    "title": "Topic",
+                    "url": "#"
+                },
+                "label": {
+                    "title": "Label",
+                    "href": "#"
+                },
+                "author": "Mike Morello"
+            }
+        },
+        {
+            "name": "large",
+            "label": "Large",
+            "context": {
+                "large": true,
+                "img": {
+                    "src": "https://via.placeholder.com/300x200"
+                },
+                "teaser": "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+                "href": "#",
+                "title": "Europe’s Gamble on AI Regulation",
+                "topic": {
+                    "title": "Topic",
+                    "url": "#"
+                },
+                "label": {
+                    "title": "Label",
+                    "href": "#"
+                },
+                "author": "Mike Morello"
+            }
+        },
+        {
+            "name": "no label",
+            "label": "No label",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/300x200"
+                },
+                "href": "#",
+                "title": "Europe’s Gamble on AI Regulation",
+                "topic": {
+                    "title": "Topic",
+                    "url": "#"
+                },
+                "author": "Mike Morello"
+            }
+        },
+        {
+            "name": "no by line",
+            "label": "No by-line",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/300x200"
+                },
+                "href": "#",
+                "title": "Europe’s Gamble on AI Regulation",
+                "topic": {
+                    "title": "Topic",
+                    "url": "#"
+                },
+                "label": {
+                    "title": "Label",
+                    "href": "#"
+                }
+            }
+        },
+        {
+            "name": "no image",
+            "label": "Splash (No image)",
+            "context": {
+                "href": "#",
+                "title": "Europe’s Gamble on AI Regulation",
+                "topic": {
+                    "title": "Topic",
+                    "url": "#"
+                },
+                "label": {
+                    "title": "Label",
+                    "href": "#"
+                }
+            }
+        }
+    ]
+}

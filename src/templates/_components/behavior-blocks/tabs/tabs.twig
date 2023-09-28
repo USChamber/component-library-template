@@ -1,0 +1,37 @@
+<div data-component="behavior-block:tabs" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }} data-behavior="tabs">
+    <div class="
+      flex overflow-auto no-scrollbar
+      w-screen -ml-outer-gutter -mr-outer-gutter px-outer-gutter
+      lg:w-full lg:ml-0 lg:mb-0 lg:px-0
+  ">
+        <div class="flex relative w-full" data-tabs-scroller>
+            <div class="border-b border-b-primary scroller"></div>
+            {% if tabBlock is defined and tabBlock.tabs %}
+                {% for tab in tabBlock.tabs %}
+                    {% set classList = "border-b-2 outline-none whitespace-nowrap px-16 py-8 lg:px-24 lg:py-12 hover:border-tab-active "~(tab.active is defined and tab.active ? 'border-tab-active f-heading-1 pointer-events-none' : 'border-b-transparent f-ui-3') %}
+                    {% if tab.href is defined and tab.href != null %}
+                        <a data-tabs-tab href="{{ tab.href }}" class="{{ classList }}">
+                    {% else %}
+                        <button data-tabs-tab class="{{ classList }}">
+                    {% endif %}
+                    <span>{{ tab.label|default('') }}</span>
+                    {% if tab.href is defined and tab.href != null %}
+                        </a>
+                    {% else %}
+                        </button>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    {% if sections is defined %}
+        {% for section in sections %}
+            <div data-tabs-section data-tabs-index="{{ loop.index0 }}" class="pt-space-5 {{ loop.index == 1 ? '' : 'hidden' }}">
+                {% include '@repeater:blocks' with {
+                    'items': section.blocks
+                } only %}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

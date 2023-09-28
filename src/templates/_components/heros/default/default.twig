@@ -1,0 +1,51 @@
+{% set componentName = 'hero:default' %}
+<div data-component="{{ componentName }}" class="
+    {{ accent is defined ? 'accent-'~accent : 'accent-primary' }} background-fill 
+    {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+
+    <div class="flex flex-col pt-space-9 pb-24 {{ variation is defined and variation == 'generic' ? 'md:pb-28 lg:pb-40 lg:w-11/12' : 'md:pb-32 lg:pb-48' }}  print:pb-0 print:pt-0">
+        {% if title is defined and title is not null %}
+            <h1 class="block {{ (variation is defined and variation == 'generic') or title|length > 100 ? 'f-heading-4' : 'f-heading-7' }} lg:pr-48">{{ title }}</h1>
+        {% endif %}
+
+        {% if summary is defined and summary is not null %}
+            <p class="block mt-28 f-body-1 lg:cols-6">{{ summary | raw }}</p>
+        {% endif %}
+
+        {% if breadcrumb is defined and breadcrumb is not null %}
+            {% include '@listing:breadcrumb' with {
+                "items": breadcrumb.items,
+                "customClasses": "hidden lg:block order-first pb-8 lg:pb-12 print:hidden"
+            } %}
+        {% endif %}
+    </div>
+
+    {% if img is defined and img is not null %}
+        <div class="breakout">
+            {% include '@atom:img' with img|merge({
+                customClasses: 'origin-top',
+                "sizes": {
+                    "sm": 4,
+                    "md": 8,
+                    "lg": 12
+                },
+                "ratio": {
+                    "sm": "1:1",
+                    "md": "16:9"
+                },
+                "transformName": componentName
+            }) %}
+        </div>
+    {% endif %}
+
+    {% if splash is defined and splash == true %}
+        <div class="breakout border-t border-primary">
+            {% include '@atom:logo-splash' with {
+                "ratio": {
+                    "sm": "1:1",
+                    "md": "16:9"
+                }
+            } %}
+        </div>
+    {% endif %}
+</div>

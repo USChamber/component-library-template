@@ -1,0 +1,63 @@
+<svg id="svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <mask id="circles">
+            <rect x="0" y="0" width="100" height="100" fill="black"/>
+            <circle cx="50" cy="50" r="50" fill="white"/>
+            <circle cx="30" cy="30" r="15" fill="black"/>
+        </mask>
+
+        <polygon id="strake" points="30,30 45,30 120,35 120,45 45,30 30,30"/>
+    </defs>
+
+    <style>
+        :root {
+            --rotate: 0deg;
+        }
+    </style>
+
+    <g id="strakes" stroke="black" mask="url(#circles)" fill="black" stroke-width="0">
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 0deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 12deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 24deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 36deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 48deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 60deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 72deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 84deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 96deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 108deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 120deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 132deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 144deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 156deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 168deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 180deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 192deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 204deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 216deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 228deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 240deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 252deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 264deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 276deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 288deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 300deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 312deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 324deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 336deg)); transform-origin: 30% 30%;"/>
+        <use href="#strake" style="transform: rotate(calc(var(--rotate) + 348deg)); transform-origin: 30% 30%;"/>
+    </g>
+</svg>
+
+<script>
+    let angle = 0;
+
+    function updateAngle() {
+        angle += 0.1;
+        document.getElementById('svg').style.setProperty('--rotate', `${angle}deg`);
+        window.requestAnimationFrame(updateAngle);
+    }
+
+    updateAngle();
+</script>

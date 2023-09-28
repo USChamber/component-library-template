@@ -1,0 +1,55 @@
+{% set themes = getThemeNamesAsArray("uscc") %}
+<ul class="grid md:grid-cols-2 gap-gutter">
+    {% for theme in themes %}
+        <li class="{{ theme }} text-primary bg-primary">
+            <p class="f-heading-2">Theme:
+                <code class="inline-block bg-code px-2 py-1  text-primary-force">.{{ theme }}</code></p>
+            <div class="demo-header accent-primary py-12 px-16 mt-20">
+                <code class="inline-block bg-code px-2 py-1 text-primary-force">.accent-primary</code>
+                <p class="f-body-1 mt-16">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea
+                    <a href="#" class="text-link-off link-underline hover:text-link-on hover:link-underline-on">commodo
+                        consequat</a>.</p>
+                <p class="mt-16">{% include '@atom:link' with { href: "#", text: "Read More" } %}</p>
+                <p class="mt-16 flex">
+                    {% include '@atom:btn' with { 'label': 'Primary' } %}
+                    {% include '@atom:btn' with { 'label': 'Secondary', 'variation': 'secondary', 'customClasses': 'ml-16' } %}
+                </p>
+                <p class="mt-16">
+                    {% render '@form:text' %}
+                </p>
+            </div>
+            <div class="accent-secondary py-12 px-16 mt-20">
+                <code class="inline-block bg-code px-2 py-1 text-primary-force">.accent-secondary</code>
+                <p class="f-body-1 mt-16">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea
+                    <a href="#" class="text-link-off link-underline hover:text-link-on hover:link-underline-on">commodo
+                        consequat</a>.</p>
+                <p class="mt-16">{% include '@atom:link' with { href: "#", text: "Read More" } %}</p>
+                <p class="mt-16 flex">
+                    {% include '@atom:btn' with { 'label': 'Primary' } %}
+                    {% include '@atom:btn' with { 'label': 'Secondary', 'variation': 'secondary', 'customClasses': 'ml-16' } %}
+                </p>
+                <p class="mt-16">
+                    {% render '@form:text' %}
+                </p>
+            </div>
+            <p class="f-body-1 mt-20">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea <a href="#" class="text-link-off link-underline hover:text-link-on hover:link-underline-on">commodo
+                    consequat</a>.</p>
+            <p class="mt-16 flex">
+                {% include '@atom:btn' with { 'label': 'Primary' } %}
+                {% include '@atom:btn' with { 'label': 'Secondary', 'variation': 'secondary', 'customClasses': 'ml-16' } %}
+            </p>
+            <p class="mt-16">
+                {% render '@form:text' %}
+            </p>
+        </li>
+    {% endfor %}
+</ul>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        document.body.classList.remove('theme-default');
+        document.getElementById('themeToggler').style.display = 'none';
+    });
+</script>

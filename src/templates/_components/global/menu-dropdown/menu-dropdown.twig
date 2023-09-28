@@ -1,0 +1,87 @@
+<div
+    id="Menu-Dropdown-{{ index }}"
+    data-component="global:menu-dropdown"
+    class="menu-dropdown hidden lg:block"
+    data-menu-dropdown
+    aria-hidden="true"
+    role="menu"
+    aria-modal="true"
+>
+    <button
+        class="menu-dropdown-close f-ui-3 accent-secondary absolute -left-full top-8 px-8 py-4 bg-light"
+        tabindex="-1"
+        data-menu-dropdown-close
+        data-label="Close Menu"
+    >
+        Close menu
+    </button>
+
+    <div class="
+      menu-dropdown-container
+      accent-primary
+      fixed top-header left-0 w-full
+      flex flex-row
+      overflow-hidden
+      overflow-x-visible overflow-y-auto styled-scrollbars
+    ">
+        <div class="flex flex-row container min-h-full">
+            {% if primary is defined %}
+                <div class="cols-3 flex flex-col pt-16 pb-20">
+                    {% if primary.title is defined %}
+                        <p class="f-heading-1 block mb-8">{{ primary.title }}</p>
+                    {% endif %}
+                    <ul class="flex flex-col flex-grow">
+                        {% if primary.items is defined %}
+                            {% for item in primary.items %}
+                                <li class="block mb-8">
+                                    <a class="f-body-1 hover:text-inverse" href="{{ item.href }}" role="menuitem">
+                                        {{ item.title }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+                        {% if href is defined %}
+                            <li class="block mt-auto">
+                                <a class="f-body-1 hover:text-inverse" href="{{ href }}">{{ overflowLabel | default('View all') }}</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% if secondary is defined and secondary.items is defined %}
+                {% if secondary.type is defined and secondary.type != 'basic' %}
+                    {% for item in secondary.items %}
+                        <div class="cols-3 gutter-stroke-left ml-gutter">
+                            {% include secondary.type with item|merge({
+                                inAccentPrimary: true,
+                                customClasses: 'w-auto -mx-half-gutter min-h-full max-h-full',
+                                attrs: {
+                                    tabindex: "-1",
+                                    role: "menuitem"
+                                }
+                            }) only %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% set length = secondary.items|length %}
+                    {% set totalColumns = length > 21 ? 3 : 2 %}
+                    {% set percolumn = (length / totalColumns)|round(0, 'ceil') %}
+                    {% set startPos = 0 %}
+                    {% set endPos = percolumn %}
+                    {% for i in range(1, totalColumns) %}
+                        <div class="cols-3 flex flex-col pt-16 pb-20 gutter-stroke-left ml-gutter">
+                            <ul>
+                                {% for item in secondary.items|slice(startPos, percolumn) %}
+                                    <li class="block mb-8">
+                                        <a class="f-body-1 hover:text-inverse" href="{{ item.href }}">{{ item.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {% set startPos = startPos + percolumn %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

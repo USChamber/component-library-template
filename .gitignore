@@ -1,0 +1,12 @@
+# IDE
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.idea
+
+# Dependencies
+/vendor
+node_modules
+/node_modules

@@ -1,0 +1,21 @@
+<div data-component="layout:center-column" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% include '@repeater:blocks' with {
+        'items': blocks|default([]),
+        'customClasses': "article-body-center",
+        'editorialColumn': true,
+        'blockImgSizes': {
+            '@block:image': {
+                "sm": "100vw",
+                "lg": "37.5rem"
+            },
+            '@block:inline-feature': {
+                "sm": "100vw",
+                "lg": "18.75rem"
+            },
+            '@block:inline-features': {
+                "sm": "4rem",
+                "lg": "17.25rem"
+            }
+        }
+    } only %}
+</div>

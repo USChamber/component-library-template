@@ -1,0 +1,27 @@
+{% if links is defined and links|length > 0 %}
+    <li class="menu-sticky-bottom-links accent-primary sticky bottom-0 w-full mt-auto border-t border-primary{{ customClasses is defined ? ' ' ~ customClasses }}">
+        {% if links|length > 1 %}
+            <ul class="flex w-full">
+                {% for link in links %}
+                    <li class="w-3/6{{ loop.first ? ' border-r border-primary' }}">
+                        <a
+                            href="{{ link.href }}"
+                            class="menu-action block pt-12 pb-12 text-center text-inverse hover:text-accent-secondary"
+                            aria-hidden="true" data-menu-parent="{{ parent }}"
+                        >
+                            <span>{{ link.title }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <a
+                href="{{ links[0].href }}"
+                class="menu-action block pt-12 pb-12 text-center text-inverse hover:text-accent-secondary"
+                aria-hidden="true" data-menu-parent="{{ parent }}"
+            >
+                <span>{{ links[0].title }}</span>
+            </a>
+        {% endif %}
+    </li>
+{% endif %}

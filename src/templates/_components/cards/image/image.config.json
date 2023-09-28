@@ -1,0 +1,47 @@
+{
+    "title": "image",
+    "handle": "card:image",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "display": {
+        "max-width": "450px"
+    },
+    "context": {
+        "title": "Title goes here",
+        "summary": "Helping your company and our country solve our workforce challenges",
+        "label": "Category",
+        "cta": "Learn more"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "href": "#",
+                "img": {
+                    "src": "https://via.placeholder.com/400x200",
+                    "alt": "image alt tag"
+                }
+            }
+        },
+        {
+            "name": "no link",
+            "label": "No link",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x200",
+                    "alt": "image alt tag"
+                }
+            }
+        },
+        {
+            "name": "splash",
+            "label": "Splash",
+            "context": {
+                "href": "#"
+            }
+        }
+    ]
+}

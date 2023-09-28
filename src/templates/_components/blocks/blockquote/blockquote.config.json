@@ -1,0 +1,31 @@
+{
+    "title": "Block quote",
+    "label": "Block quote",
+    "handle": "block:blockquote",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "quote": "Doc, are you telling me that you built a time machine out of a DeLorean?"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Quote with paragraphs",
+            "context": {
+                "quote": [
+                    "Doc, are you telling me that you built a time machine out of a DeLorean?",
+                    "For real?"
+                ]
+            }
+        },
+        {
+            "name": "with attribution",
+            "label": "with Attribution",
+            "context": {
+                "attribution": "Marty McFly"
+            }
+        }
+    ]
+}

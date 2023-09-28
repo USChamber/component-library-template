@@ -1,0 +1,44 @@
+{% set componentName = 'block:image' %}
+
+{% set imageLink = url|default(null) %}
+{% set imageTarget = target|default(null) %}
+{% set imageAttrs = imageTarget ? {
+    target: imageTarget
+} : null %}
+
+{% set imageHtml %}
+    {% if (element is defined) or (src is defined) %}
+        {% include '@atom:img' with {
+            "element": element|default(null),
+            "src": src|default(''),
+            "ratio": ratio|default(''),
+            "sizes": sizes|default('100vw'),
+            "alt": alt|default(caption|default('')),
+            "transformName": componentName
+        } only %}
+    {% endif %}
+{% endset %}
+
+<figure data-component="{{ componentName }}" class="block{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+
+    {% if imageLink %}
+        {% include '@atom:link' with {
+            href: imageLink,
+            text: imageHtml,
+            attrs: imageAttrs,
+        } %}
+    {% else %}
+        {{ imageHtml }}
+    {% endif %}
+
+    <figcaption class="block f-ui-2 mt-space-3 relative">
+        {% if source is defined and source|length > 0 %}
+            <cite class="absolute right-0 text-disabled text-right w-[20%]">
+                {{ source }}
+            </cite>
+        {% endif %}
+        {% if caption is defined and caption|length > 0 %}
+            <span class="w-[75%] inline-block">{{ caption }}</span>
+        {% endif %}
+    </figcaption>
+</figure>

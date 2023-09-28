@@ -1,0 +1,290 @@
+{
+    "title": "Grid Listing 4",
+    "handle": "listing:grid-4",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "imgRatio": "3:2"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "items": [
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "Europe’s Gamble on AI Regulation"
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "U.S. Chamber Letter on Antitrust Legislation"
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "The Benefits of International Investment"
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "Is your company compliant with the new tax legislation?"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "multi row",
+            "label": "multi row",
+            "context": {
+                "items": [
+                    {
+                        "type": "@card:display",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "Myron Brilliant",
+                            "subtitle": "President"
+                        }
+                    },
+                    {
+                        "type": "@card:date",
+                        "data": {
+                            "href": "#",
+                            "title": "Title goes here",
+                            "label": "Category",
+                            "date": "Tuesday, August 31st",
+                            "time": "7:30p – 8:00pm EST",
+                            "cta": "Learn more",
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200",
+                                "alt": "image alt tag"
+                            }
+                        }
+                    },
+                    {
+                        "type": "@card:image",
+                        "data": {
+                            "href": "#",
+                            "title": "Title goes here",
+                            "summary": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more",
+                            "img": {
+                                "src": "https://via.placeholder.com/400x200",
+                                "alt": "image alt tag"
+                            }
+                        }
+                    },
+                    {
+                        "type": "@card:links",
+                        "data": {
+                            "title": "Intellectual Property",
+                            "href": "#",
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200",
+                                "alt": "image alt tag"
+                            },
+                            "links": [
+                                {
+                                    "href": "#",
+                                    "title": "Topic section 1"
+                                },
+                                {
+                                    "href": "#",
+                                    "title": "Topic section 2"
+                                },
+                                {
+                                    "href": "#",
+                                    "title": "Topic section 3"
+                                },
+                                {
+                                    "href": "#",
+                                    "title": "Topic section 4"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@card:text",
+                        "data": {
+                            "href": "#",
+                            "title": "Title goes here",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more",
+                            "img": {
+                                "src": "https://via.placeholder.com/400x200",
+                                "alt": "image alt tag"
+                            }
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "U.S. Chamber Letter on Antitrust Legislation"
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "The Benefits of International Investment"
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "Is your company compliant with the new tax legislation?"
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "Europe’s Gamble on AI Regulation"
+                        }
+                    },
+                    {
+                        "type": "@card:card",
+                        "data": {
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200"
+                            },
+                            "href": "#",
+                            "title": "U.S. Chamber Letter on Antitrust Legislation"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "card text",
+            "label": "card:text",
+            "context": {
+                "items": [
+                    {
+                        "type": "@card:text",
+                        "data": {
+                            "href": "#",
+                            "title": "Title goes here",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more"
+                        }
+                    },
+                    {
+                        "type": "@card:text",
+                        "data": {
+                            "href": "#",
+                            "title": "Title goes here",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more"
+                        }
+                    },
+                    {
+                        "type": "@card:text",
+                        "data": {
+                            "href": "#",
+                            "title": "Title goes here",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more"
+                        }
+                    },
+                    {
+                        "type": "@card:text",
+                        "data": {
+                            "href": "#",
+                            "title": "Title goes here",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "card display",
+            "label": "card:display",
+            "context": {
+                "items": [
+                    {
+                        "type": "@card:display",
+                        "data": {
+                            "href": "#",
+                            "title": "Myron Brilliant",
+                            "subtitle": "President"
+                        }
+                    },
+                    {
+                        "type": "@card:display",
+                        "data": {
+                            "href": "#",
+                            "title": "Myron Brilliant",
+                            "subtitle": "President"
+                        }
+                    },
+                    {
+                        "type": "@card:display",
+                        "data": {
+                            "href": "#",
+                            "title": "Myron Brilliant",
+                            "subtitle": "President"
+                        }
+                    },
+                    {
+                        "type": "@card:display",
+                        "data": {
+                            "href": "#",
+                            "title": "Myron Brilliant",
+                            "subtitle": "President"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

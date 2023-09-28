@@ -1,0 +1,140 @@
+<div
+    data-behavior="multiSelect"
+    data-component="behavior-block:multi-select"
+    {% if filterItems is defined %} {% endif %}
+    class="{{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+
+    <div class="flex flex-wrap border-t border-primary pt-space-4">
+        <div class="flex w-full justify-between flex-col xl:flex-row 	">
+            <h2 class="f-heading-2">{{ title }}</h2>
+            <div
+                class="
+          mt-space-4
+          grid grid-cols-1 lg:grid-cols-3 xl:flex xl:justify-end
+          gap-x-gutter gap-y-12 md:gap-y-24 xl:gap-x-24 xl:flex-wrap
+          xl:cols-9 xl:mt-0
+          ">
+                {% if filterItems is defined %}
+                    {% for item in filterItems %}
+                        {% if item.type == 'select' %}
+                            <button
+                                data-filtertype="{{ item.type }}"
+                                data-trigger="{{ item.param }}"
+                                class=" cursor-pointer relative {{ loop.index == 1 ? '' : '' }}">
+                                <div class="
+                  xl:w-248
+                  text-left
+                  bg-primary hover:bg-light
+                  f-ui-3 pl-16 py-12
+                  border-2 border-primary hover:border-checkbox-on
+                  ">
+                                    {{ item.title }}
+                                </div>
+                                {% include '@svg:icon-24-chevron-down' with {
+                                    "customClasses": "absolute top-1/2 pointer-events-none transform -translate-y-1/2 right-12",
+                                } %}
+                            </button>
+                        {% else %}
+                            <div data-filtertype="{{ item.type }}" data-trigger="{{ item.param }}" class="relative xl:w-248">
+                                <input type="text" placeholder="{{ item.title }}"
+                                    class="
+                  placeholder-primary
+                  text-left w-full
+                  bg-primary hover:bg-light
+                  f-ui-3 pl-16 py-12
+                  border-2 border-primary hover:border-checkbox-on"/>
+                                <button data-inputsubmit class="absolute right-12 -translate-y-2/4 transform top-1/2">
+                                    {% include '@svg:icon-24-search' %}
+                                </button>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div
+            data-multiselect-list
+            class="chip-list
+            flex lg:flex-row-reverse lg:flex-wrap no-scrollbar
+            overflow-auto -ml-outer-gutter -mr-outer-gutter lg:ml-0 lg:mr-0 xl:ml-auto
+            xl:cols-8 "
+        ></div>
+    </div>
+
+    {% if filterItems is defined %}
+        {% for item in filterItems %}
+            {% if item.type == 'select' %}
+                <div
+                    data-multiselect-overlay
+                    data-overlay="{{ loop.index }}"
+                    data-overlayparam="{{ item.param }}"
+                    class="
+        multi-select-menu
+        fixed h-full bg-accent-primary top-0 text-accent-secondary
+        flex flex-col
+        w-full lg:w-1/2 xxl:w-684
+        ">
+                    <header class="px-24 py-16 flex justify-between">
+                        <strong>{{ item.title }} <span data-overlaycount></span></strong>
+                        <button data-close aria-label="close panel">
+                            {% include '@svg:icon-24-cross' %}
+                        </button>
+
+                    </header>
+                    <div class="overflow-auto">
+
+                        {% for option in item.options %}
+                            <div class="overlay-checkbox relative">
+                                <label class="overlay-checkbox-container cursor-pointer">
+                                    <span class="block px-24 py-10 f-ui-3 border-t border-transparent-1">{{ option.label }}</span>
+                                    <input data-selectitem type="checkbox" value="{{ option.value }}" data-label="{{ option.label }}" data-param="{{ item.param }}">
+                                    <span class="checkmark text-accent-secondary">
+              <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.6569 1.15685L6.34315 12.4706L0.686292 6.81371" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+
+            </span>
+                                </label>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+                    <ul class="flex w-full border-t border-transparent-1 mt-auto">
+                        <li class="w-full">
+                            {% include '@atom:btn' with {
+                                label: 'Clear All',
+                                customClasses:"w-full",
+                                attrs: {
+                                    "data-clear": null,
+                                }
+                            } %}
+                        </li>
+                        <li class="border-r border-transparent-1 w-full">
+                            {% include '@atom:btn' with {
+                                label: 'Apply',
+                                customClasses:"w-full",
+                                attrs: {
+                                    "data-submit": null,
+                                }
+                            } %}
+                        </li>
+                    </ul>
+                </div>
+
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <div data-multiselect-content class="mt-space-6">
+        {% if items is defined %}
+            {% for item in items %}
+                {% include item.type with item.data %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,33 @@
+{# Component: atom:video - NB: top spacing is *most* likely to want to be handled in _blocks.css #}
+{% set autoplay = autoplay ?? 0 %}
+
+{% switch type %}
+{% case 'livestream' %}
+    {% set autoplay = autoplay ?? 'true' %}
+    {% set src =  'https://livestream.com/accounts/27408329/events/' ~ videoId ~ '/player?amp;enableInfoAndActivity=true&amp;defaultDrawer=feed&amp;autoPlay=' ~ autoplay ~ '&amp;mute=false%22' %}
+    {% set script = '<script type="text/javascript" data-embed_id="' ~ videoId ~ '" src="https://livestream.com/assets/plugins/referrer_tracking.js"></script>' %}
+{% case 'slido' %}
+    {% set src = 'https://app.sli.do/event/' ~ videoId %}
+{% case 'youtube' %}
+    {% set src = 'https://www.youtube.com/embed/' ~ videoId ~ '?autoplay=' ~ autoplay ~ '&rel=0&controls=2&fs=1&modestbranding=1&playsinline=1&showinfo=0&enablejsapi=1' %}
+{% case 'vimeo' %}
+    {% set src = 'https://player.vimeo.com/video/' ~ videoId ~ '?color=81EEF3&title=0&byline=0&portrait=0&autoplay=' ~ autoplay %}
+{% default %}
+    {% set src = null %}
+{% endswitch %}
+
+{% if src is not null and videoId is not null %}
+    <iframe
+        data-component="atom:video"
+        class="{{ customClasses is defined ? ' ' ~ customClasses }}"
+        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        id="{{ videoId }}"
+        width="{{ width|default('100%') }}"
+        height="{{ height|default('100%') }}"
+        src="{{ src }}"
+        title="{{ title|default('Video Player') }}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; full-screen"
+        allowfullscreen
+    ></iframe>
+    {{ script is defined ? script|raw }}
+{% endif %}

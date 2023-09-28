@@ -1,0 +1,1207 @@
+{
+    "title": "modal",
+    "handle": "layout:modal",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "title": "Join the Chamber",
+        "id": "modal_demo",
+        "demo": true,
+        "blocks": [
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Uh, Doc. Huh? Uh, look me up when you get there. Indeed I will, roll em. I, Doctor Emmett Brown, am about to embark on an historic journey. What have I been thinking of, <u class=\"underline\">I almost forgot to bring some extra plutonium</u>. How did I ever expect to get back, one pallet one trip I must be out of my mind. What is it Einy? Oh my god, they found me, I don't know how but they found me. Run for it, Marty."
+                }
+            },
+            {
+                "type": "@form:form",
+                "data": {
+                    "ajax": true,
+                    "action": "//fakejsonendpoints.dev.area17.com/api/contact--verbose.php",
+                    "footnote": "The data you submit through this form will be processed in accordance with our <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">Privacy Policy</a>.",
+                    "fieldsets": [
+                        {
+                            "legend": "Your details",
+                            "fields": [
+                                {
+                                    "type": "@form:text",
+                                    "width": "half",
+                                    "data": {
+                                        "label": "First name",
+                                        "name": "first_name",
+                                        "placeholder": "Marty",
+                                        "required": true
+                                    }
+                                },
+                                {
+                                    "type": "@form:text",
+                                    "width": "half",
+                                    "data": {
+                                        "label": "Last name",
+                                        "name": "last_name",
+                                        "placeholder": "McFly",
+                                        "required": true
+                                    }
+                                },
+                                {
+                                    "type": "@form:text",
+                                    "data": {
+                                        "type": "email",
+                                        "label": "Email",
+                                        "name": "email",
+                                        "placeholder": "marty@mcfly.com",
+                                        "required": true
+                                    }
+                                },
+                                {
+                                    "type": "@form:text",
+                                    "data": {
+                                        "type": "tel",
+                                        "label": "Phone",
+                                        "name": "phone",
+                                        "placeholder": "555 438555"
+                                    }
+                                },
+                                {
+                                    "type": "@form:select",
+                                    "data": {
+                                        "label": "Select your state",
+                                        "placeholder": "State",
+                                        "options": [
+                                            {
+                                                "label": "Alaska",
+                                                "value": "al"
+                                            },
+                                            {
+                                                "label": "California",
+                                                "value": "ca"
+                                            },
+                                            {
+                                                "label": "New York",
+                                                "value": "ny"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "@form:textarea",
+                                    "data": {
+                                        "label": "Message",
+                                        "name": "msg",
+                                        "placeholder": "Enter your message"
+                                    }
+                                },
+                                {
+                                    "type": "@form:checkbox",
+                                    "data": {
+                                        "label": "Yes, I want to receive marketing emails",
+                                        "name": "accept"
+                                    }
+                                },
+                                {
+                                    "type": "@form:checkbox",
+                                    "data": {
+                                        "label": "Yes, I want to receive marketing emails from partners",
+                                        "name": "third_accept"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "label": "Submit",
+                            "type": "submit"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "With form",
+            "context": {
+            }
+        },
+        {
+            "name": "kitchen sink",
+            "label": "Kitchen sink",
+            "context": {
+                "blocks": [
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Uh, Doc. Huh? Uh, look me up when you get there. Indeed I will, roll em. I, Doctor Emmett Brown, am about to embark on an historic journey. What have I been thinking of, <u class=\"underline\">I almost forgot to bring some extra plutonium</u>. How did I ever expect to get back, one pallet one trip I must be out of my mind. What is it Einy? Oh my god, they found me, I don't know how but they found me. Run for it, Marty."
+                        }
+                    },
+                    {
+                        "type": "@form:form",
+                        "data": {
+                            "ajax": true,
+                            "action": "//fakejsonendpoints.dev.area17.com/api/contact--verbose.php",
+                            "footnote": "The data you submit through this form will be processed in accordance with our <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">Privacy Policy</a>.",
+                            "fieldsets": [
+                                {
+                                    "legend": "Your details",
+                                    "fields": [
+                                        {
+                                            "type": "@form:text",
+                                            "width": "half",
+                                            "data": {
+                                                "label": "First name",
+                                                "name": "first_name",
+                                                "placeholder": "Marty",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:text",
+                                            "width": "half",
+                                            "data": {
+                                                "label": "Last name",
+                                                "name": "last_name",
+                                                "placeholder": "McFly",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:text",
+                                            "data": {
+                                                "type": "email",
+                                                "label": "Email",
+                                                "name": "email",
+                                                "placeholder": "marty@mcfly.com",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:text",
+                                            "data": {
+                                                "type": "tel",
+                                                "label": "Phone",
+                                                "name": "phone",
+                                                "placeholder": "555 438555"
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:select",
+                                            "data": {
+                                                "label": "Select your state",
+                                                "placeholder": "State",
+                                                "options": [
+                                                    {
+                                                        "label": "Alaska",
+                                                        "value": "al"
+                                                    },
+                                                    {
+                                                        "label": "California",
+                                                        "value": "ca"
+                                                    },
+                                                    {
+                                                        "label": "New York",
+                                                        "value": "ny"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:textarea",
+                                            "data": {
+                                                "label": "Message",
+                                                "name": "msg",
+                                                "placeholder": "Enter your message"
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:checkbox",
+                                            "data": {
+                                                "label": "Yes, I want to receive marketing emails",
+                                                "name": "accept"
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:checkbox",
+                                            "data": {
+                                                "label": "Yes, I want to receive marketing emails from partners",
+                                                "name": "third_accept"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "label": "Submit",
+                                    "type": "submit"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph-lead",
+                        "data": {
+                            "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                        }
+                    },
+                    {
+                        "type": "@block:editorial-list",
+                        "data": {
+                            "title": "Key Takeaways",
+                            "items": [
+                                "Greatest film ever made",
+                                "I still want a hoverboard",
+                                "I don't want 3D holographic Jaws"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The way I see it, if you're gonna build a time machine into a car why not do it with some <strong class=\"font-bold\"><u class=\"underline\">style</strong></u>. Besides, the stainless, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. <u class=\"underline\">Einstein's clock is exactly one minute behind mine</u> it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time. "
+                        }
+                    },
+                    {
+                        "type": "@block:heading",
+                        "data": {
+                            "text": "Come here, I'll show you how it works. "
+                        }
+                    },
+                    {
+                        "type": "@block:ordered-list",
+                        "data": {
+                            "items": [
+                                "First, you turn the time circuits on. ",
+                                "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                                "You input the destination time on this keypad. ",
+                                "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                                "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "What, I don't get what happened. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "That was the day I invented time travel. I remember it vividly."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Unfortunately no, it requires something with a little more kick, plutonium. Uh, plutonium, wait a minute, are you telling me that this sucker's nuclear? Hey, hey, keep rolling, keep rolling there. <mark>No, no, no, no</mark>, this sucker's electrical. But I need a nuclear reaction to generate the one point twenty-one gigawatts of electricity that I need. Doc, you don't just walk into a store and ask for plutonium. Did you rip this off? Of course, from a group of Libyan Nationalists. They wanted me to build them a bomb, so I took their plutonium and in turn gave them a shiny bomb case full of used pinball machine parts."
+                        }
+                    },
+                    {
+                        "type": "@block:list",
+                        "data": {
+                            "items": [
+                                "Let's <strong class=\"font-bold\">get</strong>​ <em class=\"italic\">you</em>​ <u class=\"underline\">into</u> a <a class=\"text-link-off underline hover:text-link-on focus:text-link-on\" href=\"#\" target=\"_blank\">radiation</a> suit, ",
+                                "we must prepare to reload. ",
+                                "Safe now,<br>everything's lead lined. "
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Don't you lose those tapes now, we'll need a record. Wup, wup, I almost forgot my luggage. Who knows if they've got cotton underwear in the future. I'm allergic to all synthetics."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The future, it's where you're going?  That's right, twenty five years into the future. I've always dreamed on seeing the future, looking beyond my years, seeing the progress of mankind. I'll also be able to see who wins the next twenty-five world series."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Uh, Doc. Huh? Uh, look me up when you get there. Indeed I will, roll em. I, Doctor Emmett Brown, am about to embark on an historic journey. What have I been thinking of, <u class=\"underline\">I almost forgot to bring some extra plutonium</u>. How did I ever expect to get back, one pallet one trip I must be out of my mind. What is it Einy? Oh my god, they found me, I don't know how but they found me. Run for it, Marty."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Who, who? Who do you think, the Libyans. Holy shit! Unroll their fire. Doc, wait. No, bastards. Go. Go. C'mon, more, dammit. Jeez. Holy shit. Let's see if you bastards can do ninety."
+                        }
+                    },
+                    {
+                        "type": "@block:rule"
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                        }
+                    },
+                    {
+                        "type": "@block:accordion",
+                        "data": {
+                            "items": [
+                                {
+                                    "title": "Accordion block 1",
+                                    "isOpen": false,
+                                    "blocks": [
+                                        {
+                                            "type": "@block:paragraph",
+                                            "data": {
+                                                "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                                            }
+                                        },
+                                        {
+                                            "type": "@block:paragraph",
+                                            "data": {
+                                                "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Accordion block 2",
+                                    "isOpen": false,
+                                    "blocks": [
+                                        {
+                                            "type": "@block:paragraph",
+                                            "data": {
+                                                "text": "Here's what we do:"
+                                            }
+                                        },
+                                        {
+                                            "type": "@block:ordered-list",
+                                            "data": {
+                                                "items": [
+                                                    "First, you turn the time circuits on. ",
+                                                    "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                                                    "You input the destination time on this keypad. ",
+                                                    "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                                                    "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "@block:paragraph",
+                                            "data": {
+                                                "text": "That was the day I invented time travel. I remember it vividly."
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Accordion block 3",
+                                    "isOpen": false,
+                                    "blocks": [
+                                        {
+                                            "type": "@block:paragraph",
+                                            "data": {
+                                                "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                                            }
+                                        },
+                                        {
+                                            "type": "@block:paragraph",
+                                            "data": {
+                                                "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                        }
+                    },
+                    {
+                        "type": "@block:aside-listing",
+                        "data": {
+                            "title": "Report",
+                            "items": [
+                                {
+                                    "href": "#",
+                                    "title": "Huey Lewis is Back in Time"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The way I see it, if you're gonna build a time machine into a car why not do it with some <strong class=\"font-bold\"><u class=\"underline\">style</strong></u>. Besides, the stainless, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. <u class=\"underline\">Einstein's clock is exactly one minute behind mine</u> it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time. "
+                        }
+                    },
+                    {
+                        "type": "@block:heading",
+                        "data": {
+                            "text": "Come here, I'll show you how it works. "
+                        }
+                    },
+                    {
+                        "type": "@block:ordered-list",
+                        "data": {
+                            "items": [
+                                "First, you turn the time circuits on. ",
+                                "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                                "You input the destination time on this keypad. ",
+                                "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                                "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "What, I don't get what happened. "
+                        }
+                    },
+                    {
+                        "type": "@block:blockquote",
+                        "data": {
+                            "quote": "Wait a minute, wait a minute, Doc, are you telling me that you built a time machine out of a DeLorean.",
+                            "attribution": "Marty McFly"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "That was the day I invented time travel. I remember it vividly."
+                        }
+                    },
+                    {
+                        "type": "@block:cta",
+                        "data": {
+                            "title": "Join our chamber",
+                            "blocks": [
+                                {
+                                    "type": "@block:paragraph",
+                                    "data": {
+                                        "text": "Since 1912, we’ve been fighting for your business and looking out for your bottom line. We are your eyes and ears here in Washington."
+                                    }
+                                },
+                                {
+                                    "type": "@block:paragraph",
+                                    "data": {
+                                        "text": "We listen to your needs and convey your message in the political arena, taking action on legislative issues that impact your business. Learn more about our enhanced member benefits or join us today."
+                                    }
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "href": "#",
+                                    "title": "Action 1"
+                                },
+                                {
+                                    "href": "#",
+                                    "title": "Action 2",
+                                    "variation": "secondary"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                        }
+                    },
+                    {
+                        "type": "@block:embed",
+                        "data": {
+                            "embed": "<iframe width=\"100%\" style=\"aspect-ratio: 16 / 9;\" src=\"https://www.youtube.com/embed/qvsgGtivCgs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?"
+                        }
+                    },
+                    {
+                        "type": "@block:embed",
+                        "data": {
+                            "width": "wide",
+                            "embed": "<iframe width=\"100%\" style=\"aspect-ratio: 16 / 9;\" src=\"https://www.youtube.com/embed/qvsgGtivCgs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Unfortunately no, it requires something with a little more kick, plutonium. Uh, plutonium, wait a minute, are you telling me that this sucker's nuclear? Hey, hey, keep rolling, keep rolling there. <mark>No, no, no, no</mark>, this sucker's electrical. But I need a nuclear reaction to generate the one point twenty-one gigawatts of electricity that I need. Doc, you don't just walk into a store and ask for plutonium. Did you rip this off? Of course, from a group of Libyan Nationalists. They wanted me to build them a bomb, so I took their plutonium and in turn gave them a shiny bomb case full of used pinball machine parts."
+                        }
+                    },
+                    {
+                        "type": "@block:embed",
+                        "data": {
+                            "width": "fullbleed",
+                            "embed": "<iframe width=\"100%\" style=\"aspect-ratio: 16 / 9;\" src=\"https://www.youtube.com/embed/qvsgGtivCgs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+                        }
+                    },
+                    {
+                        "type": "@block:list",
+                        "data": {
+                            "items": [
+                                "Let's <strong class=\"font-bold\">get</strong>​ <em class=\"italic\">you</em>​ <u class=\"underline\">into</u> a <a class=\"text-link-off underline hover:text-link-on focus:text-link-on\" href=\"#\" target=\"_blank\">radiation</a> suit, ",
+                                "we must prepare to reload. ",
+                                "Safe now,<br>everything's lead lined. "
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:gallery",
+                        "data": {
+                            "items": [
+                                {
+                                    "type": "@atom:img",
+                                    "data": {
+                                        "alt": "alt image text",
+                                        "text": "lorem upsum this is some text form the slider",
+                                        "src": "https://via.placeholder.com/600x400"
+                                    }
+                                },
+                                {
+                                    "type": "@atom:img",
+                                    "data": {
+                                        "alt": "alt image text",
+                                        "text": "lorem upsum this is some text form the slider this is text for the slider",
+                                        "src": "https://via.placeholder.com/700x200"
+                                    }
+                                },
+                                {
+                                    "type": "@atom:img",
+                                    "data": {
+                                        "alt": "alt image text",
+                                        "text": "Hello world",
+                                        "src": "https://via.placeholder.com/700x700"
+                                    }
+                                },
+                                {
+                                    "type": "@atom:img",
+                                    "data": {
+                                        "alt": "alt image text",
+                                        "text": "lorem upsum this is some text form the slider",
+                                        "src": "https://via.placeholder.com/300x200"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Don't you lose those tapes now, we'll need a record. Wup, wup, I almost forgot my luggage. Who knows if they've got cotton underwear in the future. I'm allergic to all synthetics."
+                        }
+                    },
+                    {
+                        "type": "@block:image",
+                        "data": {
+                            "src": "https://via.placeholder.com/600x400",
+                            "caption": "Eget magna vulputate augue varius"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The future, it's where you're going?  That's right, twenty five years into the future. I've always dreamed on seeing the future, looking beyond my years, seeing the progress of mankind. I'll also be able to see who wins the next twenty-five world series."
+                        }
+                    },
+                    {
+                        "type": "@block:image-fullbleed",
+                        "data": {
+                            "src": "https://via.placeholder.com/600x400",
+                            "caption": "Eget magna vulputate augue varius"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Uh, Doc. Huh? Uh, look me up when you get there. Indeed I will, roll em. I, Doctor Emmett Brown, am about to embark on an historic journey. What have I been thinking of, <u class=\"underline\">I almost forgot to bring some extra plutonium</u>. How did I ever expect to get back, one pallet one trip I must be out of my mind. What is it Einy? Oh my god, they found me, I don't know how but they found me. Run for it, Marty."
+                        }
+                    },
+                    {
+                        "type": "@block:inline-feature",
+                        "data": {
+                            "title": "Recommended Article",
+                            "item": {
+                                "href": "#",
+                                "topic": "Topic",
+                                "title": "Huey Lewis is Back in Time"
+                            }
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Who, who? Who do you think, the Libyans. Holy shit! Unroll their fire. Doc, wait. No, bastards. Go. Go. C'mon, more, dammit. Jeez. Holy shit. Let's see if you bastards can do ninety."
+                        }
+                    },
+                    {
+                        "type": "@block:inline-features",
+                        "data": {
+                            "title": "Recommended Articles",
+                            "items": [
+                                {
+                                    "href": "#",
+                                    "topic": "Topic",
+                                    "title": "Huey Lewis is Back in Time",
+                                    "img": {
+                                        "src": "https://via.placeholder.com/300x200"
+                                    }
+                                },
+                                {
+                                    "href": "#",
+                                    "topic": "Topic",
+                                    "title": "Biff Tannen - the luckiest man alive?",
+                                    "img": {
+                                        "src": "https://via.placeholder.com/300x200"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                        }
+                    },
+                    {
+                        "type": "@block:pullquote",
+                        "data": {
+                            "quote": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The way I see it, if you're gonna build a time machine into a car why not do it with some <strong class=\"font-bold\"><u class=\"underline\">style</strong></u>. Besides, the stainless, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. <u class=\"underline\">Einstein's clock is exactly one minute behind mine</u> it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time. "
+                        }
+                    },
+                    {
+                        "type": "@block:newsletter-cta",
+                        "data": {
+                            "ajax": true,
+                            "action": "https://fakejsonendpoints.dev.area17.com/api/contact--verbose.php",
+                            "footnote": "By subscribing, you agree to the <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">Terms of Use</a> and <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">Privacy Policy</a>."
+                        }
+                    },
+                    {
+                        "type": "@block:ordered-list",
+                        "data": {
+                            "items": [
+                                "First, you turn the time circuits on. ",
+                                "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                                "You input the destination time on this keypad. ",
+                                "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                                "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "What, I don't get what happened. "
+                        }
+                    },
+                    {
+                        "type": "@block:stat",
+                        "data": {
+                            "items": [
+                                {
+                                    "stat": "26%",
+                                    "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+                                },
+                                {
+                                    "stat": "240m",
+                                    "text": "lorem ipsum dolor ametlamet"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                        }
+                    },
+                    {
+                        "type": "@block:stat",
+                        "data": {
+                            "items": [
+                                {
+                                    "stat": "26%",
+                                    "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+                                },
+                                {
+                                    "stat": "1.21GW",
+                                    "text": "lorem ipsum dolor ametlamet"
+                                },
+                                {
+                                    "stat": "1,000",
+                                    "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+                                },
+                                {
+                                    "stat": "€1.4m",
+                                    "text": "lorem ipsum dolor ametlamet"
+                                },
+                                {
+                                    "stat": "$252k",
+                                    "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+                                },
+                                {
+                                    "stat": "£13.26",
+                                    "text": "lorem ipsum dolor ametlamet"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                        }
+                    },
+                    {
+                        "type": "@block:video",
+                        "data": {
+                            "videoId": "qvsgGtivCgs",
+                            "attr": "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                            "img": {
+                                "src": "https://via.placeholder.com/300x200",
+                                "alt": "image alt tag",
+                                "ratio": "16:9",
+                                "playIcon": true
+                            }
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?!!"
+                        }
+                    },
+                    {
+                        "type": "@form:form",
+                        "data": {
+                            "ajax": true,
+                            "action": "//fakejsonendpoints.dev.area17.com/api/contact--verbose.php",
+                            "footnote": "The data you submit through this form will be processed in accordance with our <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">Privacy Policy</a>.",
+                            "fieldsets": [
+                                {
+                                    "legend": "Your details",
+                                    "fields": [
+                                        {
+                                            "type": "@form:text",
+                                            "width": "half",
+                                            "data": {
+                                                "label": "First name",
+                                                "name": "first_name",
+                                                "placeholder": "Marty",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:text",
+                                            "width": "half",
+                                            "data": {
+                                                "label": "Last name",
+                                                "name": "last_name",
+                                                "placeholder": "McFly",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:text",
+                                            "data": {
+                                                "type": "email",
+                                                "label": "Email",
+                                                "name": "email",
+                                                "placeholder": "marty@mcfly.com",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:text",
+                                            "data": {
+                                                "type": "tel",
+                                                "label": "Phone",
+                                                "name": "phone",
+                                                "placeholder": "555 438555"
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:select",
+                                            "data": {
+                                                "label": "Select your state",
+                                                "name": "state",
+                                                "placeholder": "State",
+                                                "options": [
+                                                    {
+                                                        "label": "Alaska",
+                                                        "value": "al"
+                                                    },
+                                                    {
+                                                        "label": "California",
+                                                        "value": "ca"
+                                                    },
+                                                    {
+                                                        "label": "New York",
+                                                        "value": "ny"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:textarea",
+                                            "data": {
+                                                "label": "Message",
+                                                "name": "msg",
+                                                "placeholder": "Enter your message"
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:checkbox",
+                                            "data": {
+                                                "label": "Yes, I want to receive marketing emails",
+                                                "name": "accept"
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:checkbox",
+                                            "data": {
+                                                "label": "Yes, I want to receive marketing emails from partners",
+                                                "name": "third_accept"
+                                            }
+                                        },
+                                        {
+                                            "type": "@form:field-group",
+                                            "data": {
+                                                "legend": "Do you agree to our <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">Terms and Conditions</a>?",
+                                                "fields": [
+                                                    {
+                                                        "type": "@form:radio",
+                                                        "data": {
+                                                            "label": "Agree",
+                                                            "value": "true",
+                                                            "name": "terms",
+                                                            "checked": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "@form:radio",
+                                                        "data": {
+                                                            "label": "Disagree",
+                                                            "value": "false",
+                                                            "name": "terms"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "label": "Submit",
+                                    "type": "submit"
+                                },
+                                {
+                                    "variation": "secondary",
+                                    "label": "Clear",
+                                    "type": "reset"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Unfortunately no, it requires something with a little more kick, plutonium. Uh, plutonium, wait a minute, are you telling me that this sucker's nuclear? Hey, hey, keep rolling, keep rolling there. <mark>No, no, no, no</mark>, this sucker's electrical. But I need a nuclear reaction to generate the one point twenty-one gigawatts of electricity that I need. Doc, you don't just walk into a store and ask for plutonium. Did you rip this off? Of course, from a group of Libyan Nationalists. They wanted me to build them a bomb, so I took their plutonium and in turn gave them a shiny bomb case full of used pinball machine parts."
+                        }
+                    },
+                    {
+                        "type": "@block:list",
+                        "data": {
+                            "items": [
+                                "Let's <strong class=\"font-bold\">get</strong>​ <em class=\"italic\">you</em>​ <u class=\"underline\">into</u> a <a class=\"text-link-off underline hover:text-link-on focus:text-link-on\" href=\"#\" target=\"_blank\">radiation</a> suit, ",
+                                "we must prepare to reload. ",
+                                "Safe now,<br>everything's lead lined. "
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Don't you lose those tapes now, we'll need a record. Wup, wup, I almost forgot my luggage. Who knows if they've got cotton underwear in the future. I'm allergic to all synthetics."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The future, it's where you're going?  That's right, twenty five years into the future. I've always dreamed on seeing the future, looking beyond my years, seeing the progress of mankind. I'll also be able to see who wins the next twenty-five world series."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Uh, Doc. Huh? Uh, look me up when you get there. Indeed I will, roll em. I, Doctor Emmett Brown, am about to embark on an historic journey. What have I been thinking of, <u class=\"underline\">I almost forgot to bring some extra plutonium</u>. How did I ever expect to get back, one pallet one trip I must be out of my mind. What is it Einy? Oh my god, they found me, I don't know how but they found me. Run for it, Marty."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Who, who? Who do you think, the Libyans. Holy shit! Unroll their fire. Doc, wait. No, bastards. Go. Go. C'mon, more, dammit. Jeez. Holy shit. Let's see if you bastards can do ninety."
+                        }
+                    },
+                    {
+                        "type": "@block:rule"
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The way I see it, if you're gonna build a time machine into a car why not do it with some <strong class=\"font-bold\"><u class=\"underline\">style</strong></u>. Besides, the stainless, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. <u class=\"underline\">Einstein's clock is exactly one minute behind mine</u> it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time. "
+                        }
+                    },
+                    {
+                        "type": "@block:heading",
+                        "data": {
+                            "text": "Come here, I'll show you how it works. "
+                        }
+                    },
+                    {
+                        "type": "@block:ordered-list",
+                        "data": {
+                            "items": [
+                                "First, you turn the time circuits on. ",
+                                "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                                "You input the destination time on this keypad. ",
+                                "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                                "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "What, I don't get what happened. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "That was the day I invented time travel. I remember it vividly."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Unfortunately no, it requires something with a little more kick, plutonium. Uh, plutonium, wait a minute, are you telling me that this sucker's nuclear? Hey, hey, keep rolling, keep rolling there. <mark>No, no, no, no</mark>, this sucker's electrical. But I need a nuclear reaction to generate the one point twenty-one gigawatts of electricity that I need. Doc, you don't just walk into a store and ask for plutonium. Did you rip this off? Of course, from a group of Libyan Nationalists. They wanted me to build them a bomb, so I took their plutonium and in turn gave them a shiny bomb case full of used pinball machine parts."
+                        }
+                    },
+                    {
+                        "type": "@block:list",
+                        "data": {
+                            "items": [
+                                "Let's <strong class=\"font-bold\">get</strong>​ <em class=\"italic\">you</em>​ <u class=\"underline\">into</u> a <a class=\"text-link-off underline hover:text-link-on focus:text-link-on\" href=\"#\" target=\"_blank\">radiation</a> suit, ",
+                                "we must prepare to reload. ",
+                                "Safe now,<br>everything's lead lined. "
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Don't you lose those tapes now, we'll need a record. Wup, wup, I almost forgot my luggage. Who knows if they've got cotton underwear in the future. I'm allergic to all synthetics."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The future, it's where you're going?  That's right, twenty five years into the future. I've always dreamed on seeing the future, looking beyond my years, seeing the progress of mankind. I'll also be able to see who wins the next twenty-five world series."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Uh, Doc. Huh? Uh, look me up when you get there. Indeed I will, roll em. I, Doctor Emmett Brown, am about to embark on an historic journey. What have I been thinking of, <u class=\"underline\">I almost forgot to bring some extra plutonium</u>. How did I ever expect to get back, one pallet one trip I must be out of my mind. What is it Einy? Oh my god, they found me, I don't know how but they found me. Run for it, Marty."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Who, who? Who do you think, the Libyans. Holy shit! Unroll their fire. Doc, wait. No, bastards. Go. Go. C'mon, more, dammit. Jeez. Holy shit. Let's see if you bastards can do ninety."
+                        }
+                    },
+                    {
+                        "type": "@block:rule"
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The way I see it, if you're gonna build a time machine into a car why not do it with some <strong class=\"font-bold\"><u class=\"underline\">style</strong></u>. Besides, the stainless, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. <u class=\"underline\">Einstein's clock is exactly one minute behind mine</u> it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time. "
+                        }
+                    },
+                    {
+                        "type": "@block:heading",
+                        "data": {
+                            "text": "Come here, I'll show you how it works. "
+                        }
+                    },
+                    {
+                        "type": "@block:ordered-list",
+                        "data": {
+                            "items": [
+                                "First, you turn the time circuits on. ",
+                                "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                                "You input the destination time on this keypad. ",
+                                "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                                "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "What, I don't get what happened. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "That was the day I invented time travel. I remember it vividly."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?"
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Unfortunately no, it requires something with a little more kick, plutonium. Uh, plutonium, wait a minute, are you telling me that this sucker's nuclear? Hey, hey, keep rolling, keep rolling there. <mark>No, no, no, no</mark>, this sucker's electrical. But I need a nuclear reaction to generate the one point twenty-one gigawatts of electricity that I need. Doc, you don't just walk into a store and ask for plutonium. Did you rip this off? Of course, from a group of Libyan Nationalists. They wanted me to build them a bomb, so I took their plutonium and in turn gave them a shiny bomb case full of used pinball machine parts."
+                        }
+                    },
+                    {
+                        "type": "@block:list",
+                        "data": {
+                            "items": [
+                                "Let's <strong class=\"font-bold\">get</strong>​ <em class=\"italic\">you</em>​ <u class=\"underline\">into</u> a <a class=\"text-link-off underline hover:text-link-on focus:text-link-on\" href=\"#\" target=\"_blank\">radiation</a> suit, ",
+                                "we must prepare to reload. ",
+                                "Safe now,<br>everything's lead lined. "
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Don't you lose those tapes now, we'll need a record. Wup, wup, I almost forgot my luggage. Who knows if they've got cotton underwear in the future. I'm allergic to all synthetics."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The future, it's where you're going?  That's right, twenty five years into the future. I've always dreamed on seeing the future, looking beyond my years, seeing the progress of mankind. I'll also be able to see who wins the next twenty-five world series."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Uh, Doc. Huh? Uh, look me up when you get there. Indeed I will, roll em. I, Doctor Emmett Brown, am about to embark on an historic journey. What have I been thinking of, <u class=\"underline\">I almost forgot to bring some extra plutonium</u>. How did I ever expect to get back, one pallet one trip I must be out of my mind. What is it Einy? Oh my god, they found me, I don't know how but they found me. Run for it, Marty."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Who, who? Who do you think, the Libyans. Holy shit! Unroll their fire. Doc, wait. No, bastards. Go. Go. C'mon, more, dammit. Jeez. Holy shit. Let's see if you bastards can do ninety."
+                        }
+                    },
+                    {
+                        "type": "@block:author-bio",
+                        "data": {
+                            "name": "Robert Zemeckis",
+                            "title": "Film director, film producer, and screenwriter",
+                            "summary": "Zemeckis's films are characterized by an interest in state-of-the-art special effects, including the early use of the insertion of computer graphics into live-action footage in Back to the Future Part II.",
+                            "href": "#",
+                            "img": {
+                                "src": "https://via.placeholder.com/96x96"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,112 @@
+{% set key = craft.app.request.getParam('key') %}
+{% if not currentUser and key != getComponentLibraryKey() %}
+    {% exit 404 %}
+{% endif %}
+    {% set component = craft.app.request.getParam('componentId') %}
+    {% set variant = craft.app.request.getParam('variant') %}
+
+    {% set componentViewerHelper = create('USChamber\\ComponentLibrary\\helpers\\ComponentViewerHelper') %}
+    {% set context = componentViewerHelper.getComponentContext(component, variant) %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{ component }} | {{ variant }}
+        &middot;
+        {{ siteName }}</title>
+    <style>
+        @font-face {
+            font-family: "GT America";
+            src: url("/dist/fonts-uscc/GT-America/GT-America-Standard-Light.woff") format("woff"), url("/dist/fonts-uscc/GT-America/GT-America-Standard-Light.woff") format("woff2");
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "GT America";
+            src: url("/dist/fonts-uscc/GT-America/GT-America-Standard-Light-Italic.woff") format("woff"), url("/dist/fonts-uscc/GT-America/GT-America-Standard-Light-Italic.woff") format("woff2");
+            font-weight: 300;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "GT America";
+            src: url("/dist/fonts-uscc/GT-America/GT-America-Standard-Regular.woff") format("woff"), url("/dist/fonts-uscc/GT-America/GT-America-Standard-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "GT America";
+            src: url("/dist/fonts-uscc/GT-America/GT-America-Standard-Regular-Italic.woff") format("woff"), url("/dist/fonts-uscc/GT-America/GT-America-Standard-Regular-Italic.woff2") format("woff2");
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "GT America";
+            src: url("/dist/fonts-uscc/GT-America/GT-America-Standard-Bold.woff") format("woff"), url("/dist/fonts-uscc/GT-America/GT-America-Standard-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Tobias";
+            src: url("/dist/fonts-uscc/Tobias/Tobias-Regular.woff") format("woff"), url("/dist/fonts-uscc/Tobias/Tobias-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Tobias";
+            src: url("/dist/fonts-uscc/Tobias/Tobias-RegularItalic.woff") format("woff"), url("/dist/fonts-uscc/Tobias/Tobias-RegularItalic.woff2") format("woff2");
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="icon" href="/dist/img/favicon.ico" sizes="any">
+    <link rel="icon" href="/dist/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/dist/img/apple-touch-icon.png">
+    <link rel="manifest" href="/dist/img/manifest.webmanifest">
+</head>
+<body class="theme-default text-primary bg-primary overflow-x-hidden py-outer-gutter xxxl:py-72">
+
+<div class="container">
+    <main id="main" data-axe-test-target>
+        {% include component with context %}
+    </main>
+</div>
+
+{% include "@global:mask" %}
+{% include "@layout:modal" with { "demo": false } %}
+
+<div class="dev-tools" style="display: flex; flex-flow: row-nowrap;">
+    <button class="dev-tools-toggle" onclick="this.nextElementSibling.hidden = !this.nextElementSibling.hidden;"></button>
+    <div class="dev-tools-grid" hidden></div>
+
+    <div id="themeToggler" style="display: flex; height: 30px; margin-left: 1px; padding-left: 5px; padding-right: 5px; background: #000;">
+        {% set themes = getThemeNamesAsArray("uscc") %}
+        <select style="display: block; font-size: 12px; background: #000; color: #fff;" onchange="document.body.className = document.body.className.replace(/theme-[\d\w]*/ig, this.options[this.selectedIndex].value); document.dispatchEvent(new CustomEvent('theme:updated'));">
+            {% for theme in themes %}
+                <option value="{{ theme }}">{{ theme }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+</body>
+<script src="{{ '/axe-a11y/a11y.js' }}"></script>
+<script src="{{ mix('js/app.js') }}" type="module"></script>
+<script src="{{ '/dist/js/uscc-mustard-test.js' }}" id="mustardtest" data-html4csspath="/dist/css/uscc-html4css.css" nomodule></script>
+</html>

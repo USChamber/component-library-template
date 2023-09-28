@@ -1,0 +1,234 @@
+{
+    "title": "listing load more",
+    "handle": "behavior-block:listing-block",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "loadUrl": "https:www.example.com/api/load/",
+        "hasLoadMore": true,
+        "bar": {
+            "title": "All Topics",
+            "components": [
+                {
+                    "type": "@form:select-filter",
+                    "data": {
+                        "title": "Sort by value",
+                        "customClasses": "",
+                        "options": [
+                            {
+                                "label": "Option 1",
+                                "value": "1"
+                            },
+                            {
+                                "label": "Option 2",
+                                "value": "2"
+                            },
+                            {
+                                "label": "Option 3",
+                                "value": "3"
+                            },
+                            {
+                                "label": "Option 4",
+                                "value": "4"
+                            },
+                            {
+                                "label": "Option 5",
+                                "value": "5"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "listing": {
+            "items": [
+                {
+                    "type": "@card:links",
+                    "data": {
+                        "title": "Intellectual Property",
+                        "href": "#",
+                        "img": {
+                            "src": "https://via.placeholder.com/300x200",
+                            "alt": "image alt tag"
+                        },
+                        "links": [
+                            {
+                                "href": "#",
+                                "title": "Topic section 1"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 2"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 3"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "@card:links",
+                    "data": {
+                        "title": "Intellectual Property",
+                        "href": "#",
+                        "img": {
+                            "src": "https://via.placeholder.com/300x200",
+                            "alt": "image alt tag"
+                        },
+                        "links": [
+                            {
+                                "href": "#",
+                                "title": "Topic section 1"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 2"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 3"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "@card:links",
+                    "data": {
+                        "title": "Intellectual Property",
+                        "href": "#",
+                        "img": {
+                            "src": "https://via.placeholder.com/300x200",
+                            "alt": "image alt tag"
+                        },
+                        "links": [
+                            {
+                                "href": "#",
+                                "title": "Topic section 1"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 2"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 3"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "@card:links",
+                    "data": {
+                        "title": "Intellectual Property",
+                        "href": "#",
+                        "img": {
+                            "src": "https://via.placeholder.com/300x200",
+                            "alt": "image alt tag"
+                        },
+                        "links": [
+                            {
+                                "href": "#",
+                                "title": "Topic section 1"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 2"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 3"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "@card:links",
+                    "data": {
+                        "title": "Intellectual Property",
+                        "href": "#",
+                        "img": {
+                            "src": "https://via.placeholder.com/300x200",
+                            "alt": "image alt tag"
+                        },
+                        "links": [
+                            {
+                                "href": "#",
+                                "title": "Topic section 1"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 2"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 3"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "@card:links",
+                    "data": {
+                        "title": "Intellectual Property",
+                        "href": "#",
+                        "img": {
+                            "src": "https://via.placeholder.com/300x200",
+                            "alt": "image alt tag"
+                        },
+                        "links": [
+                            {
+                                "href": "#",
+                                "title": "Topic section 1"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 2"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 3"
+                            },
+                            {
+                                "href": "#",
+                                "title": "Topic section 4"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "variants": [
+        {
+            "name": "No Load button",
+            "label": "No load button",
+            "context": {
+                "cta": "Learn more",
+                "hasLoadMore": false
+            }
+        }
+    ]
+}

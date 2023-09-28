@@ -1,0 +1,32 @@
+<form
+    data-component="global:newsletter-signup"
+    action="{{ action is defined ? action : '/' }}"
+    {% if ajax is defined %} data-behavior="globalNewsletterAjax"{% endif %}
+    class="bg-accent-secondary background-fill py-40 xl:py-96{{ customClasses is defined ? ' ' ~ customClasses }}"
+    novalidate
+>
+    <fieldset class="xl:flex xl:items-start xl:justify-between" data-globalnewsletterajax-fieldset>
+        <h4 class="f-heading-expressive-3 xl:w-half-inc-gutter accent-secondary">
+            <span data-globalnewsletterajax-title>Sign up to our newsletter</span>
+            <span data-globalnewsletterajax-msg aria-live="assertive" aria-hidden="true" class="hidden"></span>
+        </h4>
+        <div class="mt-24 xl:mt-0 xl:w-half-inc-gutter xl:h-56 flex flex-row bg-light p-4">
+            <label class="sr-only" for="global_newsletter_email">Email address</label>
+            <input
+                type="email"
+                id="global_newsletter_email"
+                name="email"
+                placeholder="Enter your email address"
+                class="input flex-grow mr-4"
+                data-globalnewsletterajax-input
+            >
+            {% include '@atom:btn' with {
+                label:"Submit",
+                type: "submit",
+                attrs: {
+                    "data-globalnewsletterajax-btn": null,
+                }
+            } %}
+        </div>
+    </fieldset>
+</form>

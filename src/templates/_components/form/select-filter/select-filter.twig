@@ -1,0 +1,38 @@
+{% set id = id is defined ? id : label is defined ? label|lower|replace({' ': '-'})|url_encode : '' %}
+
+<div data-component="form:select-filter" data-container-id="{{ id }}" class="filter-select {{ customClasses is defined ? ' ' ~ customClasses }}"{{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% if label is defined %}
+        <label
+            class="f-ui-1 block mb-12"
+            for="{{ id }}"
+        >
+            {{ label }}
+            {% if required is defined %} <span class="{{ hideRequired is defined ? 'hidden' }}">
+                    (required)</span>{% endif %}
+        </label>
+    {% endif %}
+    <div class="select w-full p-0 cursor-pointer relative">
+        <select id="{{ id }}" class="
+            appearance-none m-0 p-0 w-full 
+            bg-primary hover:bg-light
+            f-ui-3 pl-16 pr-100 py-12 
+            border-2 border-primary hover:border-checkbox-on
+            cursor-pointer
+            ">
+            {% if title is defined %}
+                <option value="">{{ title }}</option>
+            {% endif %}
+            {% if options is defined %}
+                {% for option in options %}
+                    <option value="{{ option.value }}" {{ option.selected is defined and option.selected ? 'selected' }}>{{ option.label }}</option>
+                {% endfor %}
+            {% endif %}
+        </select>
+        {% include '@svg:icon-24-chevron-down' with {
+            "customClasses": "absolute top-1/2 pointer-events-none transform -translate-y-1/2 right-12",
+            "attrs": {
+                "aria-hidden": "true"
+            }
+        } %}
+    </div>
+</div>

@@ -1,0 +1,63 @@
+{% set componentName = 'hero:default-50:50' %}
+<div
+    data-component="{{ componentName }}"
+    class="
+      flex flex-col
+      {{ accent is defined ? 'accent-'~accent : 'accent-primary' }}
+      background-fill lg:flex lg:flex-row
+      lg:h-90vh-minus-header print:flex-col print:h-auto
+    "
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <div
+        class="
+        flex flex-col lg:pr-48 lg:w-1/2
+        pt-120 pb-40 md:pt-144 lg:pt-0 lg:pb-48 xl:pb-64 print:pt-0
+    ">
+        <div class="mt-auto flex flex-col">
+            {% if title is defined and title is not null %}
+                <h1 class="block {{ title|length > 85 ? 'f-heading-4' : 'f-heading-5' }}">{{ title }}</h1>
+            {% endif %}
+            {% if summary is defined and summary is not null %}
+                <p class="block mt-16 f-body-1">{{ summary | raw }}</p>
+            {% endif %}
+            {% if breadcrumb is defined and breadcrumb is not null %}
+                {% include '@listing:breadcrumb' with {
+                    "items": breadcrumb.items,
+                    "customClasses": "hidden lg:block order-first mb-12 print:hidden"
+                } %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="w-screen relative -ml-outer-gutter -mr-outer-gutter lg:ml-0 lg:mb-0 lg:flex-grow lg:w-auto xxxl:mr-0">
+        {% if img is defined %}
+            {% include '@atom:img' with img|merge({
+                "sizes": {
+                    "sm": "100vw",
+                    "lg": 6,
+                },
+                "customClasses": "lg:h-full print:h-320",
+                "ratio": {
+                    "sm": "1:1",
+                    "lg": "4:5"
+                },
+                "alt": img.alt|default(''),
+                "transformName": componentName
+            }) %}
+            {% if img.credit is defined %}
+                <small class="block mt-4 px-outer-gutter f-ui-2
+            absolute lg:left-0 lg:right-0 lg:top-1/1 lg:px-0
+            text-primary-force lg:text-right lg:pr-outer-gutter
+            ">{{ img.credit }}
+                </small>
+            {% endif %}
+        {% else %}
+            {% include '@atom:logo-splash' with {
+                "customClasses": "border-primary border-t lg:h-full lg:border-t-0 lg:border-l xxxl:border-r",
+                "ratio": {
+                    "sm": "1:1",
+                    "lg": "4:5"
+                }
+            } %}
+        {% endif %}
+    </div>
+</div>

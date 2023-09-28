@@ -1,0 +1,37 @@
+{
+    "title": "date",
+    "handle": "card:date",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "display": {
+        "max-width": "450px"
+    },
+    "context": {
+        "title": "Title goes here",
+        "label": "Category",
+        "date": "Tuesday, August 31st",
+        "time": "7:30p – 8:00pm EST",
+        "cta": "Learn more",
+        "img": {
+            "src": "https://via.placeholder.com/300x200",
+            "alt": "image alt tag"
+        },
+        "eventId": "123"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "href": "#"
+            }
+        },
+        {
+            "name": "no link",
+            "label": "No link",
+            "context": {}
+        }
+    ]
+}

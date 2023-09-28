@@ -1,0 +1,17 @@
+{% if items is defined %}
+    {% set items = items is array ? items : [items] %}
+    {% for item in items %}
+        {% if item is string %}
+            {{ item|default('')|raw }}
+        {% elseif item.text is defined %}
+            {{ item.text|default('')|raw }}
+        {% elseif item.type is defined and item.type == 'text' and item.data is defined and item.data.text is defined %}
+            {{ item.data.text|default('')|raw }}
+        {% elseif item.type is defined %}
+            {% set data = item.data is defined ? item.data : {} %}
+            {% include item.type ignore missing with item.data only %}
+        {% else %}
+            {{ item }}
+        {% endif %}
+    {% endfor %}
+{% endif %}

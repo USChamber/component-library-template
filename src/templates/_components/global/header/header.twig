@@ -1,0 +1,124 @@
+<a class="skip-nav-link f-ui-3 accent-secondary absolute -left-full top-8 px-8 py-4 bg-light print:hidden" href="#main">
+    Skip to content
+</a>
+
+<header data-component="global:header" class="
+  uscc-header accent-primary
+  absolute top-0 left-0 right-0
+  w-full h-header
+  border-b border-primary
+" data-behavior="usccHeader"
+    data-menu-header>
+
+    <div class="container h-header flex items-center">
+
+        <div class="uscc-header-logo md:w-full md:pr-40 md:-mr-68 lg:pr-0 lg:mr-0 lg:w-1/3 flex flex-row items-center">
+            <a
+                href="/"
+                class="flex flex-row items-center mr-12 hover:text-inverse"
+                alt="U.S. Chamber of Commerce Homepage"
+            >
+                {% include '@svg:logo-mark-small' with {
+                    customClasses: "pointer-events-none flex-none w-40 lg:hidden",
+                    attrs: {
+                        "aria-hidden": "true",
+                    },
+                } %}
+                {% include '@svg:logo-mark-large' with {
+                    customClasses: "pointer-events-none hidden w-56 lg:block",
+                    attrs: {
+                        "aria-hidden": "true",
+                    },
+                } %}
+                <span
+                    class="f-body-1 block ml-12 md:hidden lg:block lg:whitespace-nowrap"
+                    aria-hidden="true"
+                >
+                        U.S. Chamber of Commerce
+                </span>
+                <span class="sr-only">USCC Homepage</span>
+            </a>
+
+            <span class="f-body-1 hidden md:inline md:mx-auto lg:hidden" aria-hidden="true">U.S. Chamber of Commerce</span>
+        </div>
+
+        {% if dropdowns is defined %}
+            <ul class="menu-dropdown-triggers f-body-1 h-full w-1/3 hidden lg:flex flex-row justify-center print:hidden">
+                {% for item in dropdowns %}
+                    <li class="menu-dropdown-trigger-li mx-10 flex flex-col justify-center">
+                        {% if item.href is defined %}
+                            <a
+                                class="block hover:text-inverse"
+                                href="{{ item.href }}"
+                                data-menu-dropdown-trigger
+                                aria-haspopup="menu"
+                                aria-controls="Menu-Dropdown-{{ loop.index }}"
+                            >{{ item.title }}</a>
+                        {% else %}
+                            <button class="block hover:text-inverse" data-menu-dropdown-trigger>{{ item.title }}</button>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <span class="w-1/3 hidden lg:block"></span>
+        {% endif %}
+
+        <ul class="uscc-header-primary-actions w-68 ml-auto lg:ml-0 lg:w-1/3 flex flex-row justify-end items-center print:hidden">
+            {% if featuredLink is defined %}
+                <li class="hidden lg:block mr-28 f-body-1">
+                    <a href="{{ featuredLink.href }}" class="hover:text-inverse">{{ featuredLink.title }}</a>
+                </li>
+            {% endif %}
+
+            <li class="w-24 h-24">
+                <style>
+                    input[type='checkbox']#queryly_toggle {
+                        position: absolute !important;
+                        left: -5000px !important;
+                    }
+                </style>
+                {# This is weird, but queryly requires an element that supports a `change` event #}
+                {# However, an input is not a logical opener for a menu, so a button should be used #}
+                {# So this button listens for the click and passes the "change" to the above checkbox #}
+                <button
+                    onclick="document.getElementById('queryly_toggle').click()"
+                    title="Site Search"
+                    role="link"
+                    aria-haspopup=“dialog”
+                    aria-controls="queryly_searchoutercontainer"
+                    class="block relative cursor-pointer relative w-24 h-24 hover:text-inverse"
+                >
+                    {% include '@svg:icon-24-search' with {
+                        customClasses: "absolute w-24 h-24 pointer-events-none top-0 left-0",
+                        attrs: {
+                            "aria-hidden": "true",
+                        },
+                    } %}
+                </button>
+            </li>
+
+            {% if navigation is defined %}
+                <li class="w-24 h-24 ml-20">
+                    {% include '@atom:burger-btn' with {
+                        customClasses: "pl-4",
+                        attrs: {
+                            "data-menu-trigger": null,
+                            "aria-haspopup": "menu",
+                            "aria-label": "Toggle menu",
+                            "aria-hidden": "true",
+                            "label": "Toggle menu",
+                        },
+                    } %}
+                </li>
+            {% endif %}
+        </ul>
+
+    </div>
+</header>
+
+{% if navigation is defined %}
+    {% include '@global:menu' with { "accountLinks": accountLinks is defined ? accountLinks, "navigation": navigation is defined ? navigation, "dropdowns": dropdowns is defined ? dropdowns } %}
+{% endif %}
+
+{% include '@global:global-search' with { "action": searchAction is defined ? searchAction : '/' } %}

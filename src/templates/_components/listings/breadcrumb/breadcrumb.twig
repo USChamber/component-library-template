@@ -1,0 +1,16 @@
+{% if items is defined and items|length > 0 %}
+    <nav data-component="listing:breadcrumb" class="print:hidden{{ customClasses is defined ? ' ' ~ customClasses }}">
+        <ul class="text-0">
+            {% for item in items %}
+                <li class="inline">
+                    {% if item.href is not defined %}
+                        <span class="f-ui-3">{{ item.title|default('') }}</span>
+                    {% else %}
+                        <a href="{{ item.href }}" class="f-ui-3 hover:text-link-on">{{ item.title|default('') }}</a>
+                    {% endif %}
+                    <span class="f-ui-3 mx-4" aria-hidden="true">/</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

@@ -1,0 +1,36 @@
+{% if items is defined %}
+    {% set items = items is array ? items : [items] %}
+    <div data-component="repeater:blocks" class="
+  blocks
+  {{ modal is defined and modal == true ? ' blocks--modal' }}
+  {{ halfLayout is defined and halfLayout == true ? ' blocks--halfLayout' }}
+  {{ editorialColumn is defined and editorialColumn == true ? ' blocks--editorial' }}
+  {{ customClasses is defined ? ' ' ~ customClasses }}"
+        {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {% for item in items %}
+            {% if item is string %}
+                {% include '@block:paragraph' ignore missing with { text: item } only %}
+            {% elseif item.text is defined %}
+                {% include '@block:paragraph' ignore missing with { text: item.text } only %}
+            {% elseif item.type is defined and item.type == 'text' and item.data is defined and item.data.text is defined %}
+                {% include '@block:paragraph' ignore missing with { text: item.data.text } only %}
+            {% elseif item.type is defined and item.type == '@block:rule' %}
+                {% include '@block:rule' %}
+            {% elseif item.type is defined %}
+                {# set responsive image sizes on any images #}
+                {% set imgSizes = '100vw' %}
+                {% if blockImgSizes is defined %}
+                    {% set imgSizes = attribute(blockImgSizes, item.type) is defined ? attribute(blockImgSizes, item.type) %}
+                {% endif %}
+                {# include component #}
+                {% if item.data is defined and item.data is not empty %}
+                    {% include item.type ignore missing with mergeResponsiveSettingsWithData({ "sizes": imgSizes }, item.data)|merge({
+                        'modal': modal is defined and modal == true ? true : false,
+                        'editorialColumn': editorialColumn is defined and editorialColumn == true ? true : false,
+                        'halfLayout': halfLayout is defined and halfLayout == true ? true : false
+                    }) only %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

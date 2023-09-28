@@ -1,0 +1,68 @@
+{% set componentName = 'listing:feature-e' %}
+<div data-component="{{ componentName }}" class="
+    pt-24 md:pt-32 lg:pt-0 lg:mt-120 xl:mt-144
+    border-t border-t-primary lg:border-t-0
+    {{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% if items is defined %}
+        <ul>
+            {% for item in items %}
+                <li class="lg:flex mb-64">
+                    <div class="w-screen -ml-outer-gutter -mr-outer-gutter mb-24 md:mb-40 lg:mb-0 lg:mx-0 lg:w-2/3-inc-gutter ">
+                        {% if item.href is defined and item.href is not null %}
+                        <a href="{{ item.href }}" class="block relative" tabindex="-1" aria-hidden="true">
+                            {% endif %}
+                            {% if item.img is defined %}
+                                {% include '@atom:img' with item.img|merge({
+                                    "sizes": {
+                                        "sm": 4,
+                                        "md": 8,
+                                    },
+                                    "ratio": item.img.ratio|default('3:2'),
+                                    "alt": item.img.alt|default('') == '' ? title|default('') : img.alt
+                                }) %}
+                            {% else %}
+                                {% include '@atom:logo-splash' with {
+                                    "ratio": "1:1",
+                                    "customClasses": "accent-secondary"
+                                } %}
+                            {% endif %}
+                            {% include '@svg:icon-play' with {
+                                "wrapperCustomClasses": "absolute",
+                            } %}
+                            {% if item.href is defined and item.href is not null %}
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="lg:flex lg:flex-col lg:items-center lg:w-1/3">
+                        <div class="flex flex-col lg:w-2/3-inc-gutter">
+                            {% if item.title is defined %}
+                                <h3 class="block f-heading-expressive-2  text-title break-words	 {{ item.label is defined ? 'mt-space-3' : '' }}">
+                                    {% if item.href is defined and item.href is not null %}
+                                        <a href="{{ item.href }}" class="hover:text-link-on">{{ item.title }}</a>
+                                    {% else %}
+                                        {{ item.title }}
+                                    {% endif %}
+                                </h3>
+                            {% endif %}
+                            {% if item.label is defined or item.topic is defined %}
+                                <span class="order-first flex items-center mt-space-4">
+                        {% if item.label is defined %}{% include '@atom:label' with { 'text': item.label.title|default(label), 'customClasses': 'mr-8 lg:mr-12', href: item.label.href|default('') } %}{% endif %}
+                                    {% if item.topic is defined %}{% include '@atom:topic' with { 'text': item.topic.title|default(topic), 'customClasses': 'mr-8 lg:mr-12', href: item.topic.href|default('') } %}{% endif %}
+                        <br class="hidden">
+                      </span>
+                            {% endif %}
+                            {% if item.description is defined %}
+                                <p class="f-body-1 mt-space-3 mb-space-4">{{ item.description }}</p>
+                            {% endif %}
+                            {% if item.timeStamp is defined and item.timeStamp is not null %}
+                                <br class="hidden">
+                                <span class="block mt-20 f-body-1 text-primary">{{ item.timeStamp }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>

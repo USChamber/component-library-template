@@ -1,0 +1,49 @@
+{
+    "title": "radio",
+    "handle": "form:radio",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "label": "Yes, I want to receive marketing emails",
+        "name": "accept",
+        "id": "accept"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "default",
+            "context": {
+            }
+        },
+        {
+            "name": "checked",
+            "label": "checked",
+            "context": {
+                "checked": true
+            }
+        },
+        {
+            "name": "required",
+            "label": "required",
+            "context": {
+                "required": true
+            }
+        },
+        {
+            "name": "disabled",
+            "label": "disabled",
+            "context": {
+                "disabled": true
+            }
+        },
+        {
+            "name": "error",
+            "label": "error",
+            "context": {
+                "error": true
+            }
+        }
+    ]
+}

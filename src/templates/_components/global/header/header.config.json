@@ -1,0 +1,970 @@
+{
+    "title": "Header",
+    "handle": "global:header",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "searchAction": "/",
+        "featuredLink": {
+            "href": "#",
+            "title": "Save the Clock Tower"
+        },
+        "accountLinks": [
+            {
+                "title": "Join Us",
+                "href": "#"
+            },
+            {
+                "title": "Sign In",
+                "href": "#"
+            }
+        ],
+        "navigation": [
+            {
+                "title": "Topics",
+                "href": "#",
+                "overflowLabel": "See all",
+                "items": [
+                    {
+                        "title": "Topics sub 1",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 1 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 3",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 4",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 5",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 6",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 7",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 8",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 9",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 10",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 11",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 11",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 12",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 12",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 13",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 14",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 15",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 16",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 17",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 18",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 19",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 20",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 21",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 22",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 22",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 23",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 24",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 25",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 26",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 27",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 28",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 29",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 1 sub 30",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 2",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 2 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 2 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 2 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 3",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 3 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 3 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 3 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 4",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 4 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 4 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 4 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 5",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 5 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 5 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 5 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 6",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 6 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 6 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 6 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 7",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 7 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 7 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 7 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 8",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 8 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 8 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 8 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 9",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 9 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 9 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 9 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 10",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 10 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 10 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 10 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 11",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 11 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 11 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 11 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 12",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 12 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 12 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 12 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 13",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 13 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 13 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 13 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Topics sub 14",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 14 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 14 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 14 sub 3",
+                                "href": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Events",
+                "href": "#",
+                "items": [
+                    {
+                        "title": "Events sub 1",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Events sub 2",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Work",
+                "href": "#",
+                "items": [
+                    {
+                        "title": "Work sub 1",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Work sub 2",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Work sub 3",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Work sub 4",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Work sub 5",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Work sub 6",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "More from the Chamber",
+                "href": "#",
+                "items": [
+                    {
+                        "title": "More from the Chamber sub 1",
+                        "href": "#"
+                    },
+                    {
+                        "title": "More from the Chamber sub 2",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "More from the Chamber sub 2 sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "More from the Chamber sub 2 sub 2",
+                                "href": "#"
+                            },
+                            {
+                                "title": "More from the Chamber sub 2 sub 3",
+                                "href": "#",
+                                "items": [
+                                    {
+                                        "title": "More from the Chamber sub 3 sub 2 sub 1",
+                                        "href": "#"
+                                    },
+                                    {
+                                        "title": "More from the Chamber sub 3 sub 2 sub 2",
+                                        "href": "#"
+                                    },
+                                    {
+                                        "title": "More from the Chamber sub 3 sub 2 sub 3",
+                                        "href": "#",
+                                        "items": [
+                                            {
+                                                "title": "More from the Chamber sub 3 sub 3 sub 2 sub 1",
+                                                "href": "#"
+                                            },
+                                            {
+                                                "title": "More from the Chamber sub 3 sub 3 sub 2 sub 2",
+                                                "href": "#"
+                                            },
+                                            {
+                                                "title": "More from the Chamber sub 3 sub 3 sub 2 sub 3",
+                                                "href": "#",
+                                                "items": [
+                                                    {
+                                                        "title": "More from the Chamber sub 3 sub 3 sub 3 sub 2 sub 1",
+                                                        "href": "#"
+                                                    },
+                                                    {
+                                                        "title": "More from the Chamber sub 3 sub 3 sub 3 sub 2 sub 2",
+                                                        "href": "#"
+                                                    },
+                                                    {
+                                                        "title": "More from the Chamber sub 3 sub 3 sub 3 sub 2 sub 3",
+                                                        "href": "#"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "More from the Chamber sub 3",
+                        "href": "#"
+                    },
+                    {
+                        "title": "More from the Chamber sub 4",
+                        "href": "#"
+                    },
+                    {
+                        "title": "More from the Chamber sub 5",
+                        "href": "#"
+                    },
+                    {
+                        "title": "More from the Chamber sub 6",
+                        "href": "#"
+                    }
+                ]
+            }
+        ],
+        "dropdowns": [
+            {
+                "title": "Topics",
+                "href": "#",
+                "overflowLabel": "See all",
+                "primary": {
+                    "title": "Trending now",
+                    "items": [
+                        {
+                            "title": "Trending topic 1",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Trending topic 2",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Trending topic 3",
+                            "href": "#"
+                        }
+                    ]
+                },
+                "secondary": {
+                    "type": "basic",
+                    "items": [
+                        {
+                            "title": "Topics 1",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 2",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 3",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 4",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 5",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 6",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 7",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 8",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 9",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 10",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 11",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 12",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 13",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 14",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 15",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 16",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 17",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 18",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 19",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 20",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 21",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 22",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 23",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 24",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 25",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 26",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 27",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Topics 28",
+                            "href": "#"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Events",
+                "href": "#",
+                "primary": {
+                    "items": [
+                        {
+                            "title": "Events 1",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Events 2",
+                            "href": "#"
+                        }
+                    ]
+                },
+                "secondary": {
+                    "type": "@card:date",
+                    "items": [
+                        {
+                            "title": "Event 1",
+                            "href": "#",
+                            "label": "Category",
+                            "date": "Tuesday, August 31st",
+                            "time": "7:30pm – 8:00pm EST",
+                            "cta": "Learn more"
+                        },
+                        {
+                            "title": "Event 2",
+                            "href": "#",
+                            "label": "Category",
+                            "date": "Tuesday, August 31st",
+                            "time": "7:30pm – 8:00pm EST",
+                            "cta": "Learn more"
+                        },
+                        {
+                            "title": "Event 3",
+                            "href": "#",
+                            "label": "Category",
+                            "date": "Tuesday, August 31st",
+                            "time": "7:30pm – 8:00pm EST",
+                            "cta": "Learn more"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Work",
+                "href": "#",
+                "primary": {
+                    "items": [
+                        {
+                            "title": "Work 1",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 2",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 2",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 3",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 3",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 4",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 5",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 6",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 7",
+                            "href": "#"
+                        },
+                        {
+                            "title": "Work 8",
+                            "href": "#"
+                        }
+                    ]
+                },
+                "secondary": {
+                    "type": "@card:text",
+                    "items": [
+                        {
+                            "title": "Work item 1",
+                            "href": "#",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more",
+                            "img": {
+                                "src": "https://via.placeholder.com/400x200",
+                                "alt": "image alt tag"
+                            }
+                        },
+                        {
+                            "title": "Work item 2",
+                            "href": "#",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more",
+                            "img": {
+                                "src": "https://via.placeholder.com/400x200",
+                                "alt": "image alt tag"
+                            }
+                        },
+                        {
+                            "title": "Work item 3",
+                            "href": "#",
+                            "description": "Helping your company and our country solve our workforce challenges",
+                            "label": "Category",
+                            "cta": "Learn more",
+                            "img": {
+                                "src": "https://via.placeholder.com/400x200",
+                                "alt": "image alt tag"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Kitchen sink",
+            "context": {
+            }
+        },
+        {
+            "name": "minimal",
+            "label": "minimal",
+            "context": {
+                "searchAction": "/",
+                "featuredLink": null,
+                "accountLinks": [
+                ],
+                "navigation": [
+                    {
+                        "title": "Topics",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Topics sub 2",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Events",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Events sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Events sub 2",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "More from the Chamber",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "More from the Chamber sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "More from the Chamber sub 2",
+                                "href": "#"
+                            }
+                        ]
+                    }
+                ],
+                "dropdowns": []
+            }
+        },
+        {
+            "name": "matts wip",
+            "label": "matts wip",
+            "context": {
+                "searchAction": "/",
+                "featuredLink": null,
+                "accountLinks": [
+                ],
+                "navigation": [
+                    {
+                        "title": "Topics",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Topics sub 1",
+                                "href": "#",
+                                "items": [
+                                    {
+                                        "title": "Topics sub 1 sub 1",
+                                        "href": "#"
+                                    },
+                                    {
+                                        "title": "Topics sub 1 sub 2",
+                                        "href": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Topics sub 2",
+                                "href": "#",
+                                "items": [
+                                    {
+                                        "title": "Topics sub 2 sub 1",
+                                        "href": "#"
+                                    },
+                                    {
+                                        "title": "Topics sub 2 sub 2",
+                                        "href": "#"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Events",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Events sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Events sub 2",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Work",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "Work sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "Work sub 2",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "More from the Chamber",
+                        "href": "#",
+                        "items": [
+                            {
+                                "title": "More from the Chamber sub 1",
+                                "href": "#"
+                            },
+                            {
+                                "title": "More from the Chamber sub 2",
+                                "href": "#",
+                                "items": [
+                                    {
+                                        "title": "More from the Chamber sub 2 sub 1",
+                                        "href": "#"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "dropdowns": []
+            }
+        }
+    ]
+}

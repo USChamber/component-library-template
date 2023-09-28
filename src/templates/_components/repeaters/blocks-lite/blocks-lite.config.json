@@ -1,0 +1,68 @@
+{
+    "title": "blocks-lite",
+    "handle": "repeater:blocks-lite",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "items": [
+            {
+                "type": "@block:ordered-list",
+                "data": {
+                    "items": [
+                        {
+                            "type": "text",
+                            "data": {
+                                "text": "un"
+                            }
+                        },
+                        {
+                            "type": "text",
+                            "data": {
+                                "text": "deux"
+                            }
+                        },
+                        [
+                            "trois",
+                            {
+                                "type": "@block:list",
+                                "data": {
+                                    "items": [
+                                        "eins",
+                                        [
+                                            "swei",
+                                            {
+                                                "type": "@block:ordered-list",
+                                                "data": {
+                                                    "items": [
+                                                        "uno",
+                                                        "dos",
+                                                        "tres"
+                                                    ]
+                                                }
+                                            }
+                                        ],
+                                        "drei"
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "@block:small",
+                                "data": {
+                                    "text": "Texte sur la sous-liste trois"
+                                }
+                            }
+                        ],
+                        {
+                            "type": "text",
+                            "data": {
+                                "text": "quatre"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

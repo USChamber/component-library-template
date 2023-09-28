@@ -1,0 +1,62 @@
+<div data-component="listing:features-a" class="lg:flex lg:justify-between{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% if primaryItems is defined %}
+        <div class="lg:cols-6 lg:order-1">
+            <ul class="
+            md:pt-16
+            lg:border-t-0 lg:mt-0 lg:pt-0
+        ">
+                <li class="
+                w-screen -ml-outer-gutter -mr-outer-gutter
+                lg:w-full lg:mx-0
+            ">
+                    {% for item in primaryItems %}
+                        {% include item.type ignore missing with mergeResponsiveSettingsWithData({ "sizes": { "sm": 4, "md": 8, "lg": 6 }, "ratio": "3:2" }, item.data|merge({ 'inFeatureGrid': true })) %}
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+    {% endif %}
+    {% if secondaryItems is defined %}
+        <div class="border-b border-primary pb-24 md:border-t md:mt-24 md:pt-24 lg:border-t-0 lg:border-b-0 lg:pt-0 lg:mt-0 lg:pb-0 lg:cols-3 lg:order-2 lg:gutter-stroke-left">
+            <ul class="md:flex md:flex-wrap md:flex-row md:justify-between lg:block">
+                {% for item in secondaryItems %}
+                    <li class="
+                border-t border-primary mt-24 pt-24
+                md:border-t-0 md:mt-0 md:pt-0
+                md:w-half-inc-gutter lg:w-full
+                {{ loop.index0 == 0 ? "" : "" }}
+                {{ loop.index0 == 0 ? "lg:border-t-0 lg:mt-0 lg:pt-0" : "lg:border-t lg:mt-40 lg:pt-24" }}
+                {{ loop.index is even ? ' md:gutter-stroke-left lg:gutter-stroke-left-0' }}
+            ">
+                        {% include item.type ignore missing with mergeResponsiveSettingsWithData({ "sizes": { "sm": 4, "md": 4, "lg": 3 }, "ratio": "3:2" }, item.data) %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if tertiaryItems is defined %}
+        <div class="mt-16 lg:mt-0 lg:cols-3 lg:order-3 lg:gutter-stroke-left">
+            <ul class="
+            md:flex md:flex-row md:flex-wrap md:justify-between
+            lg:block
+        ">
+                {% for item in tertiaryItems %}
+                    <li class="
+                    border-b border-primary pb-16 mb-16 xl:pb-16 xl:mb-20
+                    {{ not loop.last ? "" : "" }}
+                    md:flex-none md:relative
+                    {{ loop.last ? 'md:cols-8' : 'md:cols-4' }}
+                    lg:w-full
+                    {{ loop.last ? "lg:border-b-0 lg:mb-0 lg:pb-0 xl:mb-0 xl:pb-0" : "" }}
+                ">
+                        {% include item.type ignore missing with item.data %}
+                        {% if loop.index is even %}
+                            {# keyline - maybe should be a CSS class? #}
+                            <div class="hidden pointer-events-none md:block md:absolute {{ loop.index == 4 ? "md:-top-24" : "md:top-0" }} md:-left-gutter md:-bottom-1 md:w-gutter md:border-l md:border-primary md:transform md:translate-x-2/4 lg:hidden" aria-hidden></div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>

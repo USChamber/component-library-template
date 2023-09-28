@@ -1,0 +1,88 @@
+{
+    "title": "bio",
+    "handle": "layout:bio",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "title": "Doc. Emmett Brown",
+        "breadcrumb": {
+            "items": [
+                {
+                    "href": "#",
+                    "title": "Leadership"
+                }
+            ]
+        },
+        "positions": [
+            "President and CEO, Center for Capital Markets",
+            "Competitiveness President and CEO, Global Innovation Policy",
+            "Center President and CEO of Chamber Technology Engagement",
+            "Center Executive Vice President, U.S. Chamber of Commerce"
+        ],
+        "rightRail": [
+            {
+                "type": "@block:simple-links",
+                "data": {
+                    "title": "Social",
+                    "items": [
+                        {
+                            "href": "#",
+                            "title": "Facebook",
+                            "target": "_blank"
+                        },
+                        {
+                            "href": "#",
+                            "title": "Twitter",
+                            "target": "_blank"
+                        },
+                        {
+                            "href": "#",
+                            "title": "LinkedIn",
+                            "target": "_blank"
+                        }
+                    ]
+                }
+            }
+        ],
+        "blocks": [
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Doc. Emmett Brown possess great admiration for scientists from previous eras, naming successive pet dogs Copernicus and Einstein, and having portraits of Isaac Newton, Benjamin Franklin, Thomas Edison and Albert Einstein in his laboratory. His favorite author is Jules Verne and his family name was originally \"von Braun\" before World War I."
+                }
+            },
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Emmett's family moved to Hill Valley from Germany in 1908. Although initially wealthy because of his inheritance, he spent his entire family fortune on his time travel project. When the Brown mansion was destroyed by fire in 1962 and the property sold to developers, Doc subsequently resided in the mansion's garage. Once broke, he established a privately owned business to offer 24-hour scientific services, building ingenious devices for his customers."
+                }
+            },
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Emmett's work is highly regarded, enough for him to win an award for his work. However, he is shown as absent-minded at times, and various statements by other characters inhabiting Hill Valley indicate that he is generally regarded as strange, eccentric, or insane. Being very loud and sprightly, he often speaks with wide-eyed expressions and broad gestures (\"Great Scott!\" being one of his well-known catchphrases) and tends to be overly verbose in his delivery, referring in one case to a school dance as a \"rhythmic ceremonial ritual\"."
+                }
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "with image",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "alt": "Doc. Emmett Brown"
+                }
+            }
+        },
+        {
+            "name": "no image",
+            "label": "no image",
+            "context": {
+            }
+        }
+    ]
+}

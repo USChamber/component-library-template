@@ -1,0 +1,59 @@
+{
+    "title": "Default 50:50",
+    "label": "Default 50:50",
+    "handle": "hero:default-50:50",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "title": "A better future is everyone's business",
+        "summary": "There’s a rising sense of optimism in our country today. A growing belief that the dark stretch of the pandemic is nearly behind us."
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "With image",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "credit": "Vestibulum posuere, enim eu dignissim condimentum. © 2021 Getty Images"
+                }
+            }
+        },
+        {
+            "name": "long title",
+            "label": "Long title",
+            "context": {
+                "title": "U.S.-Bangladesh Business Council Hosts Bangladesh Prime Minister H.E. Sheikh Hasina on the Sidelines of United Nations General Assembly"
+            }
+        },
+        {
+            "name": "with breadcrumb",
+            "label": "with breadcrumb",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500",
+                    "credit": "Vestibulum posuere, enim eu dignissim condimentum. © 2021 Getty Images"
+                },
+                "breadcrumb": {
+                    "items": [
+                        {
+                            "href": "#",
+                            "title": "Topics"
+                        },
+                        {
+                            "href": "#",
+                            "title": "Topic"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "no image",
+            "label": "Logo splash",
+            "context": {}
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+{% set componentName = 'feature:fifty-fifty' %}
+{% set isMultiLink = (links is defined and links|length > 0) ? true : false %}
+{% set inverted = invert is defined and invert == true %}
+
+{% if isMultiLink or href is not defined %}
+<div data-component="{{ componentName }}" class="bg-accent-secondary background-fill lg:flex{{ customClasses is
+defined ? ' ' ~ customClasses }} {{ inverted ? '' : ' lg:flex-row-reverse' }}">
+    {% else %}
+    <a href="{{ href }}" data-component="{{ componentName }}" class="accent-secondary block background-fill lg:flex
+    {{ customClasses is defined ? ' ' ~ customClasses }} {{ inverted ? '' : ' lg:flex-row-reverse' }}">
+        {% endif %}
+
+        <div class="{{ inverted ? 'lg:mr-0' : 'lg:ml-0 -mr-outer-gutter' }} w-screen
+  lg:w-auto lg:flex-grow -ml-outer-gutter
+  mb-24 md:mb-40 lg:mb-0 xxxl:mr-0">
+            {% if isMultiLink %}
+            <a href="{{ href }}" class="block h-full">
+                {% endif %}
+                {% if img is defined %}
+                    {% include '@atom:img' with img|merge({
+                        "sizes": {
+                            "sm": "100vw",
+                            "lg": 6,
+                        },
+                        "ratio": {
+                            "sm": "1:1",
+                            "md": "3:2",
+                            "lg": "4:5"
+                        },
+                        "alt": img.alt|default(''),
+                        "transformName": componentName
+                    }) %}
+                {% else %}
+                    {% include '@atom:logo-splash' with {
+                        "ratio": {
+                            "sm": "1:1",
+                            "md": "3:2",
+                            "lg": "4:5"
+                        },
+                        "customClasses": "border-primary border-b lg:border-b-0 lg:border-l xxxl:border-r"
+                    } %}
+                {% endif %}
+                {% if isMultiLink %}
+            </a>
+            {% endif %}
+        </div>
+
+        <div class="
+        {{ inverted ? 'lg:pl-48' : 'lg:pr-48' }}
+        flex flex-col
+        lg:w-1/2
+        pb-40 lg:pb-48 xl:pb-64
+        ">
+
+            {% if label is defined %}
+                <div class="mb-12 md:mb-16 lg:mb-0 lg:mt-48 xl:mt-64">
+                    {% include '@atom:label' with { 'text': label, 'customClasses': '' } only %}
+                </div>
+            {% endif %}
+
+            {% if title is defined %}
+                <h3 class="block text-title lg:mt-auto {{ isExpressive is defined and isExpressive == true ? 'f-heading-expressive-5' : 'f-heading-4' }}">
+
+                    {% if isMultiLink %}
+                    <a href="{{ href }}">
+                        {% endif %}
+                        {{ title }}
+                        {% if isMultiLink %}
+                    </a>
+                    {% endif %}
+
+                </h3>
+            {% endif %}
+
+            {% if (links is defined and links|length > 0) %}
+                <ul class="mt-24">
+                    {% for item in links %}
+                        <li>
+                            <a href="{{ item.href }}" class="relative pl-16 hover:text-link-on hover:link-underline-on">
+                                {% include 'svg:icon-arrow-down-right' with { "customClasses": "absolute left-0 top-0" } %} {{ item.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if summary is defined %}
+                <p class="f-body-1 mt-12 md:mt-16 lg:mt-24">
+                    {% if href is defined and href is not null %}
+                        {{ summary | striptags('<i><b><em><strong><br>') }}
+                    {% else %}
+                        {{ summary | striptags('<a><i><b><em><strong><br>') }}
+                    {% endif %}
+                </p>
+            {% endif %}
+
+            <p class="{{ isExpressive is defined and isExpressive == true ? 'mt-24 md:mt-40' : 'mt-40' }}">
+                {% if isMultiLink %}
+                    {% include '@atom:link' with {
+                        text: cta,
+                        href: href,
+                    } %}
+                {% elseif href is defined %}
+                    {% include '@atom:link' with {
+                        text: cta,
+                        href: href,
+                        display: true,
+                    } %}
+                {% endif %}
+            </p>
+        </div>
+        {% if isMultiLink %}
+</div>
+{% else %}
+    </a>
+{% endif %}

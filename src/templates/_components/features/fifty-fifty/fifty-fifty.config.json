@@ -1,0 +1,67 @@
+{
+    "title": "50-50",
+    "label": "50-50",
+    "handle": "feature:50-50",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "cta": "Learn more",
+        "href": "#",
+        "title": "Lorem ipsum dolor",
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quam sem, volutpat eget scelerisque in, viverra vel risus.",
+        "label": "Explainer"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500"
+                }
+            }
+        },
+        {
+            "name": "no image",
+            "label": "Logo splash",
+            "context": {
+            }
+        },
+        {
+            "name": "expressive",
+            "label": "Expressive",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500"
+                },
+                "isExpressive": true
+            }
+        },
+        {
+            "name": "topic",
+            "label": "Topic feature",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/400x500"
+                },
+                "isExpressive": true,
+                "links": [
+                    {
+                        "href": "#",
+                        "title": "Link 1"
+                    },
+                    {
+                        "href": "#",
+                        "title": "Link 2"
+                    },
+                    {
+                        "href": "#",
+                        "title": "Link 3"
+                    }
+                ]
+            }
+        }
+    ]
+}

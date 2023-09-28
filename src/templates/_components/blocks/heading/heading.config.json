@@ -1,0 +1,12 @@
+{
+    "title": "Heading",
+    "label": "Heading",
+    "handle": "block:heading",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "text": "Come here, I'll show you how it works."
+    }
+}

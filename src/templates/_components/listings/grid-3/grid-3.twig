@@ -1,0 +1,27 @@
+{% if items is defined %}
+    <ul
+        data-component="listing:grid-3"
+        class="
+      grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+      gap-x-gutter gap-y-48 md:gap-y-64
+      grid-line-y grid-line-y-primary
+      grid-line-xfull grid-line-x-primary grid-line-x-24 md:grid-line-x-32
+      md:grid-line-x-0
+      {{ customClasses is defined ? ' ' ~ customClasses }}"
+        {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {% for item in items %}
+            <li>
+                {% include item.type with mergeResponsiveSettingsWithData({
+                    "sizes": {
+                        "sm": 4,
+                        "md": 2.6,
+                        "lg": 4,
+                        "xl": 4,
+                        "xxl": 4
+                    },
+                    "ratio": imgRatio is defined ? imgRatio : '3:2'
+                }, item.data) %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

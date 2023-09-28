@@ -1,0 +1,11 @@
+{
+    "title": "Mask",
+    "handle": "global:mask",
+    "status": "ready",
+    "hidden": "true",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+    }
+}

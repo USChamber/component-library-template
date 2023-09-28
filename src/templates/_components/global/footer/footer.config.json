@@ -1,0 +1,105 @@
+{
+    "title": "Footer",
+    "label": "Footer",
+    "handle": "global:footer",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "copyright": "&copy; 2021 U.S. Chamber of Commerce",
+        "featuredLinks": {
+            "title": "Featured Topics",
+            "viewAll": {
+                "title": "View All Topics",
+                "href": "#"
+            },
+            "links": [
+                {
+                    "title": "Climate Change",
+                    "href": "#"
+                },
+                {
+                    "title": "Health Care",
+                    "href": "#"
+                },
+                {
+                    "title": "Diversity",
+                    "href": "#"
+                },
+                {
+                    "title": "Regulations",
+                    "href": "#"
+                },
+                {
+                    "title": "Law Suits",
+                    "href": "#"
+                },
+                {
+                    "title": "Technology",
+                    "href": "#"
+                },
+                {
+                    "title": "Small Business",
+                    "href": "#"
+                },
+                {
+                    "title": "Travel",
+                    "href": "#"
+                }
+            ]
+        },
+        "links": [
+            {
+                "title": "Our Work",
+                "href": "#"
+            },
+            {
+                "title": "Events",
+                "href": "#"
+            },
+            {
+                "title": "About",
+                "href": "#"
+            },
+            {
+                "title": "CO-",
+                "href": "#"
+            },
+            {
+                "title": "Find your chamber",
+                "href": "#"
+            },
+            {
+                "title": "U.S. Chamber Foundation",
+                "href": "#"
+            },
+            {
+                "title": "Contact",
+                "href": "#"
+            }
+        ],
+        "legals": [
+            {
+                "title": "Terms and Conditions",
+                "href": "#"
+            },
+            {
+                "title": "Privacy Policy",
+                "href": "#"
+            },
+            {
+                "title": "Press",
+                "href": "#"
+            },
+            {
+                "title": "Careers",
+                "href": "#"
+            },
+            {
+                "title": "Site Map",
+                "href": "#"
+            }
+        ]
+    }
+}

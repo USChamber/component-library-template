@@ -1,0 +1,110 @@
+{
+    "title": "Button",
+    "label": "Button",
+    "handle": "atom:btn",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "label": "Button"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Primary link",
+            "context": {
+                "href": "#"
+            }
+        },
+        {
+            "name": "as button",
+            "label": "Primary as button",
+            "context": {}
+        },
+        {
+            "name": "disabled",
+            "label": "Primary disabled",
+            "context": {
+                "disabled": true
+            }
+        },
+        {
+            "name": "secondary",
+            "label": "Secondary",
+            "context": {
+                "variation": "secondary"
+            }
+        },
+        {
+            "name": "secondary disabled",
+            "label": "Secondary disabled",
+            "context": {
+                "variation": "secondary",
+                "disabled": true
+            }
+        },
+        {
+            "name": "icon",
+            "label": "Icon",
+            "context": {
+                "label": "Next",
+                "icon": {
+                    "type": "icon-24-arrow-right"
+                }
+            }
+        },
+        {
+            "name": "icon secondary",
+            "label": "Icon secondary",
+            "context": {
+                "label": "Next",
+                "variation": "secondary",
+                "icon": {
+                    "type": "icon-24-arrow-right"
+                }
+            }
+        },
+        {
+            "name": "icon left",
+            "label": "Icon left",
+            "context": {
+                "label": "Back",
+                "iconLeft": {
+                    "type": "icon-24-arrow-left",
+                    "classes": ""
+                }
+            }
+        },
+        {
+            "name": "icon left secondary",
+            "label": "Icon left secondary",
+            "context": {
+                "label": "Back",
+                "variation": "secondary",
+                "iconLeft": {
+                    "type": "icon-24-arrow-left",
+                    "classes": ""
+                }
+            }
+        },
+        {
+            "name": "icon right",
+            "label": "Icon right",
+            "context": {
+                "label": "Next",
+                "iconRight": {
+                    "type": "icon-24-arrow-right"
+                }
+            }
+        },
+        {
+            "name": "open modal",
+            "label": "Open modal",
+            "context": {
+                "label": "Open modal",
+                "openModal": "modal_demo"
+            }
+        }
+    ]
+}

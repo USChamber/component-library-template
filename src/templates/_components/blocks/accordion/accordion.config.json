@@ -1,0 +1,93 @@
+{
+    "title": "accordion",
+    "handle": "block:accordion",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "items": [
+            {
+                "title": "Accordion block 1",
+                "isOpen": true,
+                "blocks": [
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Accordion block 2",
+                "isOpen": false,
+                "blocks": [
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Here's what we do:"
+                        }
+                    },
+                    {
+                        "type": "@block:ordered-list",
+                        "data": {
+                            "items": [
+                                "First, you turn the time circuits on. ",
+                                "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                                "You input the destination time on this keypad. ",
+                                "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                                "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                            ]
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "That was the day I invented time travel. I remember it vividly."
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Accordion block 3",
+                "isOpen": false,
+                "blocks": [
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "The flux capacitor. It's taken me almost thirty years and my entire family fortune to realize the vision of that day, my god has it been that long. Things have certainly changed around here. I remember when this was all farmland as far as the eye could see. Old man Peabody, owned all of this. He had this crazy idea about breeding pine trees."
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Primary",
+            "context": {
+                "primary": true
+            }
+        },
+        {
+            "name": "highlight",
+            "label": "Secondary",
+            "context": {
+            }
+        }
+    ]
+}

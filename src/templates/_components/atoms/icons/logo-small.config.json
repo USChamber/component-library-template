@@ -1,0 +1,11 @@
+{
+    "title": "Logo",
+    "handle": "svg:logo-small",
+    "status": "ready",
+    "tags": [
+        "USCC",
+        "icon"
+    ],
+    "context": {
+    }
+}

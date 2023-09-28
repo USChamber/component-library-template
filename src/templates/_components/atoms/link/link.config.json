@@ -1,0 +1,35 @@
+{
+    "title": "link",
+    "handle": "atom:link",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "text": "Read more",
+        "href": "#"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "href": "#"
+            }
+        },
+        {
+            "name": "display",
+            "label": "Display only (no link)",
+            "context": {
+                "display": true
+            }
+        },
+        {
+            "name": "secondary",
+            "label": "Secondary",
+            "context": {
+                "secondary": true
+            }
+        }
+    ]
+}

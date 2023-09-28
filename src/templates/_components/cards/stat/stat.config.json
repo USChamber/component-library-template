@@ -1,0 +1,26 @@
+{
+    "title": "stat",
+    "handle": "card:stat",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "value": "25",
+        "text": "People in Congress",
+        "multiple": "false"
+    },
+    "variants": [
+        {
+            "name": "Default",
+            "context": {}
+        },
+        {
+            "name": "With Label",
+            "label": "withLabel",
+            "context": {
+                "label": "People in Congress"
+            }
+        }
+    ]
+}

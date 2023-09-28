@@ -1,0 +1,54 @@
+{% set componentName = 'card:card' %}
+<div data-component="{{ componentName }}" class="relative">
+    {% if href is defined and href is not null %}
+    <a href="{{ href }}" class="block" tabindex="-1" aria-hidden="true">
+        {% else %}
+        <span class="block">
+  {% endif %}
+            {% if img is defined and img is not null %}
+                {% include '@atom:img' with img|merge({
+                    "alt": img.alt|default(''),
+                    "ratio": "3:2",
+                    "transformName": componentName
+                }) %}
+            {% else %}
+                {% include '@atom:logo-splash' with {
+                    "ratio": "3:2",
+                    "customClasses": "accent-secondary"
+                } %}
+            {% endif %}
+            {% if href is defined and href is not null %}
+    </a>
+{% else %}
+    </span>
+    {% endif %}
+    {% if title is defined or tag is defined or teaser is defined or author is defined %}
+        <span class="block flex flex-col align-start mt-16 xl:mt-20">
+    {% if label is defined or topic is defined %}
+        <span class="flex items-center mb-space-3">
+        {% if label is defined %}{% include '@atom:label' with { 'text': label.title|default(label), 'customClasses': 'mr-8 lg:mr-12', href: label.href|default('') } %}{% endif %}
+            {% if topic is defined %}{% include '@atom:topic' with { 'text': topic.title|default(topic), 'customClasses': 'mr-8 lg:mr-12', href: topic.href|default('') } %}{% endif %}
+        <br class="hidden">
+      </span>
+    {% endif %}
+            {% if title is defined and title is not null %}
+                <strong class="
+        block
+        f-heading-expressive-1 text-title
+        group-hover:text-link-off
+        {{ large is defined and large == true ? 'f-heading-expressive-3' : 'f-heading-expressive-1' }}"
+                >
+        {% if href is defined and href is not null %}<a href="{{ href }}" class="hover:text-link-off">{% endif %}
+                        {{ title }}
+                        {% if href is defined and href is not null %}</a>{% endif %}
+    </strong>
+            {% endif %}
+            {% if teaser is defined and teaser is not null %}
+                <br class="hidden"><span class="block mt-12 f-body-1 text-primary">{{ teaser|raw }}</span>
+            {% endif %}
+            {% if author is defined and author is not null %}
+                <br class="hidden"><span class="block mt-20 f-body-1 text-primary">By {{ author }}</span>
+            {% endif %}
+  </span>
+    {% endif %}
+</div>

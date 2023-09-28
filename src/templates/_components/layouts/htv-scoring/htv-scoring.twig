@@ -1,0 +1,64 @@
+{# Component: layout:htv-scoring - NB: top spacing is *most* likely to want to be handled in _blocks.css #}
+<div data-component="layout:htv-scoring" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% for item in items %}
+        <div class="grid grid-cols-3 gap-x-24 mt-space-6">
+            <div class="col-span-2">
+                {% include "@block:title-bar" with {
+                    title: item.title,
+                } %}
+                {% include "@block:paragraph" with {
+                    text: item.text,
+                } %}
+            </div>
+            <div>
+                {% include "@block:stat" with {
+                    items: [{
+                        stat: item.stat.stat,
+                        text: item.stat.text
+                    }]
+                } %}
+            </div>
+        </div>
+        {% if item.table is defined and item.table is not null and item.legend is defined and item.table is not null %}
+            <div class="grid grid-cols-3 gap-x-24 mt-24">
+                <div class="htv-table-wrap sm:col-span-3 md:col-span-2">
+                    <table class="w-full">
+                        <thead>
+                        <tr class="htv-table-headers">
+                            {% for header in item.table.headers %}
+                                <th class="text-left py-space-3">{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for row in item.table.rows %}
+                            <tr>
+                                {% for cell in row %}
+                                    {% if cell.type is defined and cell.type is not null %}
+                                        <td class="py-space-3 border-b-2 border-primary {{ loop.first ? 'pl-8' : '' }}">
+                                            {% include cell.type with cell.data %}
+                                        </td>
+                                    {% else %}
+                                        <td class="py-space-3 border-b-2 border-primary {{ loop.first ? 'pl-8' : '' }}">{{ cell | raw }}</td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="htv-key sm:col-span-3 md:col-span-1">
+                    <h3 class="f-heading-1">{{ item.legend.title }}</h3>
+                    {% for legendItem in item.legend.items %}
+                        <div class="mt-space-2 float-left mr-16 md:mr-0 md:flex md:float-none items-center">
+                            <dl class="flex">
+                                {% include "@svg:icon-24-" ~ legendItem.icon %}
+                                <dd class="ml-12 md:ml-16 mt-space-2 f-ui-2">{{ legendItem.title | raw }}</dd>
+                            </dl>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

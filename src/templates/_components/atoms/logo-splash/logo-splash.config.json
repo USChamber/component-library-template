@@ -1,0 +1,57 @@
+{
+    "title": "logo-splash",
+    "handle": "atom:logo-splash",
+    "status": "wip",
+    "tags": [
+        "USCC"
+    ],
+    "display": {
+        "max-width": "500px"
+    },
+    "context": {
+        "customClasses": "accent-secondary"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Ratio 3:2",
+            "context": {
+                "type": "dotted",
+                "ratio": "3:2"
+            }
+        },
+        {
+            "name": "ratio 4:5",
+            "label": "Ratio 4:5",
+            "context": {
+                "type": "dotted",
+                "ratio": "4:5"
+            }
+        },
+        {
+            "name": "ratio 4:5 reverse",
+            "label": "Ratio 4:5 reverse",
+            "context": {
+                "reverse": true,
+                "type": "dotted",
+                "ratio": "4:5"
+            }
+        },
+        {
+            "name": "mixed ratio",
+            "label": "Mixed ratio",
+            "display": {
+                "max-width": "9999px"
+            },
+            "context": {
+                "type": "dotted",
+                "ratio": {
+                    "sm": "1:1",
+                    "md": "4:5",
+                    "lg": "16:9",
+                    "xl": "3:2"
+                }
+            }
+        }
+    ]
+}

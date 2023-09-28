@@ -1,0 +1,58 @@
+{% if href is defined and href is not null %}
+<a data-component="card:date" data-event-id="uscc-event-{{ eventId }}" href="{{ href }}" class="
+    block ratio ratio-4x5 group
+    {{ inAccentPrimary is not defined ? 'bg-light' }}
+    {{ customClasses is defined ? ' ' ~ customClasses }}
+" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% else %}
+    <div data-component="card:date" href="#" class="
+    block ratio ratio-4x5
+    {{ inAccentPrimary is not defined ? 'bg-light' }}
+    {{ customClasses is defined ? ' ' ~ customClasses }}
+" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {% endif %}
+
+        <span class="
+        ratio-content p-16 pt-12 lg:pt-16 {{ inAccentPrimary is not defined ? 'xl:p-24' : 'lg:pb-20' }}
+        flex flex-col
+        {{ inAccentPrimary is not defined ? 'group-hover:bg-accent-secondary' : 'group-hover:text-inverse' }}
+    ">
+        {% if label is defined %}
+            <span class="f-ui-1 pb-8">{{ label }}</span>
+        {% endif %}
+
+            {% if title is defined %}
+                <strong class="block f-quote-1 text-title text-primary{{ inAccentPrimary is  defined ? ' group-hover:text-inverse' }}">{{ title }}</strong>
+            {% endif %}
+
+        <span class="mt-space-5">
+            {% if date is defined %}
+                <em class="block f-body-1 not-italic text-primary{{ inAccentPrimary is  defined ? ' group-hover:text-inverse' }}">{{ date }}</em>
+            {% endif %}
+            {% if time is defined %}
+                <em class="block f-body-1 not-italic text-primary{{ inAccentPrimary is  defined ? ' group-hover:text-inverse' }}">{{ time }}</em>
+            {% endif %}
+        </span>
+
+        {% if href is defined and href is not null %}
+            <span class="block mt-auto">
+                <span class="inline-flex">
+                    <span class="f-ui-3 link-underline whitespace-nowrap">{{ cta is defined and cta is not null ? cta : '' }}</span>
+                    {% include '@svg:icon-24-arrow-top-right' with {
+                        customClasses: "pointer-events-none transition-transform group-hover:translate-x-2 group-hover:-translate-y-2",
+                        attrs: {
+                            "aria-hidden": "true",
+                        },
+                    } %}
+                </span>
+
+            </span>
+        {% endif %}
+
+    </span>
+
+        {% if href is defined and href is not null %}
+</a>
+{% else %}
+    </div>
+{% endif %}

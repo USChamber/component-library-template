@@ -1,0 +1,14 @@
+{
+    "title": "Global search",
+    "handle": "global:global-search",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "hidden": "true",
+    "context": {
+        "action": "/"
+    },
+    "variants": [
+    ]
+}

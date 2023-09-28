@@ -1,0 +1,36 @@
+<div data-component="behavior-block:filter-select" aria-live="polite" class="blocks {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }} id="{{ uniqueId
+?? '' }}_Listing">
+    {% if bar is defined %}
+        {% include '@block:title-bar' with bar %}
+    {% endif %}
+    {% if rowList is defined and rowList.data is defined %}
+        <div class="flex {{ filterLayout == 'vertical' ? 'flex-col lg:flex-row' : 'flex-col' }}">
+            {% set customListingClasses = '' %}
+            {% if filterComponents is defined %}
+                {% set filterLayout = filterLayout ?? 'horizontal' %}
+                {% if filterLayout == 'vertical' %}
+                    {% set filterLayoutClasses = 'w-full lg:w-1/5 mr-48 mb-24 ' %}
+                    {% set filterComponentClasses = 'mb-8' %}
+                    {% set customListingClasses = 'w-full lg:w-4/5' %}
+                {% else %}
+                    {% set filterLayoutClasses = 'flex-none ml-auto flex flex-col md:flex-row flex-wrap max-w-full w-full md:w-auto mt-24 md:mt-0 filter-wrap' %}
+                    {% set filterComponentClasses = 'mt-12 md:mt-0 md:ml-24 mb-space-6' %}
+                    {% set customListingClasses = '' %}
+                {% endif %}
+                <div class="{{ filterLayoutClasses }}">
+                    {% for filter in filterComponents %}
+                        <div class="{{ loop.index == 1 and filterLayout == 'horizontal' ? '' : filterComponentClasses }} min-w-200">
+                            {% include filter.type ignore missing with filter.data %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% include rowList.type with rowList.data|merge({ customClasses: customListingClasses }) only %}
+            {% include '@atom:logo-animated' with {
+                customClasses: "hidden max-w-lg mx-auto",
+                uniqueId: uniqueId ?? 'animated-logo-1'
+            } %}
+        </div>
+    {% endif %}
+
+</div>

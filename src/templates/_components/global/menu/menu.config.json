@@ -1,0 +1,13 @@
+{
+    "title": "menu",
+    "handle": "global:menu",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "hidden": true,
+    "context": {
+    },
+    "variants": [
+    ]
+}

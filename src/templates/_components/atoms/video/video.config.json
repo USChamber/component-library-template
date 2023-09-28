@@ -1,0 +1,30 @@
+{
+    "title": "video",
+    "handle": "atom:video",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "type": "youtube",
+        "videoId": "dQw4w9WgXcQ"
+    },
+    "variants": [
+        {
+            "name": "livestream",
+            "label": "Livestream",
+            "context": {
+                "type": "livestream",
+                "videoId": "dQw4w9WgXcQ"
+            }
+        },
+        {
+            "name": "slido",
+            "label": "Sli.do",
+            "context": {
+                "type": "slido",
+                "videoId": "dQw4w9WgXcQ"
+            }
+        }
+    ]
+}

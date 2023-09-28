@@ -1,0 +1,61 @@
+{# Component: card:video - NB: top spacing is *most* likely to want to be handled in _blocks.css #}
+
+{% set componentName = 'card:video' %}
+<div data-component="{{ componentName }}" class="relative {{ customClasses is defined ? ' ' ~ customClasses }}">
+    {% if href is defined and href is not null %}
+    <a href="{{ href }}" class="relative grid" tabindex="-1" aria-hidden="true">
+        {% else %}
+        <span class="block relative grid">
+  {% endif %}
+            {% if img is defined and img is not null %}
+                {% include '@atom:img' with img|merge({
+                    "alt": img.alt|default(''),
+                    "ratio": "3:2",
+                    "transformName": componentName,
+                    "playIcon": true,
+                }) %}
+            {% else %}
+                {% include '@atom:logo-splash' with {
+                    "ratio": "3:2",
+                    "customClasses": "accent-secondary",
+                    "playIcon": true,
+                } %}
+            {% endif %}
+            {% if href is defined and href is not null %}
+    </a>
+{% else %}
+    </span>
+    {% endif %}
+    {% if title is defined or description is defined or timestamp is defined or author is defined %}
+        <span class="block flex flex-col align-start mt-16 xl:mt-20">
+    {% if label is defined or topic is defined %}
+        <span class="flex items-center mb-space-3">
+        {% if label is defined %}{% include '@atom:label' with { 'text': label.title|default(label), 'customClasses': 'mr-8 lg:mr-12', href: label.href|default('') } %}{% endif %}
+            {% if topic is defined %}{% include '@atom:topic' with { 'text': topic.title|default(topic), 'customClasses': 'mr-8 lg:mr-12', href: topic.href|default('') } %}{% endif %}
+        <br class="hidden">
+      </span>
+    {% endif %}
+            {% if title is defined %}
+                <strong class="
+        block
+        f-heading-expressive-1 text-title
+        group-hover:text-link-off
+        {{ large is defined and large == true ? 'f-heading-expressive-3' : 'f-heading-expressive-1' }}"
+                >
+        {% if href is defined and href is not null %}<a href="{{ href }}" class="hover:text-link-off">{% endif %}
+                        {{ title }}
+                        {% if href is defined and href is not null %}</a>{% endif %}
+    </strong>
+            {% endif %}
+            {% if teaser is defined and teaser is not null %}
+                <br class="hidden"><span class="block mt-12 f-body-1 text-primary">{{ teaser }}</span>
+            {% endif %}
+            {% if author is defined %}
+                <br class="hidden"><span class="block mt-20 f-body-1 text-primary">By {{ author }}</span>
+            {% endif %}
+            {% if timeStamp is defined and timeStamp is not null %}
+                <br class="hidden"><span class="block mt-20 f-body-1 text-primary">{{ timeStamp }}</span>
+            {% endif %}
+  </span>
+    {% endif %}
+</div>

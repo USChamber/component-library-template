@@ -1,0 +1,57 @@
+{% set attrs = attrs is defined ? attrs : {} %}
+{% if openModal is defined %}
+    {% set attrs = attrs|merge({
+        "data-behavior": "openModal",
+        "data-openmodal-id": openModal,
+    }) %}
+{% endif %}
+{% if target is defined and target is not null and target == "_blank" %}
+    {% set attrs = attrs|merge({
+        "target": "_blank",
+    }) %}
+{% endif %}
+{% if href is defined and href is not null %}
+<a data-component="atom:btn" href="{{ href }}" class="{{ variation is defined ? 'btn-' ~ variation : 'btn-primary' }}{{ customClasses is defined ? ' ' ~ customClasses }}"{{ disabled is defined
+? ' disabled' }} {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% else %}
+    <button data-component="atom:btn" class="{{ variation is defined ? 'btn-' ~ variation : 'btn-primary' }}{{ customClasses is defined ? ' ' ~ customClasses }}" type="{{ type is defined ?
+    type : "button" }}"{{ disabled is defined ? ' disabled' }} {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {% endif %}
+        {% if iconLeft is defined and iconLeft != null %}
+            <span class="btn-icon-left">
+        {% include '@svg:'~ iconLeft.type with {
+            customClasses: iconLeft.classes,
+            attrs: {
+                "aria-hidden": "true",
+            },
+        } %}
+      </span>
+        {% endif %}
+        {% if icon is defined and icon != null %}
+            <span class="btn-icon-center">
+        {% include '@svg:'~ icon.type with {
+            customClasses: icon.classes is defined and not null ? icon.classes : '',
+            attrs: {
+                "aria-hidden": "true",
+            },
+        } %}
+        <span class="sr-only">{{ label|default(title|default('')) }}</span>
+      </span>
+        {% else %}
+            {{ label|default(title|default('')) }}
+        {% endif %}
+        {% if iconRight is defined and iconRight != null %}
+            <span class="btn-icon-right">
+        {% include '@svg:'~ iconRight.type with {
+            customClasses: icon.classes is defined and not null ? icon.classes : '',
+            attrs: {
+                "aria-hidden": "true",
+            },
+        } %}
+      </span>
+        {% endif %}
+        {% if href is defined and href is not null %}
+</a>
+{% else %}
+    </button>
+{% endif %}

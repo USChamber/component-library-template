@@ -1,0 +1,66 @@
+{% set id = id is defined ? id : title is defined ? title|lower|replace({' ': '-'})|url_encode : '' %}
+<div
+    data-component="layout:modal"
+    class="
+    modal
+    fixed top-0 bottom-0 w-full lg:w-2/3 xl:w-1/2 xxl:w-684
+    flex flex-col overflow-hidden
+    bg-primary overscroll-contain
+    {{ customClasses is defined ? ' ' ~ customClasses }}
+    {{ demo is defined and demo == true ? 's-active' : '' }}
+  "
+    id="{{ id }}"
+    data-behavior="modal"
+    aria-hidden="true"
+    {% if demo is defined and demo == true %} data-modal-demo="true"{% endif %}
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+
+    <button class="absolute z-20 right-26 top-16 w-24 h-24 hover:text-link-off" data-modal-close>
+        {% include '@svg:icon-24-cross' with {
+            customClasses: "w-24 h-24 pointer-events-none",
+            attrs: {
+                ariaHidden: "true",
+            },
+        } %}
+        <span class="sr-only">Close modal</span>
+    </button>
+
+    <div class="relative flex flex-col w-full h-full px-outer-gutter lg:px-24 overflow-x-hidden overflow-y-auto overscroll-contain" data-modal-scrollarea>
+        {% if title is defined %}
+            <div class="sticky top-0 z-10 bg-primary h-56 lg:h-60 flex flex-none items-center -mx-outer-gutter lg:-mx-24 px-outer-gutter lg:px-24">
+                <h2 class="f-heading-1">{{ title }}</h2>
+            </div>
+        {% endif %}
+        {% include '@repeater:blocks' with {
+            'items': blocks|default([]),
+            'modal': true,
+            'customClasses': 'flex flex-col flex-grow pb-24',
+            'blockImgSizes': {
+                '@block:image': {
+                    "sm": "100vw",
+                    "lg": "66.66vw",
+                    "xl": "50vw",
+                    "xxl": "684px"
+                },
+                '@block:image-fullbleed': {
+                    "sm": "100vw",
+                    "lg": "66.66vw",
+                    "xl": "50vw",
+                    "xxl": "684px"
+                },
+                '@block:inline-feature': {
+                    "sm": "100vw",
+                    "lg": "33.33vw",
+                    "xl": "25vw",
+                    "xxl": "684px"
+                },
+                '@block:inline-features': {
+                    "sm": "100vw",
+                    "lg": "33.33vw",
+                    "xl": "25vw",
+                    "xxl": "684px"
+                }
+            }
+        } only %}
+    </div>
+</div>

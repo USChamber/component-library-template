@@ -1,0 +1,26 @@
+{
+    "title": "Label",
+    "label": "Label",
+    "handle": "atom:label",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "text": "Explainer"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "href": "#"
+            }
+        },
+        {
+            "name": "no link",
+            "label": "No link",
+            "context": {}
+        }
+    ]
+}

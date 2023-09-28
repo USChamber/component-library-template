@@ -1,0 +1,64 @@
+{% set componentName = 'feature:expressive' %}
+<div data-component="{{ componentName }}" class="
+    pt-24 md:pt-32 lg:pt-0 lg:mt-120 xl:mt-144
+    border-t border-t-primary lg:border-t-0
+    lg:flex {{ invert is defined and invert == true ? ' flex-row-reverse' : '' }}
+    {{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <div class="w-screen -ml-outer-gutter -mr-outer-gutter mb-24 md:mb-40 lg:mb-0 lg:mx-0 lg:w-half-inc-gutter">
+        {% if href is defined and href is not null %}
+        <a href="{{ href }}" class="block" tabindex="-1" aria-hidden="true">
+            {% endif %}
+            {% if video is defined %}
+                {% include '@block:video' with video|merge({
+                    "caption": null
+                }) %}
+            {% elseif img is defined %}
+                {% include '@atom:img' with img|merge({
+                    "sizes": {
+                        "sm": 4,
+                        "md": 8,
+                    },
+                    "ratio": img.ratio|default('1x1'),
+                    "alt": img.alt|default(''),
+                    "transformName": componentName,
+                    "customClasses": invert is defined and invert == true ? 'lg:-mr-outer-gutter' : 'lg:-ml-outer-gutter'
+                }) %}
+            {% else %}
+                {% include '@atom:logo-splash' with {
+                    "ratio": "1:1",
+                    "customClasses": "accent-secondary"
+                } %}
+            {% endif %}
+            {% if href is defined and href is not null %}
+        </a>
+        {% endif %}
+    </div>
+    <div class="lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-1/2-inc-gutter lg:w-half-inc-gutter {{ invert is defined and invert == true ? 'lg:mr-gutter lg:gutter-stroke-right' : 'lg:ml-gutter lg:gutter-stroke-left' }}">
+        <div class="flex flex-col lg:w-2/3-inc-gutter">
+            {% if title is defined %}
+                <h3 class="block f-heading-4 text-title {{ label is defined ? 'mt-space-4' : '' }}">
+                    {% if href is defined and href is not null %}
+                        <a href="{{ href }}" class="hover:text-link-on" aria-hidden="true" tabindex="-1">{{ title }}</a>
+                    {% else %}
+                        {{ title }}
+                    {% endif %}
+                </h3>
+            {% endif %}
+            {% if label is defined %}
+                <p class="order-first">{% include '@atom:label' with { 'text': label, href: null } %}</p>
+            {% endif %}
+            {% if description is defined %}
+                <p class="f-body-1 mt-space-4">{{ description }}</p>
+            {% endif %}
+            {% if cta is defined and href is defined and href is not null %}
+                <p class="mt-24 md:mt-32 lg:mt-24">
+                    {% include '@atom:link' with {
+                        "text": cta,
+                        "href": href
+                    } %}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>

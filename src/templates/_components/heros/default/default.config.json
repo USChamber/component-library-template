@@ -1,0 +1,106 @@
+{
+    "title": "Default",
+    "label": "Default",
+    "handle": "hero:default",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "title": "A better future is everyone's business"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Title",
+            "context": {}
+        },
+        {
+            "name": "long title",
+            "label": "Long title",
+            "context": {
+                "title": "U.S.-Bangladesh Business Council Hosts Bangladesh Prime Minister H.E. Sheikh Hasina on the Sidelines of United Nations General Assembly"
+            }
+        },
+        {
+            "name": "summary",
+            "label": "With summary",
+            "context": {
+                "summary": "There’s a rising sense of optimism in our country today. A growing belief that the dark stretch of the pandemic is nearly behind us."
+            }
+        },
+        {
+            "name": "breadcrumb",
+            "label": "With breadcrumb",
+            "context": {
+                "breadcrumb": {
+                    "items": [
+                        {
+                            "href": "#",
+                            "title": "Topics"
+                        },
+                        {
+                            "href": "#",
+                            "title": "Topic"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "image",
+            "label": "With image",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/300x200",
+                    "alt": "image alt tag"
+                }
+            }
+        },
+        {
+            "name": "kitchen sink",
+            "label": "Kitchen sink",
+            "context": {
+                "img": {
+                    "src": "https://via.placeholder.com/300x200",
+                    "alt": "image alt tag"
+                },
+                "breadcrumb": {
+                    "items": [
+                        {
+                            "href": "#",
+                            "title": "Topics"
+                        },
+                        {
+                            "href": "#",
+                            "title": "Topic"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "generic",
+            "label": "Generic page",
+            "context": {
+                "variation": "generic",
+                "title": "Global Task Force on Pandemic Response Mobilizes Pandemic Relief in Indonesia and Southeast Asia, with Pledges of Aid from U.S. Businesses",
+                "breadcrumb": {
+                    "items": [
+                        {
+                            "href": "#",
+                            "title": "Press Release"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "splash",
+            "label": "With splash",
+            "context": {
+                "splash": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{% set type = type is defined ? type : 'dotted' %}
+{% set multiRatio = false %}
+{% set ratioClassString = '' %}
+{% set imgClassString = 'block ratio-content object-cover '~(imgClassString|default('')) %}
+{% if ratio is defined %}
+    {% if ratio is string %}
+        {% set ratio = parseResponsiveImageRatio(ratio) %}
+    {% else %}
+        {% set multiRatio = true %}
+        {% set ratioClassString = ' ratio' %}
+        {% for bp, r in ratio %}
+            {% set r = parseResponsiveImageRatio(r) %}
+            {% set classStr = loop.index0 == 0 ? 'ratio-' ~ r.string : bp ~ ':ratio-' ~ r.string %}
+            {% set ratioClassString = ratioClassString ~ ' ' ~ classStr %}
+            {% set imgClassString = r.string == 'free' ? imgClassString ~ ' ' ~ bp ~ ':w-full ' ~ bp ~ ':h-auto' : imgClassString %}
+        {% endfor %}
+    {% endif %}
+{% endif %}
+{% set type = random(['dotted', 'kaleidoscopic', 'kaleidoscopic:medium', 'kaleidoscopic:bold', 'linear', 'pointed', 'wedged']) %}
+{% set left = reverse is defined ? 100 : -100 %}
+{% set top = randBetween(-75, 75) %}
+{% set transitionDuration = transitionDuration is defined ? transitionDuration : "300ms" %}
+{% set align = 'center center' %}
+{% set style = '--left:'~left~'%; --top:'~top~'%; --scale: 3.3; --transition-duration: '~transitionDuration~';' %}
+{% set splashStyle = 'transform-origin: '~align~'; transform: translateX(var(--left)) translateY(var(--top)) scale(var(--scale)) rotate(var(--rotate, 0deg)); transition: transform var(--transition-duration) ease-in-out, opacity var(--transition-duration);' %}
+<span
+    data-component="atom:logo-splash"
+    class="
+    block relative overflow-hidden
+    {{ ratio is defined and ratio.string is defined  ? ' ratio ratio-'~ratio.string }}
+    {{ ratioClassString is defined ? ratioClassString }}
+    {{ customClasses is defined ? ' ' ~ customClasses }}
+  "
+    style="{{ style }}"
+    aria-hidden="true"
+  {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <span class="{{ imgClassString }}">
+      {% include '@foundation:splashes:'~type ignore missing with {
+          customClasses: "block w-full h-auto pointer-events-none "~(svgClassString|default('')),
+          attrs: {
+              style: splashStyle,
+          }
+      } %}
+    </span>
+    {% if playIcon is defined %}
+        <span class="absolute bottom-0 ml-space-4 mb-space-4 flex items-center justify-center bg-transparent-2 rounded-full">{% include '@svg:icon-play' with {} only %}</span>{% endif %}
+</span>

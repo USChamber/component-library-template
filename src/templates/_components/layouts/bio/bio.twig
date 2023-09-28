@@ -1,0 +1,80 @@
+{% if img is defined %}
+    {% set leftRail = [
+        {
+            "type": "@block:image",
+            "data": img|merge({
+            'customClasses': 'hidden xl:block print:hidden',
+            'ratio': '4:5',
+            "sizes": {
+                "sm": "0px",
+                "xl": "12.5rem"
+            }
+        })
+        }
+    ]|merge(leftRail|default([])) %}
+{% endif %}
+
+{% if positions is defined %}
+    {% set bioBlock = {
+        "type": "@block:bio-positions",
+        "data": {
+            "name": title,
+            "positions": positions
+        }
+    } %}
+    {% if img is defined and img is not empty %}
+        {% set bioBlock =  bioBlock|merge({'data':bioBlock.data|merge({'img': img})}) %}
+    {% endif %}
+
+    {% set blocks = [bioBlock]|merge(blocks|default([])) %}
+{% endif %}
+
+<article data-component="layout:bio" class="bio{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% include '@hero:default' with {
+        "title": title,
+        "breadcrumb": breadcrumb,
+        "customClasses": "print:hidden"
+    } only %}
+    <div class="article-body mt-space-7">
+        {% include '@repeater:blocks' with {
+            'items': leftRail|default([]),
+            'customClasses': 'article-body-left',
+            'blockImgSizes': {
+                '@block:image': {
+                    "sm": "100vw",
+                    "lg": "37.5rem",
+                    "xl": "12.5rem"
+                }
+            }
+        } only %}
+        {% include '@repeater:blocks' with {
+            'items': blocks|default([]),
+            'customClasses': 'article-body-center',
+            'editorialColumn': true,
+            'blockImgSizes': {
+                '@block:image': {
+                    "sm": "100vw",
+                    "lg": "37.5rem"
+                },
+                '@block:inline-feature': {
+                    "sm": "100vw",
+                    "lg": "18.75rem"
+                },
+                '@block:inline-features': {
+                    "sm": "4rem",
+                    "lg": "17.25rem"
+                }
+            }
+        } only %}
+        {% include '@repeater:blocks' with {
+            'items': rightRail|default([]),
+            'customClasses': 'article-body-right',
+            'blockImgSizes': {
+                '@block:image': {
+                    "sm": "100vw",
+                    "lg": "12.5rem"
+                }
+            }
+        } only %}
+    </div>
+</article>

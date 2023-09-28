@@ -1,0 +1,109 @@
+{
+    "title": "home",
+    "handle": "hero:feature",
+    "status": "qa",
+    "tags": [
+        "USCC"
+    ],
+    "context": {},
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+                "href": "#",
+                "cta": "Learn more",
+                "primary": {
+                    "title": "A better future is everyone’s business."
+                },
+                "secondary": {
+                    "title": "109 years helping all americans.",
+                    "img": {
+                        "src": "https://via.placeholder.com/500x800",
+                        "alt": "image alt tag"
+                    }
+                }
+            }
+        },
+        {
+            "name": "no cta",
+            "label": "No cta",
+            "context": {
+                "primary": {
+                    "title": "A better future is everyone’s business."
+                },
+                "secondary": {
+                    "title": "109 years helping all americans.",
+                    "img": {
+                        "src": "https://via.placeholder.com/500x800",
+                        "alt": "image alt tag"
+                    }
+                }
+            }
+        },
+        {
+            "name": "images",
+            "label": "Two images",
+            "context": {
+                "href": "#",
+                "cta": "Learn more",
+                "primary": {
+                    "title": "A better future is everyone’s business.",
+                    "img": {
+                        "src": "https://via.placeholder.com/500x800",
+                        "alt": "image alt tag"
+                    }
+                },
+                "secondary": {
+                    "title": "109 years helping all americans.",
+                    "img": {
+                        "src": "https://via.placeholder.com/500x800",
+                        "alt": "image alt tag"
+                    }
+                }
+            }
+        },
+        {
+            "name": "no secondary panel",
+            "label": "No secondary panel",
+            "context": {
+                "primary": {
+                    "title": "A better future is everyone’s business.",
+                    "img": {
+                        "src": "https://via.placeholder.com/500x800",
+                        "alt": "image alt tag"
+                    }
+                }
+            }
+        },
+        {
+            "name": "two splashes",
+            "label": "Two splashes",
+            "context": {
+                "href": "#",
+                "cta": "Learn more",
+                "primary": {
+                    "title": "A better future is everyone’s business."
+                },
+                "secondary": {
+                    "title": "109 years helping all americans."
+                }
+            }
+        },
+        {
+            "name": "two splashes alt rotation",
+            "label": "Two splashes, alt rotation",
+            "context": {
+                "href": "#",
+                "cta": "Learn more",
+                "rotation": "anticlockwise",
+                "primary": {
+                    "title": "A better future is everyone’s business."
+                },
+                "secondary": {
+                    "title": "109 years helping all americans."
+                }
+            }
+        }
+    ]
+}

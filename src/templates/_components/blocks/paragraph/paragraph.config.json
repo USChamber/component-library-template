@@ -1,0 +1,12 @@
+{
+    "title": "Paragraph",
+    "label": "Paragraph",
+    "handle": "block:paragraph",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "text": "The way I see it, if you're gonna build a <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">time machine<\/a> into a car why not do it with <strong class=\"font-bold\">some<\/strong> <em class=\"font-italic\">style<\/em>. Besides, the <u class=\"underline\">stainless<\/u>, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. Einstein's clock is exactly one minute behind mine it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time."
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Logo Animation Test",
+    "label": "Logo Animation Test",
+    "handle": "atom:logo-animated",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "uniqueId": "9082345069225"
+    },
+    "variants": []
+}

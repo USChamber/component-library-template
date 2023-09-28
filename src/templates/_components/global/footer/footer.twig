@@ -1,0 +1,79 @@
+<footer data-component="global:footer" class="accent-primary background-fill relative pt-20 lg:pt-0 lg:flex lg:flex-wrap lg:flex-row-reverse">
+    <p class="lg:absolute left-0 top-48 print:hidden">
+        <a href="/" class="hover:text-inverse">
+            {% include '@svg:logo-small' with {
+                customClasses: "pointer-events-none lg:hidden",
+                attrs: {
+                    "aria-hidden": "true",
+                },
+            } %}
+            {% include '@svg:logo-large' with {
+                customClasses: "pointer-events-none hidden lg:block",
+                attrs: {
+                    "aria-hidden": "true",
+                },
+            } %}
+            <span class="sr-only">USCC Homepage</span>
+        </a>
+    </p>
+
+    <div class="mt-40 lg:mt-0 lg:pt-72 lg:pb-64 lg:cols-6 lg:gutter-stroke-left print:hidden">
+        {% if featuredLinks is defined %}
+            {% if featuredLinks.title is defined %}
+                <h2 class="f-ui-1 mb-40 lg:mb-64">{{ featuredLinks.title }}</h2>{% endif %}
+            {% if featuredLinks.links is defined %}
+                <ul class="f-heading-expressive-4">
+                    {% for item in featuredLinks.links %}
+                        <li><a href="{{ item.href }}" class="hover:text-inverse">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if featuredLinks.viewAll is defined %}<p class="f-ui-3 mt-40 lg:mt-64">
+                <a href="{{ featuredLinks.viewAll.href }}" class="hover:text-inverse">{{ featuredLinks.viewAll.title }}</a>
+                </p>{% endif %}
+        {% endif %}
+    </div>
+
+    {% if links is defined %}
+        <div class="mt-40 lg:mt-0 lg:pt-72 lg:pb-64 lg:cols-6 lg:mr-gutter lg:flex lg:flex-col lg:justify-end print:hidden">
+            <ul class="f-ui-3">
+                {% for item in links %}
+                    <li class="mt-8 first:mt-0">
+                        <a href="{{ item.href }}" class="hover:text-inverse">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <div class="mt-40 lg:mt-0 lg:w-screen lg:border-t lg:border-primary lg:-ml-outer-gutter lg:-mr-outer-gutter lg:px-outer-gutter lg:py-40 lg:flex lg:justify-between lg:flex-row-reverse xxxl:mx-0 xxxl:px-0">
+        {% if legals is defined %}
+            <ul class="f-ui-3 lg:flex print:hidden">
+                {% for item in legals %}
+                    <li class="mt-8 first:mt-0 lg:mt-0 lg:ml-24">
+                        <a href="{{ item.href }}" class="whitespace-nowrap hover:text-inverse">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if copyright is defined %}
+            <small class="f-ui-3 block py-24 border-t border-primary -ml-outer-gutter -mr-outer-gutter mt-40 lg:py-0 px-outer-gutter lg:border-t-0 lg:mt-0 lg:mx-0 lg:px-0">{{ copyright|raw }}</small>
+        {% endif %}
+    </div>
+
+    {# this allows SVGs in the page (header logos) to have a pride gradient background #}
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="sr-only print:hidden">
+        <linearGradient id="prideGradient" gradientTransform="rotate(90)">
+            <stop offset="0%" stop-color="var(--pride-red)"/>
+            <stop offset="16.6666666667%" stop-color="var(--pride-red)"/>
+            <stop offset="16.6666666667%" stop-color="var(--pride-orange)"/>
+            <stop offset="33.3333333333%" stop-color="var(--pride-orange)"/>
+            <stop offset="33.3333333333%" stop-color="var(--pride-green)"/>
+            <stop offset="50%" stop-color="var(--pride-green)"/>
+            <stop offset="50%" stop-color="var(--pride-yellow)"/>
+            <stop offset="66.6666666667%" stop-color="var(--pride-yellow)"/>
+            <stop offset="66.6666666667%" stop-color="var(--pride-blue)"/>
+            <stop offset="83.3333333333%" stop-color="var(--pride-blue)"/>
+            <stop offset="83.3333333333%" stop-color="var(--pride-violet)"/>
+            <stop offset="100%" stop-color="var(--pride-violet)"/>
+        </linearGradient>
+    </svg>
+</footer>

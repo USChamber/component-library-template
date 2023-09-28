@@ -1,0 +1,18 @@
+<button
+    aria-label="Open menu"
+    data-component="atom:burger-btn"
+    class="burger-btn w-24 h-24{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <svg width="16" height="14" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg">
+        <g>
+            <rect width="16" height="2" fill="currentColor"></rect>
+            <rect y="6" width="16" height="2" fill="currentColor"></rect>
+            <rect y="12" width="16" height="2" fill="currentColor"></rect>
+        </g>
+        <g>
+            <rect width="16" height="2" fill="currentColor"></rect>
+            <rect y="6" width="16" height="2" fill="currentColor"></rect>
+            <rect y="12" width="16" height="2" fill="currentColor"></rect>
+        </g>
+    </svg>
+    <span class="sr-only">{{ label|default("Menu") }}</span>
+</button>

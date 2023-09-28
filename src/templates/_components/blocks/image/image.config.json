@@ -1,0 +1,27 @@
+{
+    "title": "Image",
+    "label": "Image",
+    "handle": "block:image",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "element": "craftcms image element",
+        "alt": "alt text"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Inline",
+            "context": {}
+        },
+        {
+            "name": "caption",
+            "label": "with caption",
+            "context": {
+                "caption": "Eget magna vulputate augue varius"
+            }
+        }
+    ]
+}

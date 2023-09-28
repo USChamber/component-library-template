@@ -1,0 +1,16 @@
+{
+    "title": "Dump data",
+    "handle": "util:dump",
+    "status": "wip",
+    "tags": [
+        "SHARED"
+    ],
+    "context": {
+        "data": {
+            "type": "@block:blockquote",
+            "data": {
+                "quote": "I was standing on the edge of my toilet hanging a clock, the porcelain was wet, I slipped, hit my head on the edge of the sink. And when I came to I had a revelation, a picture, a picture in my head, a picture of this. This is what makes time travel possible. The flux capacitor."
+            }
+        }
+    }
+}

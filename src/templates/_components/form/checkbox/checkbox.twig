@@ -1,0 +1,36 @@
+{% set id = id is defined ? id : name is defined ? name : label is defined ? label|lower|replace({' ': '-'})|url_encode : '' %}
+{% set name = name is defined ? name : id %}
+{% set label = label is defined ? label : '' %}
+
+<div data-component="form:checkbox"
+    class="relative {{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <input
+        class="input{{ error is defined ? " s-error" }}"
+        type="checkbox"
+        name="{{ name }}"
+        id="{{ id }}"
+        {% if value is defined %} value="{{ value|raw }}"{% endif %}
+        {% if readonly is defined %} readonly{% endif %}
+        {% if required is defined %} required{% endif %}
+        {% if autofocus is defined %} autofocus{% endif %}
+        {% if disabled is defined %} disabled{% endif %}
+        {% if checked is defined %} checked{% endif %}
+        {% if error is defined %} aria-valid="false"{% endif %}
+        {% if note is defined %} aria-describedby="note_{{ id is defined ? id : name }}"{% endif %}
+        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+    />
+    {% set errorClasses = "text-error hover:text-primary" %}
+    <label
+        class="{{ labelClasses is defined ? labelClasses }}"
+        for="{{ id is defined ? id : name }}"
+        data-error-classes="{{ errorClasses }}"
+    >
+        <span class="f-body-1">{{ label }}</span>
+        {% if required is defined %} <span class="{{ hideRequired is defined ? 'hidden' : 'f-ui-1' }}">
+                (required)</span>{% endif %}
+    </label>
+    {% if note is defined %}
+        <p class="f-ui-2 mt-12" id="note_{{ id is defined ? id : name }}">{{ note|raw }}</p>
+    {% endif %}
+</div>

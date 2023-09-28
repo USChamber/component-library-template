@@ -1,0 +1,47 @@
+<article data-component="layout:article" data-behavior="article" class="article{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% if hero is defined %}
+        {% include hero.type with hero.data %}
+    {% endif %}
+    <div class="article-body{{ hero is defined ? " mt-space-7 print:mt-space-3" }}">
+        {% include '@repeater:blocks' with {
+            'items': leftRail|default([]),
+            'customClasses': 'article-body-left',
+            'blockImgSizes': {
+                '@block:image': {
+                    "sm": "100vw",
+                    "lg": "37.5rem",
+                    "xl": "12.5rem"
+                }
+            }
+        } only %}
+        {% include '@repeater:blocks' with {
+            'items': blocks|default([]),
+            'customClasses': 'article-body-center ' ~ centerColCustomClasses|default(),
+            'editorialColumn': true,
+            'blockImgSizes': {
+                '@block:image': {
+                    "sm": "100vw",
+                    "lg": "37.5rem"
+                },
+                '@block:inline-feature': {
+                    "sm": "100vw",
+                    "lg": "18.75rem"
+                },
+                '@block:inline-features': {
+                    "sm": "4rem",
+                    "lg": "17.25rem"
+                }
+            }
+        } only %}
+        {% include '@repeater:blocks' with {
+            'items': rightRail|default([]),
+            'customClasses': 'article-body-right',
+            'blockImgSizes': {
+                '@block:image': {
+                    "sm": "100vw",
+                    "lg": "12.5rem"
+                }
+            }
+        } only %}
+    </div>
+</article>

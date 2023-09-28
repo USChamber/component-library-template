@@ -1,0 +1,38 @@
+{% set id = id is defined ? id : name is defined ? name : label is defined ? label|lower|replace({' ': '-'})|url_encode : '' %}
+{% set name = name is defined ? name : id %}
+{% set label = label is defined ? label : '' %}
+
+<div data-component="form:text"
+    class="{{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% if label is defined and label != '' %}
+        <label
+            class="f-ui-1 block mb-12"
+            for="{{ id }}"
+        >
+            {{ label }}
+            {% if required is defined %} <span class="{{ hideRequired is defined ? 'hidden' }}">
+                    (required)</span>{% endif %}
+        </label>
+    {% endif %}
+    <input
+        class="input{{ inputClasses is defined ? ' ' ~ inputClasses }}{{ error is defined ? " s-error" }}"
+        type="{{ type is defined ? type : 'text' }}"
+        name="{{ name }}"
+        id="{{ id }}"
+        {% if value is defined %} value="{{ value|raw }}"{% endif %}
+        {% if placeholder is defined %} placeholder="{{ placeholder }}"{% endif %}
+        {% if maxlength is defined %} maxlength="{{ maxlength }}"{% endif %}
+        {% if minlength is defined %} minlength="{{ minlength }}"{% endif %}
+        {% if pattern is defined %} pattern="{{ pattern }}"{% endif %}
+        {% if readonly is defined %} readonly{% endif %}
+        {% if required is defined %} required{% endif %}
+        {% if autofocus is defined %} autofocus{% endif %}
+        {% if disabled is defined %} disabled{% endif %}
+        {% if error is defined %} aria-valid="false"{% endif %}
+        {% if note is defined %} aria-describedby="note_{{ id is defined ? id : name }}"{% endif %}
+    />
+    {% if note is defined %}
+        <p class="f-ui-2 mt-12" id="note_{{ id }}">{{ note|raw }}</p>
+    {% endif %}
+</div>

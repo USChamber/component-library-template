@@ -1,0 +1,129 @@
+{
+    "title": "features a",
+    "handle": "listing:features-a",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "primaryItems": [
+            {
+                "type": "@card:feature",
+                "data": {
+                    "img": {
+                        "src": "https://via.placeholder.com/300x200"
+                    },
+                    "href": "#",
+                    "title": "Europe’s Gamble on AI Regulation",
+                    "topic": {
+                        "title": "Topic",
+                        "url": "#"
+                    },
+                    "label": {
+                        "title": "Label",
+                        "href": "#"
+                    },
+                    "teaser": "Donec efficitur dolor purus, id congue tellus laoreet sit amet. Quisque ornare non diam ac finibus p.ellentesque habitant morbi tristique senectus.",
+                    "author": "Mike Morello"
+                }
+            }
+        ],
+        "secondaryItems": [
+            {
+                "type": "@card:card",
+                "data": {
+                    "img": {
+                        "src": "https://via.placeholder.com/300x200"
+                    },
+                    "href": "#",
+                    "title": "Europe’s Gamble on AI Regulation",
+                    "topic": {
+                        "title": "Topic",
+                        "url": "#"
+                    },
+                    "label": {
+                        "title": "Label",
+                        "href": "#"
+                    },
+                    "author": "Mike Morello"
+                }
+            },
+            {
+                "type": "@card:card",
+                "data": {
+                    "img": {
+                        "src": "https://via.placeholder.com/300x200"
+                    },
+                    "href": "#",
+                    "title": "Europe’s Gamble on AI Regulation",
+                    "topic": {
+                        "title": "Topic",
+                        "url": "#"
+                    },
+                    "label": {
+                        "title": "Label",
+                        "href": "#"
+                    },
+                    "author": "Mike Morello"
+                }
+            }
+        ],
+        "tertiaryItems": [
+            {
+                "type": "@card:card-aside",
+                "data": {
+                    "href": "#",
+                    "title": "Europe’s Gamble on AI Regulation",
+                    "topic": {
+                        "title": "Topic",
+                        "href": "#"
+                    }
+                }
+            },
+            {
+                "type": "@card:card-aside",
+                "data": {
+                    "href": "#",
+                    "title": "Europe’s Gamble",
+                    "topic": {
+                        "title": "Topic",
+                        "href": "#"
+                    }
+                }
+            },
+            {
+                "type": "@card:card-aside",
+                "data": {
+                    "href": "#",
+                    "title": "Europe’s Gamble on AI Regulation",
+                    "topic": {
+                        "title": "Topic",
+                        "href": "#"
+                    }
+                }
+            },
+            {
+                "type": "@card:card-aside",
+                "data": {
+                    "href": "#",
+                    "title": "Europe’s Gamble on AI Regulation",
+                    "topic": {
+                        "title": "Topic",
+                        "href": "#"
+                    }
+                }
+            },
+            {
+                "type": "@card:card-aside",
+                "data": {
+                    "href": "#",
+                    "title": "Europe’s Gamble on AI Regulation",
+                    "topic": {
+                        "title": "Topic",
+                        "href": "#"
+                    }
+                }
+            }
+        ]
+    }
+}

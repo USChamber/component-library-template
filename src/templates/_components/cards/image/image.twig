@@ -1,0 +1,49 @@
+{% set componentName = 'card:image' %}
+{% if href is defined and href is not null %}
+<a data-component="{{ componentName }}" href="{{ href }}" class="
+block ratio ratio-4x5 bg-light group
+{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% else %}
+    <div data-component="{{ componentName }}" class="
+block ratio ratio-4x5 bg-light
+{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {% endif %}
+
+        <span class="ratio-content flex flex-col">
+        <span class="w-full h-1/2 absolute top-0 left-0 p-16 xl:p-24 flex flex-col bg-light group-hover:bg-accent-secondary">
+            {% if label is defined %}
+                <span class="f-ui-1 pb-8">{{ label }}</span>
+            {% endif %}
+
+            {% if title is defined %}
+                <strong class="block f-heading-expressive-2 text-title text-primary">{{ title }}</strong>
+            {% endif %}
+
+            {% if href is defined and href is not null %}
+                <span class="block mt-auto">
+                <span class="link-underline f-ui-3">{{ cta is defined and cta is not null ? cta : '' }}</span>
+            </span>
+            {% endif %}
+        </span>
+
+        <span class="mt-auto group-hover:accent-secondary">
+          {% if img is defined and img is not null %}
+              {% include '@atom:img' with img|merge({
+                  "ratio": "8:5",
+                  "alt": img.alt|default(''),
+                  "transformName": componentName
+              }) %}
+          {% else %}
+              {% include '@atom:logo-splash' with {
+                  "ratio": "8:5",
+                  "customClasses": "group-hover:bg-accent-secondary group-hover:text-accent-primary"
+              } %}
+          {% endif %}
+        </span>
+    </span>
+
+        {% if href is defined and href is not null %}
+</a>
+{% else %}
+    </div>
+{% endif %}

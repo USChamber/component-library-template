@@ -1,0 +1,19 @@
+<fieldset
+    data-component="form:field-group"
+    class="{{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {% if legend is defined %}
+        <legend class="f-ui-1">{{ legend }}</legend>{% endif %}
+    {% if fields is defined %}
+        <ol class="flex flex-wrap justify-between">
+            {% for field in fields %}
+                <li
+                    data-field-type="{{ field.type }}"
+                    class="{{ field.type == '@form:checkbox' or field.type == '@form:radio' ? 'mt-16' : 'mt-24 lg:mt-40' }} w-full{{ field.width is defined ? ' lg:cols-6' }}"
+                >
+                    {% include field.type ignore missing with field.data %}
+                </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+</fieldset>

@@ -1,0 +1,26 @@
+<div data-component="behavior-block:listing-block" class="blocks{{ customClasses is defined ? ' ' ~ customClasses }}" data-behavior="listingLoad" {% if loadUrl is defined %} data-listingload-url="{{ loadUrl }}" {% endif %} {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+
+    {% if bar is defined %}
+        {% include '@block:title-bar' with bar|merge({"attrs": {
+            "data-listingload-select": null,
+        }}) %}
+    {% endif %}
+
+    {% if listing is defined %}
+        {% include '@listing:grid-3' with listing|merge({attrs: {
+            "data-listingload-content": null,
+        }}) %}
+    {% endif %}
+
+    {% if hasLoadMore is defined and hasLoadMore == true %}
+        <div class="border-t border-primary mt-space-6 pt-space-4">
+            {% include '@atom:btn' with {
+                label: "Load More",
+                customClasses: "mx-auto w-full md:cols-3 lg:cols-3",
+                attrs: {
+                    "data-listingload-trigger": null,
+                }
+            } %}
+        </div>
+    {% endif %}
+</div>

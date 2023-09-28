@@ -1,0 +1,52 @@
+<details class="component-group level-{{ level }}">
+    {% if componentKey %}
+        {% set headerClass = level == 1 or level == 2 ? 'header-left-menu' %}
+        <summary class="{{ headerClass }}" data-original-text="{{ componentKey }}">{{ componentKey }}</summary>
+    {% endif %}
+
+    {% for key, component in components %}
+        {% if component.error is defined %}
+            <p>This component errored: {{ component.path }}</p>
+            <pre>
+                <code>
+Message: {{ component.error.message }}
+Code: {{ component.error.code }}
+Line: {{ component.error.line }}
+                </code>
+            </pre>
+        {% elseif component.components is defined %}
+            {# Component Groups #}
+            {% include 'component-library/component-tree.twig' with {
+                components: component.components,
+                componentKey: key,
+                level: level + 1,
+            } %}
+        {% elseif component.handle is defined %}
+            {# Component Name #}
+            {% include 'component-library/component-tree.twig' with {
+                components: component.buttonVariants,
+                componentKey: key,
+                level: level + 1,
+            } %}
+        {% elseif component.buttons is defined %}
+            {# Component Details - Single and Multiple Variants #}
+            <div class="component-variants">
+                {% for variant in component.buttons %}
+                    {% include 'component-library/left-panel-btn.twig' with {
+                        handle: component.componentId,
+                        variant: loop.index0,
+                        name: variant.label,
+                    } %}
+                {% endfor %}
+            </div>
+        {% else %}
+            {# Headers #}
+            {% include 'component-library/component-tree.twig' with {
+                components: component,
+                componentKey: key,
+                level: level + 1,
+            } %}
+        {% endif %}
+
+    {% endfor %}
+</details>

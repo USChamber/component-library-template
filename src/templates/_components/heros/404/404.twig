@@ -1,0 +1,25 @@
+{% set type = random(['dotted', 'kaleidoscopic', 'kaleidoscopic:medium', 'kaleidoscopic:bold', 'linear', 'pointed', 'wedged']) %}
+
+<div data-component="hero:404" class="accent-primary bg-accent-primary text-accent-secondary  background-fill {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <div class="flex flex-col lg:flex-row lg:flex-wrap
+    pt-64 md:pt-72 lg:pt-48 xl:pt-64
+    pb-40 lg:pb-48 xl:pb-64">
+        <div class="cols-3 md:cols-5  lg:mt-auto">
+            <h1 class="f-heading-7">{{ error }}</h1>
+            <div class="mt-space-4">
+                {% for item in text %}
+                    {% include item.type with item.data %}
+                {% endfor %}
+            </div>
+            {% include '@atom:link' with {
+                href: href,
+                text: cta,
+                inAccentPrimary: true,
+                customClasses: "block mt-space-4"
+            } %}
+        </div>
+        <div class="cols-2 md:cols-3 lg:cols-6 ml-auto mt-40">
+            {% include '@foundation:splashes:'~type ignore missing %}
+        </div>
+    </div>
+</div>

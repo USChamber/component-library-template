@@ -1,0 +1,22 @@
+{
+    "title": "Nav Item",
+    "handle": "global:nav-item",
+    "status": "ready",
+    "hidden": "true",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "level": 0,
+        "item": {
+            "href": "#",
+            "title": "Nav Item",
+            "items": []
+        },
+        "parent": "parent-id",
+        "loop": {
+            "index": 0,
+            "last": false
+        }
+    }
+}

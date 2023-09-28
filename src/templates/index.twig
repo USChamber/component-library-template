@@ -1,0 +1,139 @@
+{% if not currentUser %}
+    {% exit 404 %}
+{% endif %}
+    {% set componentViewerHelper = create('USChamber\\ComponentLibrary\\helpers\\ComponentViewerHelper') %}
+    {% set components = componentViewerHelper.getAllComponents() %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Component Library</title>
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script>
+        window.renderKey = '{{ getComponentLibraryKey() }}';
+
+    </script>
+    {% do view.registerAssetBundle("USChamber\\ComponentLibrary\\assetbundles\\library\\LibraryAssets") %}
+
+</head>
+<body>
+<nav>
+    <h1>U.S. Chamber of Commerce Component Library</h1>
+    <div>
+        <label>
+            <input type="radio" name="environment" value="production">
+            <span>Production</span>
+        </label>
+        <label>
+            <input type="radio" name="environment" value="staging">
+            <span>Staging</span>
+        </label>
+        <label>
+            <input type="radio" name="environment" value="development">
+            <span>Development</span>
+        </label>
+        <label>
+            <input type="radio" name="environment" value="current">
+            <span>Current</span>
+        </label>
+    </div>
+</nav>
+<div id="Wrapper">
+    <div class="panel panel-left">
+        <h3 class="header-left-menu">Documentation</h3>
+        <button id="OverviewBtn" class="btn btn-left-menu">Overview</button>
+        <form>
+            <input type="text" name="search" id="Search" placeholder="Search Components..."/>
+        </form>
+        {% include 'component-library/component-tree.twig' with {
+            components: components,
+            componentKey: 'Components',
+            level: 1,
+        } %}
+    </div>
+    <div class="panel panel-right">
+        <div id="Resizable" class="panel panel-top">
+            <div id="Overview">
+                <div class="content">
+                    <h3>Welcome to the Component Library</h3>
+                    <p>This component library demonstrates the components available on the US Chamber sites. Throughout this library the terms “block” and “component” will be used
+                        interchangeably. Essentially we’re describing a single, reusable item that can be fed with different data to alter its outcome. Page content is then built up of these
+                        components -
+                        a little bit like building with LEGO.</p>
+                </div>
+            </div>
+            <div id="IframeWrapper">
+                <div id="IframeHeader">
+                    <div>
+                        <h3 data-component="iframe-title"></h3>
+                        <a href="#" target="_blank" data-component="iframe-link" title="Open in New Tab">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"/>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" data-component="open-in-ide" title="Edit in Storm">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div>
+                        <div data-component="iframe-size"></div>
+                        <div data-component="iframe-status"></div>
+                    </div>
+                </div>
+                <iframe src=""></iframe>
+            </div>
+            <div class="resizer resizer-v" data-direction="horizontal"></div>
+            <div class="resizer resizer-h" data-direction="vertical"></div>
+        </div>
+        <div class="panel panel-bottom">
+            <div id="Selector">
+                <label>
+
+                    <input type="radio" name="bottom-panel" value="notes" checked/>
+                    <span>Notes</span>
+                </label>
+                <label>
+                    <input type="radio" name="bottom-panel" value="html"/>
+                    <span>HTML</span>
+                </label>
+                <label>
+                    <input type="radio" name="bottom-panel" value="view"/>
+                    <span>Twig</span>
+                </label>
+                <label>
+                    <input type="radio" name="bottom-panel" value="context"/>
+                    <span>Context</span>
+                </label>
+                <label>
+                    <input type="radio" name="bottom-panel" value="info"/>
+                    <span>Info</span>
+                </label>
+            </div>
+            <section class="component-notes">
+                <div class="computed"></div>
+            </section>
+            <section class="component-html hidden">
+                <pre><code class="computed language-html"></code></pre>
+            </section>
+            <section class="component-view hidden">
+                <pre><code class="computed language-twig"></code></pre>
+            </section>
+            <section class="component-context hidden">
+                <pre><code class="computed language-json"></code></pre>
+            </section>
+            <section class="component-info hidden">
+                <button data-component="component-history-btn">Get History</button>
+                <ul data-component="component-history"></ul>
+                <div class="computed"></div>
+            </section>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

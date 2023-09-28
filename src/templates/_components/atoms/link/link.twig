@@ -1,0 +1,30 @@
+{% if text is defined %}
+    {% if display is defined or href is not defined %}
+        <span
+        data-component="atom:link"
+        class="
+          f-ui-3
+          {{ secondary is defined ? '' : 'link-underline hover:link-underline-off' }}
+           hover:text-link-off
+          {{ group is defined and group == true ? 'group-hover:text-link-off group-hover:link-underline-off' : '' }}
+          {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        >
+  {% else %}
+        <a
+        href="{{ href }}"
+        data-component="atom:link"
+        class="
+          f-ui-3
+          {{ secondary is defined ? '' : 'link-underline hover:link-underline-off' }}
+          {{ inAccentPrimary is defined ? 'link-underline-light hover:text-inverse hover:link-underline-light-on' : 'hover:text-link-off' }}
+          {{ group is defined and group == true ? 'group-hover:text-link-off group-hover:link-underline-off' : '' }}
+          {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        >
+    {% endif %}
+    {{ text }}
+    {% if display is defined %}
+        </span>
+    {% else %}
+        </a>
+    {% endif %}
+{% endif %}

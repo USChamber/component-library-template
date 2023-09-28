@@ -1,0 +1,12 @@
+{% set id = id is defined ? id : name is defined ? name : label is defined ? label|lower|replace({' ': '-'})|url_encode : '' %}
+{% set name = name is defined ? name : id %}
+{% set label = label is defined ? label : '' %}
+
+<input
+    data-component="form:hidden"
+    type="hidden"
+    name="{{ name }}"
+    value="{{ value|default('') }}"
+    id="{{ id }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+>

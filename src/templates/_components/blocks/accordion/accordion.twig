@@ -1,0 +1,55 @@
+{% if items is defined %}
+    <div data-component="block:accordion:{{ primary is defined ? 'primary' : 'secondary' }}"
+        data-behavior="accordion"
+        class="{{ customClasses is defined ? ' ' ~ customClasses }}"
+        {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {% for item in items %}
+            <button
+
+                data-accordion-trigger
+                class="
+              f-ui-3
+              flex w-full pl-16 py-16 justify-between text-left
+              {{ primary is defined ? 'text-accent-secondary' : 'text-primary ' }}
+              {{ primary is defined ? 'bg-accent-primary' : '' }}
+              {{ loop.index != 1 and primary is not defined ? 'border-t border-primary' }}
+              hover:bg-accent-secondary hover:text-accent-primary
+              {# focus:bg-accent-secondary focus:text-accent-primary focus:outline-none #}
+              cursor-pointer
+              {{ item.isOpen ? 'bg-accent-secondary text-accent-primary' : 'print:font-bold' }}
+          "
+                aria-expanded="{{ item.isOpen }}"
+                aria-controls="accordion-{{ item.title|lower|replace({' ': '-'})|url_encode }}-content"
+                id="accordion-{{ item.title|lower|replace({' ': '-'})|url_encode }}"
+            >
+
+                {{ item.title|default('') }}
+
+                {% include '@svg:icon-24-chevron-down' with {
+                    customClasses: 'mr-16 ml-48 flex-shrink-0 transform' ~ (item.isOpen ? ' rotate-180' : ' print:hidden'),
+                    attrs: {
+                        "aria-hidden": "true",
+                    },
+                } only %}
+            </button>
+            <div
+                data-accordion-content
+                class="
+          transition-all overflow-hidden opacity-0
+          {{ item.isOpen ? "duration-200 ease-out-1 opacity-100" : "duration-150 ease-in-1 hidden print:block print:opacity-100" }}
+        "
+                role="region"
+                id="accordion-{{ item.title|lower|replace({' ': '-'})|url_encode }}-content"
+                aria-labelledby="accordion-{{ item.title|lower|replace({' ': '-'})|url_encode }}"
+            >
+                {% include '@repeater:blocks' with {
+                    items: item.blocks is defined ? item.blocks : [],
+                    customClasses: 'py-24 px-16',
+                    attrs: {
+                        "data-accordion-blocks": null,
+                    }
+                } only %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

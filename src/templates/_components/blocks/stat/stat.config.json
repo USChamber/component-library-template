@@ -1,0 +1,62 @@
+{
+    "title": "stat",
+    "handle": "block:stat",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "items": [
+            {
+                "stat": "26%",
+                "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+            },
+            {
+                "stat": "240m",
+                "text": "lorem ipsum dolor ametlamet"
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "default",
+            "context": {
+                "fullWidth": false
+            }
+        },
+        {
+            "name": "multi row",
+            "label": "multi row",
+            "context": {
+                "fullWidth": false,
+                "items": [
+                    {
+                        "stat": "26%",
+                        "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+                    },
+                    {
+                        "stat": "1.21GW",
+                        "text": "lorem ipsum dolor ametlamet"
+                    },
+                    {
+                        "stat": "1,000",
+                        "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+                    },
+                    {
+                        "stat": "€1.4m",
+                        "text": "lorem ipsum dolor ametlamet"
+                    },
+                    {
+                        "stat": "$252k",
+                        "text": "lorem ipsum dolor ametlorem ipsum dolor amet"
+                    },
+                    {
+                        "stat": "£13.26",
+                        "text": "lorem ipsum dolor ametlamet"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+<div data-component="layout:colset-75-25" class="colset-75-25 lg:flex lg:justify-between" {% if behavior is
+    defined %}data-behavior="{{ behavior }}"{% endif %}
+    %}>
+    {% include '@repeater:blocks' with {
+        'items': leftRail|default([]),
+        'customClasses': 'colset-75-25-blocks lg:cols-9',
+        'editorialColumn': true,
+        'blockImgSizes': {
+            '@block:image': {
+                "sm": "100vw",
+                "lg": "75vw"
+            },
+            '@block:inline-feature': {
+                "sm": "100vw",
+                "lg": "25vw"
+            },
+            '@block:inline-features': {
+                "sm": "100vw",
+                "lg": "33.33vw"
+            }
+        }
+    } only %}
+    {% include '@repeater:blocks' with {
+        'items': rightRail|default([]),
+        'customClasses': 'mt-40 lg:mt-0 lg:cols-3'
+    } only %}
+</div>

@@ -1,0 +1,180 @@
+{
+    "title": "tabs",
+    "handle": "behavior-block:tabs",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "tabBlock": {
+            "tabs": [
+                {
+                    "label": "Tab 1",
+                    "href": "#",
+                    "active": true
+                },
+                {
+                    "label": "Tab 2",
+                    "href": "#"
+                },
+                {
+                    "label": "Tab 3",
+                    "href": "#"
+                }
+            ]
+        },
+        "sections": [
+            {
+                "blocks": [
+                    {
+                        "type": "@listing:slider",
+                        "data": {
+                            "items": [
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 1 Title 1",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 1 Title 2",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 1 Title 3",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 1 Title 4",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "blocks": [
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                        }
+                    },
+                    {
+                        "type": "@block:paragraph",
+                        "data": {
+                            "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                        }
+                    }
+                ]
+            },
+            {
+                "blocks": [
+                    {
+                        "type": "@listing:slider",
+                        "data": {
+                            "items": [
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 2 Title 1",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 2 Title 2",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 2 Title 3",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "@card:text",
+                                    "data": {
+                                        "title": "Tab 2 Title 4",
+                                        "description": "Helping your company and our country solve our workforce challenges",
+                                        "label": "Category",
+                                        "cta": "Learn more",
+                                        "href": "#",
+                                        "img": {
+                                            "src": "https://via.placeholder.com/300x200",
+                                            "alt": "image alt tag"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "variants": []
+}

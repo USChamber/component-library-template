@@ -1,0 +1,32 @@
+{
+    "title": "field-group",
+    "handle": "form:field-group",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "legend": "Do you agree to our <a href=\"#\" class=\"text-link-off underline hover:text-link-on focus:text-link-on\">Terms and Conditions</a>?",
+        "fields": [
+            {
+                "type": "@form:radio",
+                "data": {
+                    "label": "Agree",
+                    "value": "true",
+                    "name": "terms",
+                    "checked": true
+                }
+            },
+            {
+                "type": "@form:radio",
+                "data": {
+                    "label": "Disagree",
+                    "value": "false",
+                    "name": "terms"
+                }
+            }
+        ]
+    },
+    "variants": [
+    ]
+}

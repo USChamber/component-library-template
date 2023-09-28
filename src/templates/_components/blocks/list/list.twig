@@ -1,0 +1,13 @@
+<ul data-component="block:list" class="f-body-1 list-disc pl-16">
+    {% if items is defined %}
+        {% for item in items %}
+            <li class="{{ (not loop.last) ? 'mb-space-2' : '' }}">
+                {% if item is array or item is iterable %}
+                    {% include '@repeater:blocks-lite' with { items: item } only %}
+                {% else %}
+                    {{ item|default('')|raw }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    {% endif %}
+</ul>

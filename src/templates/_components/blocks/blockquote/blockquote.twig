@@ -1,0 +1,21 @@
+<figure
+    data-component="block:blockquote"
+    class="relative{{ customClasses is defined ? ' ' ~ customClasses }}"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+>
+    {% if quote is defined %}
+        <blockquote class="block
+        before:content-[''] before:h-full before:w-2 before:bg-accent-primary before:absolute lg:before:w-4">
+            {% if quote is array %}
+                {% for para in quote %}
+                    <p class="ml-space-4 block mt-space-3">{{ para|raw }}</p>
+                {% endfor %}
+            {% else %}
+                <p class="ml-space-4 block">{{ quote }}</p>
+            {% endif %}
+        </blockquote>
+    {% endif %}
+    {% if attribution is defined %}
+        <figcaption class="block f-ui-2 mt-space-3 ml-space-4">{{ attribution }}</figcaption>
+    {% endif %}
+</figure>

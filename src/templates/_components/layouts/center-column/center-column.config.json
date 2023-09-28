@@ -1,0 +1,90 @@
+{
+    "title": "Center Column",
+    "handle": "layout:center-column",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "blocks": [
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Calm down, Marty, I didn't disintegrate anything. The molecular structure of Einstein and the car are <strong class=\"font-bold\">completely intact</strong>. Where the heck are they? The appropriate question is, <em class=\"italic\">when</em> the heck they. "
+                }
+            },
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Einstein has just become the world's first time traveler. I sent him into the future. One minute into the future to be exact. And at exactly 1:21 a.m. we should catch up with him and the time machine. "
+                }
+            },
+            {
+                "type": "@block:blockquote",
+                "data": {
+                    "quote": "Wait a minute, wait a minute, Doc, are you telling me that you built a time machine out of a DeLorean.",
+                    "attribution": "Marty McFly"
+                }
+            },
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "The way I see it, if you're gonna build a time machine into a car why not do it with some <strong class=\"font-bold\"><u class=\"underline\">style</strong></u>. Besides, the stainless, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. <u class=\"underline\">Einstein's clock is exactly one minute behind mine</u> it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time. "
+                }
+            },
+            {
+                "type": "@block:heading",
+                "data": {
+                    "text": "Come here, I'll show you how it works. "
+                }
+            },
+            {
+                "type": "@block:ordered-list",
+                "data": {
+                    "items": [
+                        "First, you turn the time circuits on. ",
+                        "This readout tell you where you're going, this one tells you where you are, this one tells you where you were. ",
+                        "You input the destination time on this keypad. ",
+                        "Say, you wanna see the signing of the declaration of independence, or witness the birth of Christ. ",
+                        "Here's a red-letter date in the history of science, November 5, 1955. Yes, of course, November 5, 1955."
+                    ]
+                }
+            },
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "This is uh, this is heavy duty, Doc, this is great. Uh, does it run on regular unleaded gasoline?"
+                }
+            },
+            {
+                "type": "@block:image",
+                "data": {
+                    "src": "https://via.placeholder.com/600x400",
+                    "caption": "Eget magna vulputate augue varius"
+                }
+            },
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Unfortunately no, it requires something with a little more kick, plutonium. Uh, plutonium, wait a minute, are you telling me that this sucker's nuclear? Hey, hey, keep rolling, keep rolling there. <mark>No, no, no, no</mark>, this sucker's electrical. But I need a nuclear reaction to generate the one point twenty-one gigawatts of electricity that I need. Doc, you don't just walk into a store and ask for plutonium. Did you rip this off? Of course, from a group of Libyan Nationalists. They wanted me to build them a bomb, so I took their plutonium and in turn gave them a shiny bomb case full of used pinball machine parts."
+                }
+            },
+            {
+                "type": "@block:list",
+                "data": {
+                    "items": [
+                        "Let's <strong class=\"font-bold\">get</strong>​ <em class=\"italic\">you</em>​ <u class=\"underline\">into</u> a <a class=\"text-link-off underline hover:text-link-on focus:text-link-on\" href=\"#\" target=\"_blank\">radiation</a> suit, ",
+                        "we must prepare to reload. ",
+                        "Safe now,<br>everything's lead lined. "
+                    ]
+                }
+            },
+            {
+                "type": "@block:paragraph",
+                "data": {
+                    "text": "Don't you lose those tapes now, we'll need a record. Wup, wup, I almost forgot my luggage. Who knows if they've got cotton underwear in the future. I'm allergic to all synthetics."
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "title": "Unknown block",
+    "label": "Unknown block",
+    "handle": "block:unknown-block",
+    "status": "ready",
+    "hidden": "true",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "context": "unknown_block"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "devMode true",
+            "context": {
+                "devMode": true
+            }
+        },
+        {
+            "name": "public",
+            "label": "devMode false",
+            "context": {
+                "devMode": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+{% set componentName = 'hero:feature' %}
+<div
+    data-component="{{ componentName }}"
+    data-behavior="heroFeature"
+    data-herofeature-rotation="{{ rotation is defined ? rotation : 'clockwise' }}"
+    class="accent-primary background-fill{{ customClasses is defined ? ' ' ~ customClasses }}"
+    style="--rotate: {{ rotation is defined and rotation == 'anticlockwise' ? '-5deg' : '5deg' }};"
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <div data-herofeature-content class="transition-opacity opacity-0 duration-500 lg:flex lg:flex-wrap">
+        <div
+            data-herofeature-primaryimage
+            class="accent-primary -mx-outer-gutter overflow-hidden lg:ml-0 lg:w-auto lg:flex-grow lg:order-2 lg:max-h-screen-minus-header xxxl:mr-0">
+            {% if href is defined and href is not null %}
+            <a href="{{ href }}" class="block" tabindex="-1" aria-hidden="true">
+                {% endif %}
+                {% if primary.img is defined %}
+                    {% include '@atom:img' with primary.img|merge({
+                        "lazyLoad": false,
+                        "customClasses": "lg:max-h-screen-minus-header",
+                        "ratio": {
+                            "sm": "1:1",
+                            "md": "1:1",
+                            "lg": "1:1"
+                        },
+                        "sizes": {
+                            "sm": "100vw",
+                            "lg": "50vw"
+                        },
+                        "transformName": componentName
+                    }) %}
+                {% else %}
+                    {% include '@atom:logo-splash' with {
+                        attrs: {
+                            "data-herofeature-primarysvg": null,
+                        },
+                        customClasses: "lg:max-h-screen-minus-header border-b border-primary lg:border-l xxxl:border-r",
+                        transitionDuration: "500ms",
+                        svgClasses: "ease-out",
+                        ratio: {
+                            "sm": "1:1",
+                            "md": "1:1",
+                            "lg": "1:1"
+                        }
+                    } %}
+                {% endif %}
+                {% if href is defined and href is not null %}
+            </a>
+            {% endif %}
+        </div>
+        <div
+            data-herofeature-primarycontainer
+            class="
+        feature-hero__primary-container
+        sticky top-0 top-header
+        pt-40 pb-120 md:pb-144 lg:pb-48 xl:pb-64 lg:pr-gutter
+        lg:flex lg:flex-col lg:w-1/2 lg:order-1 lg:justify-end"
+        >
+            <h1 data-herofeature-primarytext class="block f-heading-6 antialiased">
+                {% if href is defined and href is not null %}
+                    <a href="{{ href }}" class="block hover:text-link-on">{{ primary.title|default('') }}</a>
+                {% else %}
+                    <span class="block">{{ primary.title|default('') }}</span>
+                {% endif %}
+            </h1>
+        </div>
+        {% if secondary is defined and secondary.title is not null %}
+            <div class="accent-primary relative z-20 w-full lg:flex lg:flex-wrap lg:order-3">
+                <div data-herofeature-secondaryimage
+                    class="-mx-outer-gutter overflow-hidden lg:mr-0 lg:flex-grow lg:max-h-screen-minus-header lg:-mr-1 lg:-mt-1 xxxl:ml-0">
+                    {% if href is defined and href is not null %}
+                    <a href="{{ href }}" class="block">
+                        {% endif %}
+                        {% if secondary is defined and secondary.img is defined %}
+                            {% include '@atom:img' with secondary.img|merge({
+                                "customClasses": "lg:max-h-screen-minus-header",
+                                "ratio": {
+                                    "sm": "1:1",
+                                    "md": "1:1",
+                                    "lg": "1:1"
+                                },
+                                "sizes": {
+                                    "sm": "100vw",
+                                    "lg": "50vw"
+                                },
+                                "transformName": componentName
+                            }) %}
+                        {% else %}
+                            {% include '@atom:logo-splash' with {
+                                attrs: {
+                                    "data-herofeature-secondarysvg": null,
+                                },
+                                customClasses: "lg:max-h-screen-minus-header border-primary border-t lg:border-r xxxl:border-l",
+                                transitionDuration: "0ms",
+                                reverse: true,
+                                ratio: {
+                                    "sm": "1:1",
+                                    "md": "1:1",
+                                    "lg": "1:1"
+                                }
+                            } %}
+                        {% endif %}
+                        {% if href is defined and href is not null %}
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="relative pt-40 lg:pt-64 lg:flex lg:flex-col lg:mt-0 lg:pr-0 lg:pl-half-gutter lg:w-1/2" data-herofeature-secondarycontainer>
+                    <div class="sticky bottom-0 mt-auto{{ href is defined ? ' pb-24 md:pb-32 lg:pb-48 xl:pb-64 ' : ' pb-120 md:pb-144 lg:pb-48 xl:pb-64' }}" data-herofeature-secondarytext>
+                        <p class="f-heading-6 antialiased">
+                            {% if href is defined and href is not null %}
+                                <a href="{{ href }}" class="hover:text-link-on">{{ secondary.title|default('') }}</a>
+                            {% else %}
+                                {{ secondary.title|default('') }}
+                            {% endif %}
+                        </p>
+                        {% if href is defined and href is not null %}
+                            <div class="
+            mt-120 md:mt-144 lg:mt-auto lg:pt-40">
+                                {% include '@atom:link' with {
+                                    href: href,
+                                    text: cta,
+                                    "inAccentPrimary": true
+                                } %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

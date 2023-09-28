@@ -1,0 +1,33 @@
+{
+    "title": "Color",
+    "handle": "color",
+    "status": "reference",
+    "tags": [
+        "USCC",
+        "foundation",
+        "color"
+    ],
+    "variants": [
+        {
+            "name": "default",
+            "label": "Tokens",
+            "handle": "color:tokens",
+            "order": 1
+        },
+        {
+            "name": "variables",
+            "label": "CSS Variables",
+            "order": 2
+        },
+        {
+            "name": "tailwind",
+            "label": "Tailwind Classes",
+            "order": 3
+        },
+        {
+            "name": "demo",
+            "label": "Demo",
+            "order": 4
+        }
+    ]
+}

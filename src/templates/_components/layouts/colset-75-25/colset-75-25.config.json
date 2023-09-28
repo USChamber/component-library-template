@@ -1,0 +1,67 @@
+{
+    "title": "colset-75-25",
+    "handle": "layout:colset-75-25",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "leftRail": [
+            {
+                "type": "@block:paragraph-lead",
+                "data": {
+                    "text": "The way I see it, if you're gonna build a time machine into a car why not do it with some <strong class=\"font-bold\"><u class=\"underline\">style<\/strong><\/u>. Besides, the stainless, steel construction made the flux dispersal- look out. What, what is it hot? It's cold, cold. Ha, ha, ha, Einstein, you little devil. <u class=\"underline\">Einstein's clock is exactly one minute behind mine<\/u> it's still ticking. He's alright. He's fine, and he's completely unaware that anything happened. As far as he's concerned the trip was instantaneous. That's why Einstein's watch is exactly one minute behind mine. He skipped over that minute to instantly arrive at this moment in time. "
+                }
+            },
+            {
+                "type": "@block:paragraph-lead",
+                "data": {
+                    "text": "What, I don't get what happened. "
+                }
+            },
+            {
+                "type": "@block:paragraph-lead",
+                "data": {
+                    "text": "I was standing on the edge of my toilet hanging a clock, the porcelain was wet, I slipped, hit my head on the edge of the sink. And when I came to I had a revelation, a picture, a picture in my head, a picture of this. This is what makes time travel possible. The flux capacitor."
+                }
+            }
+        ],
+        "rightRail": [
+            {
+                "type": "@block:simple-links",
+                "data": {
+                    "title": "Explore more",
+                    "items": [
+                        {
+                            "href": "#",
+                            "title": "The Power of Love"
+                        },
+                        {
+                            "href": "#",
+                            "title": "Earth Angel"
+                        },
+                        {
+                            "href": "#",
+                            "title": "Johnny B. Goode"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "context": {
+            }
+        },
+        {
+            "name": "empty right col",
+            "label": "Empty right col",
+            "context": {
+                "rightRail": []
+            }
+        }
+    ]
+}

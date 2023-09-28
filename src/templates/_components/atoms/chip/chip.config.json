@@ -1,0 +1,13 @@
+{
+    "title": "chip",
+    "handle": "atom:chip",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "label": "finance"
+    },
+    "variants": [
+    ]
+}

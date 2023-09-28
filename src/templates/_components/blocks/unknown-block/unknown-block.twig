@@ -1,0 +1,18 @@
+{% if devMode %}
+    <div data-component="block:unknown-block" class="bg-unknown-block pt-12 pb-20 px-20">
+        {% if type is defined %}
+            <p class="f-heading-2">Unknown Formatter:
+                <code class="bg-code">{{ type }}</code>
+            </p>
+        {% endif %}
+        {% if context is defined %}
+            <p class="f-heading-1">Context:
+                <code class="bg-code">{{ context }}</code>
+            </p>
+        {% endif %}
+        <p class="f-ui">Block data:</p>
+        {% if data is defined %}
+            <pre class="block py-4 px-12 mt-16 bg-code whitespace-pre-wrap">{{ jsonPrettyPrint(data) }}</pre>
+        {% endif %}
+    </div>
+{% endif %}

@@ -1,0 +1,56 @@
+<nav data-component="global:menu" class="menu print:hidden" data-behavior="menu">
+    <div class="menu-container accent-primary fixed top-header lg:top-0 bottom-0 w-full lg:w-1/2 xxl:w-684 flex flex-col overflow-hidden overscroll-contain">
+        <button
+            class="menu-close fixed lg:absolute right-26 top-26 lg:top-20 w-24 h-24 hover:text-inverse"
+            data-menu-close
+            aria-label="Close menu"
+        >
+            {% include '@svg:icon-24-cross' with {
+                customClasses: "w-24 h-24 pointer-events-none",
+                attrs: {
+                    "aria-hidden": "true",
+                }
+            } %}
+            <span class="sr-only">Close menu</span>
+        </button>
+        <div class="
+          menu-list
+          w-full h-full
+          flex-col
+          overflow-hidden
+          " data-menu-items="main"
+            role="menu"
+        >
+            <ul class="
+                menu-list-list
+                absolute top-0 bottom-0
+                flex flex-col w-full h-full
+                styled-scrollbars overscroll-contain
+            ">
+                <li class="f-heading-1 pt-20 pb-132 px-outer-gutter lg:px-24 border-b border-primary hidden lg:block">
+                    Main Menu
+                </li>
+                {% for item in navigation %}
+                    {% include '@global:nav-item' with {
+                        item: item,
+                        parent: 'main',
+                        level: 0,
+                        index: loop.index,
+                    } %}
+                {% endfor %}
+                {% if accountLinks is defined and accountLinks|length > 0 %}
+                    {% include '@global:sticky-bottom-nav-link' with {
+                        links: accountLinks,
+                        parent: 'main',
+                    } %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    {% if dropdowns is defined %}
+        {% for item in dropdowns %}
+            {% include '@global:menu-dropdown' with item|merge({ index: loop.index }) %}
+        {% endfor %}
+    {% endif %}
+</nav>

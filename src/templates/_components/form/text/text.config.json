@@ -1,0 +1,64 @@
+{
+    "title": "text",
+    "handle": "form:text",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "label": "Full name",
+        "name": "full_name"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "default",
+            "context": {
+            }
+        },
+        {
+            "name": "required",
+            "label": "required",
+            "context": {
+                "required": true
+            }
+        },
+        {
+            "name": "placeholder",
+            "label": "placeholder",
+            "context": {
+                "placeholder": "Enter your full name"
+            }
+        },
+        {
+            "name": "value",
+            "label": "with value",
+            "context": {
+                "value": "Marty McFly"
+            }
+        },
+        {
+            "name": "disabled",
+            "label": "disabled",
+            "context": {
+                "disabled": true
+            }
+        },
+        {
+            "name": "disabled value",
+            "label": "disabled with value",
+            "context": {
+                "disabled": true,
+                "value": "Marty McFly"
+            }
+        },
+        {
+            "name": "error",
+            "label": "error",
+            "context": {
+                "error": true,
+                "value": "Marty McFly"
+            }
+        }
+    ]
+}

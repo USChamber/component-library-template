@@ -1,0 +1,291 @@
+{
+    "title": "multi select",
+    "handle": "behavior-block:multi-select",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "title": "title of the filter",
+        "filterItems": [
+            {
+                "param": "type",
+                "title": "Filter by type",
+                "type": "select",
+                "options": [
+                    {
+                        "label": "Option 1",
+                        "value": "1"
+                    },
+                    {
+                        "label": "Option 2",
+                        "value": "2"
+                    },
+                    {
+                        "label": "Option 3",
+                        "value": "3"
+                    },
+                    {
+                        "label": "Option 4",
+                        "value": "4"
+                    },
+                    {
+                        "label": "Option 5",
+                        "value": "5"
+                    },
+                    {
+                        "label": "Option 15",
+                        "value": "15"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "param": "a",
+                "title": "Filter by topic",
+                "options": [
+                    {
+                        "label": "topic 1",
+                        "value": "topic-1"
+                    },
+                    {
+                        "label": "topic 2",
+                        "value": "topic-2"
+                    },
+                    {
+                        "label": "topic 3",
+                        "value": "topic-3"
+                    }
+                ]
+            },
+            {
+                "param": "q",
+                "type": "text",
+                "title": "Search"
+            }
+        ],
+        "items": [
+            {
+                "type": "@behavior-block:tabs",
+                "data": {
+                    "tabBlock": {
+                        "tabs": [
+                            {
+                                "label": "Tab 1",
+                                "href": "#",
+                                "active": true
+                            },
+                            {
+                                "label": "Tab 2",
+                                "href": "#"
+                            },
+                            {
+                                "label": "Tab 3",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    "sections": [
+                        {
+                            "blocks": {
+                                "type": "@listing:slider",
+                                "data": {
+                                    "items": [
+                                        {
+                                            "type": "@card:text",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "description": "Helping your company and our country solve our workforce challenges",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:text",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "description": "Helping your company and our country solve our workforce challenges",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:text",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "description": "Helping your company and our country solve our workforce challenges",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:text",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "description": "Helping your company and our country solve our workforce challenges",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "blocks": {
+                                "type": "@listing:slider",
+                                "data": {
+                                    "items": [
+                                        {
+                                            "type": "@card:image",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:image",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:image",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:image",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "blocks": {
+                                "type": "@listing:slider",
+                                "data": {
+                                    "items": [
+                                        {
+                                            "type": "@card:date",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "date": "Tuesday, August 31st",
+                                                "time": "7:30p – 8:00pm EST",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:date",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "date": "Tuesday, August 31st",
+                                                "time": "7:30p – 8:00pm EST",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:date",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "date": "Tuesday, August 31st",
+                                                "time": "7:30p – 8:00pm EST",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "@card:date",
+                                            "data": {
+                                                "title": "Title goes here",
+                                                "label": "Category",
+                                                "date": "Tuesday, August 31st",
+                                                "time": "7:30p – 8:00pm EST",
+                                                "cta": "Learn more",
+                                                "href": "#",
+                                                "img": {
+                                                    "src": "https://via.placeholder.com/300x200",
+                                                    "alt": "image alt tag"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "variants": [
+    ]
+}

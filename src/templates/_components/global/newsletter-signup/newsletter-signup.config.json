@@ -1,0 +1,13 @@
+{
+    "title": "Newsletter signup",
+    "label": "Newsletter signup",
+    "handle": "global:newsletter-signup",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "ajax": true,
+        "action": "https://fakejsonendpoints.dev.area17.com/api/newsletter--verbose.php"
+    }
+}

@@ -1,0 +1,162 @@
+{% set url = url|default(null) %}
+{% set src = src|default(element.url ?? url) %}
+{% if element.filename is not defined %}
+    {% set element = src %}
+{% endif %}
+{% if element is defined and element is not null %}
+    {% set multiRatio = false %}
+    {% set isAnimated = craft.imager.isAnimated(element) %}
+    {# fractal uses placeholders, app uses real images (hopefully) #}
+    {% set placeholder = ('placehold.dev.area17.com' in src) ? true : false %}
+    {% set lazyload = lazyload is not defined ? true : lazyload %}
+    {# parentComponent: possible use case to split out separate transforms from each other #}
+    {% set parentComponentName = transformName is defined ? transformName : '' %}
+    {# lets workout if this is a single ratio or different ratios at differnt breakpoints #}
+    {% if ratio is defined %}
+        {% if ratio is string %}
+            {% set ratio = parseResponsiveImageRatio(ratio) %}
+        {% else %}
+            {% set multiRatio = true %}
+        {% endif %}
+    {% endif %}
+    {# right lets make an <img> or <picture> tag #}
+    {% if isAnimated %}
+        <span data-component="atom:img" class="block relative{{ ratio is defined and ratio.string is defined  ? ' ratio ratio-'~ratio.string }}{{ customClasses is defined ? ' ' ~ customClasses }}" {{ parentAttrs is defined ? parentAttrs|arrayToAttributes }}>
+      <img
+          class="{{ ratio is defined and ratio.string is defined ? 'ratio-content object-cover' : 'block w-full h-auto' }} {{ imgClassString is defined ? ' ' ~ imgClassString }}"
+          src="{{ element.url ?? element }}"
+        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+          {# for reference #}
+        data-parent="{{ parentComponentName }}"
+      />
+    </span>
+    {% elseif not multiRatio %}
+        {# single ratio image - meaning same ratio for all breakpoints - use <img> tag #}
+        {# lets generate transformer names #}
+        {% set lqipTransformer = 'lqip' ~ (ratio is defined and ratio.string is defined ? ':' ~ ratio.string : '') %}
+        {% set srcsetTransformer = 'srcset' ~ (ratio is defined and ratio.string is defined ? ':' ~ ratio.string : '') %}
+        {# and generate lqip and srcset with imager-x #}
+        {% if not placeholder %}
+            {% set lqip = craft.imager.transformImage(element, lqipTransformer) %}
+            {% set transformedImages = craft.imager.transformImage(element, srcsetTransformer) %}
+            {% set srcset = craft.imager.srcset(transformedImages, 'w') %}
+            {% if attribute(element, 'getFocalPoint') is defined %}
+                {% set objectPosition = element.getFocalPoint() %}
+                {% set objectPositionStr = objectPosition is defined ? 'object-position:' ~ (objectPosition.x * 100) ~ '% ' ~ (objectPosition.y * 100) ~ '%' : '' %}
+            {% else %}
+                {% set objectPositionStr = '' %}
+            {% endif %}
+        {% else %}
+            {# default for placeholders #}
+            {% set lqip = [element] %}
+        {% endif %}
+        {# make the html #}
+        <span data-component="atom:img" class="block relative{{ ratio is defined and ratio.string is defined  ? ' ratio ratio-'~ratio.string }}{{ customClasses is defined ? ' ' ~ customClasses }}" data-behavior="lazyloadimg" {{ parentAttrs is defined ? parentAttrs|arrayToAttributes }}>
+      <img
+          class="{{ ratio is defined and ratio.string is defined ? 'ratio-content object-cover' : 'block w-full h-auto' }} {{ imgClassString is defined ? ' ' ~ imgClassString }}"
+            {{ lazyload and srcset is not defined ? 'data-' : '' }}src="{{ lqip[0].getUrl() }}"
+        {% if srcset is defined %} {{ lazyload ? 'data-' : '' }}srcset="{{ srcset }}"{% endif %}
+          {% if sizes is defined %} sizes="{{ responsiveImageSizes(sizes, "uscc") }}"{% endif %}
+          {% if width is defined %} width="{{ width }}"{% endif %}
+          {% if height is defined %} height="{{ height }}"{% endif %}
+        style="{{ objectPositionStr | default }}"
+          alt="{% if alt is defined %}{{ alt }}{% endif %}"
+          data-lazyloadimg-img
+        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+          {# for reference #}
+        data-srcset-transformer="{{ srcsetTransformer }}"
+          data-lqip-transformer="{{ lqipTransformer }}"
+          data-parent="{{ parentComponentName }}"
+      />
+      {% if playIcon is defined and playIcon is not null %}
+          <span class="absolute bottom-0 ml-space-4 mb-space-4 flex items-center justify-center bg-transparent-2 rounded-full">{% include '@svg:icon-play' with { 'customClasses': '' } %}</span>{% endif %}
+    </span>
+    {% else %}
+        {# Multi ratio - means we're going to use a <picture> tag with different sources for each ratio #}
+        {# firstly set up CSS classes #}
+        {% set ratioClassString = ' ratio' %}
+        {% set imgClassString = 'block ratio-content object-cover' %}
+        {% if attribute(element, 'getFocalPoint') is defined %}
+            {% set objectPosition = element.getFocalPoint() %}
+            {% set objectPositionStr = objectPosition is defined ? 'object-position:' ~ (objectPosition.x * 100) ~ '% ' ~ (objectPosition.y * 100) ~ '%' : '' %}
+        {% else %}
+            {% set objectPositionStr = '' %}
+        {% endif %}
+        {# get the sizes attribute content (same for each ) #}
+        {% set sizes = sizes is defined ? responsiveImageSizes(sizes, "uscc") : "" %}
+        {# empty variables to be filled in later #}
+        {% set lqipTransformer = "" %}
+        {% set lqip = [""] %}
+        {# loop the ratios #}
+        {% for bp, r in ratio %}
+            {# make sure the ratio is usable #}
+            {% set r = parseResponsiveImageRatio(r) %}
+            {# fill in class strings based on those ratios #}
+            {% set classStr = loop.index0 == 0 ? 'ratio-' ~ r.string : bp ~ ':ratio-' ~ r.string %}
+            {% set ratioClassString = ratioClassString ~ ' ' ~ classStr %}
+            {% set imgClassString = r.string == 'free' ? imgClassString ~ ' ' ~ bp ~ ':w-full ' ~ bp ~ ':h-auto' : imgClassString %}
+            {# sort out the lqip for this picture #}
+            {# using the first ratio as lqip, it'll best fit, its not perfect but not worth trying to have lqips for every ratio #}
+            {% if loop.index0 == 0 %}
+                {% set lqipTransformer = 'lqip' ~ (ratio is defined and ratio.string is defined ? ':' ~ ratio.string : '') %}
+                {% if not placeholder %}
+                    {# make lqip image with imager-x #}
+                    {% set lqip = craft.imager.transformImage(element, lqipTransformer) %}
+                {% else %}
+                    {% set lqip = [src] %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% set sourceMqs = mqForBp(ratio) %}
+        <picture data-component="atom:img" class="block{{ ratioClassString }}{{ customClasses is defined ? ' ' ~ customClasses }}" data-behavior="lazyloadimg" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+            {# loop the ratios in reverse now, sources need to be in largest breakpoint source first, else will show the wrong source (probably always show desktop source) #}
+            {% for bp, r in ratio|reverse %}
+                {# NB: the sources order will be incorrect in fractal as twigJS doesn't understand the `|reverse` filter as JavaScript objects have no set order and so no `reverse` method #}
+                {% set r = parseResponsiveImageRatio(r) %}
+                {# sort out transformer name #}
+                {% set srcsetTransformer = 'srcset' ~ (r is defined and r.string is defined ? ':' ~ r.string : '') %}
+                {# give a base srcset, will be replaced if not placeholder #}
+                {% set srcset = src %}
+                {% if not placeholder %}
+                    {# make srcset images with imager-x #}
+                    {% set transformedImages = craft.imager.transformImage(element, srcsetTransformer) %}
+                    {% set srcset = craft.imager.srcset(transformedImages, 'w') %}
+                {% endif %}
+                {# finally make the source itself #}
+                <source
+                    data-ratio="{{ r.string|default(r|default('')) }}"
+                    {{ lazyload ? 'data-' : '' }}srcset="{{ srcset }}"
+                    media="{{ attribute(sourceMqs, bp)|default('') }}"
+                    {% if sizes is defined %} sizes="{{ sizes }}"{% endif %}
+                    data-lazyloadimg-source
+                    {# for reference #}
+                    data-srcset-transformer="{{ srcsetTransformer }}"
+                >
+            {% endfor %}
+            {# and the base image for the <picture> tag #}
+            <img
+                class="{{ imgClassString }}"
+                src="{{ lqip[0].getUrl() }}"
+                style="{{ objectPositionStr | default }}"
+                alt="{% if alt is defined %}{{ alt }}{% endif %}"
+                {% if width is defined %} width="{{ width }}"{% endif %}
+                {% if height is defined %} height="{{ height }}"{% endif %}
+                data-lazyloadimg-img
+                {# for reference #}
+                data-lqip-transformer="{{ lqipTransformer }}"
+                data-parent="{{ parentComponentName }}"
+            >
+            {% if playIcon is defined %}
+                <span class="absolute bottom-0 ml-space-4 mb-space-4 flex items-center justify-center bg-transparent-2 rounded-full">
+                    {%- include '@svg:icon-play' -%}
+                </span>
+            {% endif %}
+        </picture>
+    {% endif %}
+{% else %}
+    {# if this fails, fall back to a splash - this should be handled in the component, this is a fail nice #}
+    {% include '@atom:logo-splash' with {
+        "ratio": ratio is defined ? ratio,
+        "customClasses": "accent-secondary"
+    } %}
+{% endif %}

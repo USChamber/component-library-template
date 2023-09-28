@@ -1,0 +1,11 @@
+{
+    "title": "Account links",
+    "handle": "global:sticky-bottom-nav-link",
+    "status": "wip",
+    "hidden": "true",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+    }
+}

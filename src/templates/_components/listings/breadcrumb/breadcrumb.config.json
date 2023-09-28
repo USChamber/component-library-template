@@ -1,0 +1,41 @@
+{
+    "title": "Breadcrumb",
+    "label": "Breadcrumb",
+    "handle": "listing:breadcrumb",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "items": [
+            {
+                "href": "#",
+                "title": "Topics"
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "1 layer",
+            "context": {
+            }
+        },
+        {
+            "name": "2 layers",
+            "label": "2 layers",
+            "context": {
+                "items": [
+                    {
+                        "href": "#",
+                        "title": "Topics"
+                    },
+                    {
+                        "href": "#",
+                        "title": "Economics"
+                    }
+                ]
+            }
+        }
+    ]
+}

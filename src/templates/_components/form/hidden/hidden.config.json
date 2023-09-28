@@ -1,0 +1,12 @@
+{
+    "title": "hidden",
+    "handle": "form:hidden",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "name": "token",
+        "value": "asdf1234hjkl"
+    }
+}

@@ -1,0 +1,4 @@
+{% if data is not defined %}
+    {% set data = contextData|default(_context) %}
+{% endif %}
+<pre class="block py-1 px-3 mt-3 bg-code whitespace-pre-wrap">{{ jsonPrettyPrint(data) }}</pre>

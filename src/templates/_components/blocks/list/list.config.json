@@ -1,0 +1,106 @@
+{
+    "title": "List",
+    "label": "List",
+    "handle": "block:list",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {},
+    "variants": [
+        {
+            "name": "default",
+            "label": "list",
+            "context": {
+                "items": [
+                    "First, you turn the time circuits on,",
+                    "You input the destination time on this keypad."
+                ]
+            }
+        },
+        {
+            "name": "child lists",
+            "label": "child lists",
+            "context": {
+                "items": [
+                    "one",
+                    {
+                        "text": "two"
+                    },
+                    {
+                        "type": "text",
+                        "data": {
+                            "text": "three"
+                        }
+                    },
+                    [
+                        {
+                            "type": "text",
+                            "data": {
+                                "text": "four"
+                            }
+                        },
+                        {
+                            "type": "@block:ordered-list",
+                            "data": {
+                                "items": [
+                                    {
+                                        "type": "text",
+                                        "data": {
+                                            "text": "un"
+                                        }
+                                    },
+                                    {
+                                        "type": "text",
+                                        "data": {
+                                            "text": "deux"
+                                        }
+                                    },
+                                    [
+                                        "trois",
+                                        {
+                                            "type": "@block:list",
+                                            "data": {
+                                                "items": [
+                                                    "eins",
+                                                    [
+                                                        "swei",
+                                                        {
+                                                            "type": "@block:ordered-list",
+                                                            "data": {
+                                                                "items": [
+                                                                    "uno",
+                                                                    "dos",
+                                                                    "tres"
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "drei"
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "@block:small",
+                                            "data": {
+                                                "text": "Texte sur la sous-liste trois"
+                                            }
+                                        }
+                                    ],
+                                    {
+                                        "type": "text",
+                                        "data": {
+                                            "text": "quatre"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "five",
+                    "six"
+                ]
+            }
+        }
+    ]
+}

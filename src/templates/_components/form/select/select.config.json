@@ -1,0 +1,120 @@
+{
+    "title": "select",
+    "handle": "form:select",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "label": "Select your state",
+        "name": "State",
+        "options": [
+            {
+                "label": "Alaska",
+                "value": "al"
+            },
+            {
+                "label": "California",
+                "value": "ca"
+            },
+            {
+                "label": "New York",
+                "value": "ny"
+            }
+        ]
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "default",
+            "context": {
+            }
+        },
+        {
+            "name": "required",
+            "label": "required",
+            "context": {
+                "required": true
+            }
+        },
+        {
+            "name": "placeholder",
+            "label": "placeholder",
+            "context": {
+                "placeholder": "State"
+            }
+        },
+        {
+            "name": "value",
+            "label": "with value",
+            "context": {
+                "options": [
+                    {
+                        "label": "Alaska",
+                        "value": "al"
+                    },
+                    {
+                        "label": "California",
+                        "value": "ca"
+                    },
+                    {
+                        "label": "New York",
+                        "value": "ny",
+                        "selected": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "disabled",
+            "label": "disabled",
+            "context": {
+                "disabled": true
+            }
+        },
+        {
+            "name": "disabled value",
+            "label": "disabled with value",
+            "context": {
+                "disabled": true,
+                "options": [
+                    {
+                        "label": "Alaska",
+                        "value": "al"
+                    },
+                    {
+                        "label": "California",
+                        "value": "ca"
+                    },
+                    {
+                        "label": "New York",
+                        "value": "ny",
+                        "selected": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "error",
+            "label": "error",
+            "context": {
+                "error": true,
+                "options": [
+                    {
+                        "label": "Alaska",
+                        "value": "al"
+                    },
+                    {
+                        "label": "California",
+                        "value": "ca"
+                    },
+                    {
+                        "label": "New York",
+                        "value": "ny",
+                        "selected": true
+                    }
+                ]
+            }
+        }
+    ]
+}

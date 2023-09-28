@@ -1,0 +1,62 @@
+{
+    "title": "Image",
+    "label": "Responsive image",
+    "handle": "atom:img",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "element": "craft img element",
+        "alt": "image alt tag",
+        "sizes": {
+            "sm": "100vw",
+            "md": 4,
+            "lg": 7,
+            "xl": "80%",
+            "xxl": "300px"
+        }
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "Default",
+            "display": {
+                "max-width": "500px"
+            },
+            "context": {}
+        },
+        {
+            "name": "ratio 3:2",
+            "label": "Ratio 3:2",
+            "display": {
+                "max-width": "500px"
+            },
+            "context": {
+                "ratio": "3:2"
+            }
+        },
+        {
+            "name": "mixed ratio",
+            "label": "Mixed ratio",
+            "context": {
+                "ratio": {
+                    "sm": "1:1",
+                    "md": "4:5",
+                    "lg": "free"
+                }
+            }
+        },
+        {
+            "name": "play icon",
+            "label": "with play icon",
+            "display": {
+                "max-width": "500px"
+            },
+            "context": {
+                "ratio": "16:9",
+                "playIcon": true
+            }
+        }
+    ]
+}

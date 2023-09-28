@@ -1,0 +1,121 @@
+{% set nextLevel = level + 1 %}
+{% if item is defined %}
+    <li
+        class="{{ loop.last ? '' : ' border-b border-primary' }}"
+        data-menu-item role="menuitem"
+    >
+        {% if item.href is defined and item.items is not defined %}
+            <a
+                class="menu-action block pt-12 pb-12 px-outer-gutter lg:px-24 hover:text-inverse"
+                href="{{ item.href }}"
+                aria-hidden="true"
+                data-menu-parent="{{ parent }}"
+            >
+                <span>{{ item.title }}</span>
+            </a>
+        {% elseif item.items is defined %}
+            {% if item.href is defined %}
+                <a
+                    class="menu-action flex w-full pt-12 pb-12 px-outer-gutter lg:px-24 flex justify-between hover:text-inverse"
+                    href="{{ item.href }}"
+                    data-menu-forward="{{ parent }}::{{ item.title|lower|replace({' ': '-'})|url_encode }}"
+                    aria-hidden="true"
+                    data-menu-parent="{{ parent }}"
+                    {{ level == 0 ? " data-menu-hasdropdown="~(loop.last ? "false" : "true")~"" }}
+                >
+                    <span class="pointer-events-none">{{ item.title }}</span>
+                    {% include '@svg:icon-24-chevron-right' with {
+                        customClasses: "pointer-events-none -mr-4",
+                        attrs: {
+                            "aria-hidden": "true"
+                        },
+                    } %}
+                </a>
+            {% else %}
+                <button
+                    class="menu-action flex w-full pt-12 pb-12 px-outer-gutter lg:px-24 flex justify-between hover:text-inverse"
+                    data-menu-forward="{{ parent }}::{{ item.title|lower|replace({' ': '-'})|url_encode }}"
+                    aria-hidden="true"
+                    data-menu-parent="{{ parent }}"
+                    {{ level == 0 ? " data-menu-hasdropdown="~(loop.last ? "false" : "true")~"" }}
+                >
+                    <span class="pointer-events-none">{{ item.title }}</span>
+                    {% include '@svg:icon-24-chevron-right' with {
+                        customClasses: "pointer-events-none -mr-4",
+                        attrs: {
+                            "aria-hidden": "true"
+                        },
+                    } %}
+                </button>
+            {% endif %}
+            {% set safeTitle = item.title|lower|replace({' ': '-'})|url_encode %}
+            <div
+                id="Burger-Menu-Contents-{{ index }}"
+                role="menu"
+                class="menu-sublist
+			      fixed top-header lg:top-0 bottom-0 right-0 w-full h-screen-minus-header lg:h-full
+			      overflow-hidden
+                    {{ level == 0 and loop.last ? ' lg:absolute' : ' lg:w-1/2 xxl:w-684' }}
+                  "
+                aria-hidden="true"
+                aria-modal="true"
+                data-menu-items="{{ safeTitle }}"
+                data-i="{{ level }},{{ loop.index }}"
+            >
+                <ul class="
+        menu-sublist-list
+        absolute top-0 bottom-0
+        flex flex-col w-full h-full
+        styled-scrollbars overscroll-contain
+        {{ level == 0 and loop.last ? ' lg:right-0' : ' ' }}
+      ">
+                    <li
+                        class="f-heading-1 accent-primary flex-none sticky top-0 pt-20 h-176 lg:px-24 border-b border-primary hidden lg:block"
+                        aria-hidden="true"
+                    >
+                        {{ item.title }}
+                    </li>
+                    <li class="menu-back-btn accent-primary sticky top-0 lg:top-176 border-b border-primary {{ loop.last and level == 0 ? "lg:hidden" }}">
+                        <button
+                            class="menu-action flex w-full pt-12 pb-12 px-outer-gutter lg:px-24 hover:text-inverse"
+                            data-menu-back
+                            aria-hidden="true"
+                            data-menu-parent="{{ safeTitle }}"
+                        >
+                            {% include '@svg:icon-24-chevron-left' with {
+                                customClasses: "pointer-events-none -ml-8 mr-4",
+                                attrs: {
+                                    "aria-hidden": "true"
+                                },
+                            } %}
+                            <span class="pointer-events-none">Back</span>
+                        </button>
+                    </li>
+                    {% for subItem in item.items %}
+                        {% include '@global:nav-item' with {
+                            item: subItem,
+                            parent: safeTitle,
+                            level: nextLevel,
+                        } %}
+                    {% endfor %}
+                    {% if loop.last and level < 1 and accountLinks is defined and accountLinks|length > 0 %}
+                        {% include '@global:sticky-bottom-nav-link' with {
+                            links: accountLinks,
+                            parent: parent,
+                            customClasses: 'hidden lg:block'
+                        } %}
+                    {% elseif item.href is defined and level < 1 %}
+                        {% include '@global:sticky-bottom-nav-link' with {
+                            links: [{
+                                href: item.href,
+                                title: item.overflowLabel | default('View all'),
+                            }],
+                            parent: safeTitle
+                        } %}
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    </li>
+{% endif %}
+

@@ -1,0 +1,48 @@
+<div
+    data-component="global:global-search"
+    class="global-search print:hidden"
+>
+    <button class="global-search-close f-ui-3 accent-secondary absolute -left-full top-8 px-8 py-4 bg-light" tabindex="-1" data-globalsearch-close>
+        Close search
+    </button>
+
+    <form class="
+    global-search-form
+    bg-accent-primary
+    fixed left-0 right-0
+    w-full h-header
+    border-b border-transparent-1
+    flex flex-row items-center
+  "
+        action="{{ action is defined ? action : "//" }}"
+    >
+        <fieldset class="container">
+            <legend class="sr-only">Site search</legend>
+            <label for="global_search_query" class="sr-only">Enter your search query</label>
+            <div class="flex flex-row bg-light p-4 w-full">
+                <input
+                    type="search"
+                    name="q"
+                    id="global_search_query"
+                    class="
+            flex-grow px-12
+            text-primary placeholder-default
+            bg-light border-2 border-transparent
+          "
+                    data-globalsearch-input
+                />
+                {% include '@atom:btn' with {
+                    label:"Submit",
+                    type: "submit",
+                    attrs: {
+                        "data-search-btn": null,
+                    },
+                    variation: "primary",
+                    icon: {
+                        type: "icon-24-search"
+                    }
+                } %}
+            </div>
+        </fieldset>
+    </form>
+</div>

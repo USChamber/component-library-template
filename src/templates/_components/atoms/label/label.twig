@@ -1,0 +1,20 @@
+{% if text is defined %}
+    {% if href is defined and href != null %}
+        <a href="{{ href }}"
+    {% else %}
+        <span
+    {% endif %}
+    data-component="atom:label"
+    class="
+      f-ui-1 inline-block
+      {% if href is defined and href != null %}hover:text-tag focus:text-tag{% endif %}
+      {{ customClasses is defined ? ' ' ~ customClasses }}
+      "
+    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ text }}
+    {% if href is defined and href != null %}
+        </a>
+  {% else %}
+        </span>
+    {% endif %}
+{% endif %}

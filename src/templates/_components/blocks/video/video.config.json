@@ -1,0 +1,79 @@
+{
+    "title": "video",
+    "handle": "block:video",
+    "status": "ready",
+    "tags": [
+        "USCC"
+    ],
+    "context": {
+        "videoId": "qvsgGtivCgs"
+    },
+    "variants": [
+        {
+            "name": "default",
+            "label": "with poster image",
+            "context": {
+                "videoId": "qvsgGtivCgs",
+                "img": {
+                    "src": "https://via.placeholder.com/300x200&text=youtube",
+                    "alt": "image alt tag"
+                }
+            }
+        },
+        {
+            "name": "wide",
+            "label": "wide",
+            "context": {
+                "videoId": "qvsgGtivCgs",
+                "width": "wide"
+            }
+        },
+        {
+            "name": "fullbleed",
+            "label": "fullbleed",
+            "context": {
+                "videoId": "qvsgGtivCgs",
+                "width": "fullbleed"
+            }
+        },
+        {
+            "name": "no poster image",
+            "label": "no poster image",
+            "context": {
+                "videoId": "qvsgGtivCgs"
+            }
+        },
+        {
+            "name": "autoplay",
+            "label": "no poster image, autoplay",
+            "context": {
+                "videoId": "qvsgGtivCgs",
+                "autoplay": true
+            }
+        },
+        {
+            "name": "caption",
+            "label": "with caption",
+            "context": {
+                "videoId": "qvsgGtivCgs",
+                "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                "img": {
+                    "src": "https://via.placeholder.com/300x200&text=youtube",
+                    "alt": "image alt tag"
+                }
+            }
+        },
+        {
+            "name": "vimeo",
+            "label": "Vimeo",
+            "context": {
+                "videoId": "314200064",
+                "type": "vimeo",
+                "img": {
+                    "src": "https://via.placeholder.com/300x200&text=vimeo",
+                    "alt": "image alt tag"
+                }
+            }
+        }
+    ]
+}

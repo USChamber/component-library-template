@@ -1,0 +1,34 @@
+{% set componentName = "block:video" %}
+{% if width is defined %}
+    {% set componentName = componentName ~ ":" ~ width %}
+{% endif %}
+<figure data-component="{{ componentName }}" class="{{ width is defined and width == 'fullbleed' ? 'w-screen -ml-outer-gutter xxxl:ml-0 xxxl:w-full' }}{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <div class="ratio ratio-16x9">
+        <div class="ratio-content" data-videoembed-player>
+            {% if img is defined %}
+                {% include '@atom:img' with img|merge({
+                    playIcon: true,
+                    lazyload: false,
+                    customClasses: "cursor-pointer",
+                    parentAttrs: {
+                        "data-videoembed-poster": null,
+                    },
+                    ratio: "16:9",
+                    playIcon: true,
+                    transformName: componentName
+                }) %}
+            {% endif %}
+            {% include "@atom:video" with {
+                videoId: videoId,
+                type: type ?? "youtube",
+                autoplay: autoplay ?? false,
+                customClasses: "video-player w-full h-full absolute top-0 left-0",
+                width: 640,
+                height: 360,
+            } %}
+        </div>
+    </div>
+    {% if caption is defined and caption is not null %}
+        <figcaption class="{{ width is defined and width == 'fullbleed' ? 'block f-ui-2 mt-space-3 pl-outer-gutter pr-outer-gutter' : 'block f-ui-2 mt-space-3' }}">{{ caption }}</figcaption>
+    {% endif %}
+</figure>
