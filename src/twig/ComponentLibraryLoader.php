@@ -11,7 +11,6 @@ use Twig\Loader\LoaderInterface;
 use Twig\Source;
 use USChamber\ComponentLibrary\ComponentLibrary;
 use yii\base\Exception;
-use yii\base\ExitException;
 
 /**
  * @see TemplateLoader
@@ -39,7 +38,11 @@ class ComponentLibraryLoader implements LoaderInterface
      */
     public function getSourceContext($name): Source
     {
-        $template = $this->findTemplate($name);
+        try {
+            $template = $this->findTemplate($name);
+        } catch (\Exception $e) {
+            throw new LoaderError($e->getMessage());
+        }
 
         if (!is_readable($template)) {
             throw new LoaderError('Template not found: ' . $name);
@@ -63,7 +66,7 @@ class ComponentLibraryLoader implements LoaderInterface
     /**
      * @throws TemplateLoaderException
      * @throws Exception
-     * @throws LoaderError|ExitException
+     * @throws LoaderError
      */
     protected function findTemplate(string $name): string
     {
@@ -104,7 +107,7 @@ class ComponentLibraryLoader implements LoaderInterface
             $isUpdatePending = Craft::$app->getUpdates()->getIsCraftUpdatePending();
         }
 
-        if ($request->getIsCpRequest() && $isUpdatePending) {
+        if ($isUpdatePending && $request->getIsCpRequest()) {
             return false;
         }
 
@@ -113,22 +116,4 @@ class ComponentLibraryLoader implements LoaderInterface
         return $sourceModifiedTime <= $time;
     }
 
-    /**
-     * Returns the path to a given template, or throws a TemplateLoaderException.
-     *
-     * @param string $name
-     *
-     * @return string
-     * @throws TemplateLoaderException|LoaderError if the template doesn't exist
-     */
-    private function _resolveTemplate(string $name): string
-    {
-        $template = $this->view->resolveTemplate($name);
-
-        if ($template !== false) {
-            return $template;
-        }
-
-        throw new TemplateLoaderException($name, Craft::t('app', 'Unable to find the template “{template}”.', ['template' => $name]));
-    }
 }

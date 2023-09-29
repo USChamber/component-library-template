@@ -1,10 +1,13 @@
 {% if items is defined and items is not empty %}
-    <aside data-component="block:aside-listing" class="block border-t border-primary pt-space-3 pb-40 print:hidden{{ customClasses is defined ? ' ' ~ customClasses }}">
-        {% if title is defined %}<h2 class="f-heading-1 mb-16 md:mb-20 lg:mb-24">{{ title }}</h2>{% endif %}
+    <aside
+        data-component="block:aside-listing"
+        class="{{ customClasses is defined ? ' ' ~ customClasses }}"
+    >
+        {% if title is defined %}<h2>{{ title }}</h2>{% endif %}
         {% if items|length > 1 %}
             <ul>
                 {% for item in items %}
-                    <li class="{{ loop.index0 > 0 ? ' mt-20 pt-20 border-t border-primary' }}">
+                    <li>
                         {% include '@card:card-aside' with item %}
                     </li>
                 {% endfor %}

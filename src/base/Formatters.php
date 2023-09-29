@@ -3,16 +3,26 @@
 namespace USChamber\ComponentLibrary\base;
 
 use Craft;
+use craft\errors\DeprecationException;
 use craft\errors\MissingComponentException;
 use craft\events\RegisterComponentTypesEvent;
 use craft\helpers\Json;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 use Twig\Markup;
 use USChamber\ComponentLibrary\formatters\blocks\UnknownBlock;
 use yii\base\Component;
+use yii\base\Exception;
 use yii\web\NotFoundHttpException;
 
+/**
+ *
+ * @property-read array $componentMap
+ * @property-read array $formatters
+ */
 class Formatters extends Component
 {
     public const EVENT_REGISTER_FORMATTERS = 'registerFormatters';
@@ -61,6 +71,10 @@ class Formatters extends Component
         }
     }
 
+    /**
+     * @throws DeprecationException
+     * @throws NotFoundHttpException
+     */
     public function getFormatter(string $formatterId, $config = []): BaseFormatter
     {
         $formatters = $this->getFormatters();
@@ -80,6 +94,9 @@ class Formatters extends Component
         return $formatter;
     }
 
+    /**
+     * @throws MissingComponentException
+     */
     public function getComponentMap(): array
     {
         if ($this->_componentMap) {
@@ -118,6 +135,9 @@ class Formatters extends Component
         return $this->_componentMap;
     }
 
+    /**
+     * @throws NotFoundHttpException|DeprecationException
+     */
     public function getData(string $formatterId, $data = []): array
     {
         $formatter = $this->getFormatter($formatterId, [
@@ -127,6 +147,13 @@ class Formatters extends Component
         return $formatter->getData();
     }
 
+    /**
+     * @throws SyntaxError
+     * @throws RuntimeError
+     * @throws Exception
+     * @throws LoaderError
+     * @throws NotFoundHttpException
+     */
     public function getHtml(string $formatterId, $data = null): ?Markup
     {
         $formatter = $this->getFormatter($formatterId, [

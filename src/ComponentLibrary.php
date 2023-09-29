@@ -126,98 +126,26 @@ class ComponentLibrary extends Module
         });
     }
 
-    public static function getCssConfig(): ?array
-    {
-        $feConfigJsonFilePath = '../src/css/app.config.json';
-
-        if (!file_exists($feConfigJsonFilePath)) {
-            return null;
-        }
-
-        $feConfigJson = file_get_contents($feConfigJsonFilePath);
-
-        return Json::decode($feConfigJson, true);
-    }
-
     public function getFormatterTypes(): array
     {
         return [
             // Globals
             TopNav::class,
             FooterNav::class,
-            CaseIssuesFooter::class,
 
             // Blocks
             AccordionBlock::class,
-            Arc::class,
             AsideListing::class,
-            AutoAside::class,
             Blockquote::class,
             BulletList::class,
             CenterColumn::class,
-            ColSet7525::class,
-            ColSet7525Aside::class,
-            Counter::class,
-            DataTable::class,
-            EditorialList::class,
             EventGrid::class,
-            EventGrid3::class,
-            EventGrid4::class,
-            Feature3Category::class,
-            Feature3VideoCategory::class,
-            Feature4Category::class,
-            Feature4VideoCategory::class,
-            FeatureExpressive::class,
-            FeatureExpressiveVideo::class,
-            FeatureFiftyFifty::class,
-            FeatureGrid::class,
-            FeatureGridContentType::class,
-            FeatureGridCustomCards::class,
-            FeatureGridPersonType::class,
-            FeatureGrid3::class,
-            FeatureGrid3ContentType::class,
-            FeatureGrid3CustomCards::class,
-            FeatureGrid3LinksCategory::class,
-            FeatureGrid3PersonType::class,
-            FeatureGrid4::class,
-            FeatureGrid4ContentType::class,
-            FeatureGrid4CustomCards::class,
-            FeatureGrid4LinksCategory::class,
-            FeatureGrid4PersonType::class,
-            FeatureListing::class,
-            FeatureListingsB::class,
-            FeatureListingsD::class,
-            FeatureListingsE::class,
-            Form5050::class,
-            FormEmbedInPage::class,
-            FormModal::class,
-            FullWidthStat::class,
-            HardBreak::class,
             Heading::class,
-            HorizontalRule::class,
             Image::class,
-            ImageFullBleed::class,
-            ImageGallery::class,
-            ImageRepeater::class,
-            ImageWithCaption::class,
-            InlineFeature::class,
-            InlineFeatures::class,
-            MapEmbed::class,
-            OrderedList::class,
-            OurWork::class,
             Paragraph::class,
-            PromoCtaBlock::class,
-            PromoCtaFormEmbed::class,
-            Pullquote::class,
-            SimpleLinks::class,
             Stat::class,
-            TableOfContents::class,
-            Testimonial::class,
-            TitleBar::class,
             UnknownBlock::class,
             Video::class,
-            VideoFullBleed::class,
-            VideoWide::class,
         ];
     }
 }
