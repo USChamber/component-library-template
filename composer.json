@@ -2,7 +2,7 @@
     "name": "uschamber/component-library",
     "description": "Component library module for U.S. Chamber Craft applications",
     "type": "craft-module",
-    "version": "3.2.30",
+    "version": "3.0.0",
     "license": "proprietary",
     "authors": [
         {

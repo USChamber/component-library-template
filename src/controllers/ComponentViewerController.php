@@ -16,9 +16,6 @@ class ComponentViewerController extends Controller
      */
     protected int|bool|array $allowAnonymous = ['get-component-info', 'get-component-history'];
 
-    // Public Methods
-    // =========================================================================
-
     public function actionIndex(): Response
     {
         return $this->asJson(['success' => true]);

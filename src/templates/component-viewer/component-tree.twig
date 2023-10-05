@@ -16,14 +16,14 @@ Line: {{ component.error.line }}
             </pre>
         {% elseif component.components is defined %}
             {# Component Groups #}
-            {% include 'component-library/component-tree.twig' with {
+            {% include 'component-library/component-viewer/component-tree.twig' with {
                 components: component.components,
                 componentKey: key,
                 level: level + 1,
             } %}
         {% elseif component.handle is defined %}
             {# Component Name #}
-            {% include 'component-library/component-tree.twig' with {
+            {% include 'component-library/component-viewer/component-tree.twig' with {
                 components: component.buttonVariants,
                 componentKey: key,
                 level: level + 1,
@@ -32,7 +32,7 @@ Line: {{ component.error.line }}
             {# Component Details - Single and Multiple Variants #}
             <div class="component-variants">
                 {% for variant in component.buttons %}
-                    {% include 'component-library/left-panel-btn.twig' with {
+                    {% include 'component-library/component-viewer/left-panel-btn.twig' with {
                         handle: component.componentId,
                         variant: loop.index0,
                         name: variant.label,
@@ -41,7 +41,7 @@ Line: {{ component.error.line }}
             </div>
         {% else %}
             {# Headers #}
-            {% include 'component-library/component-tree.twig' with {
+            {% include 'component-library/component-viewer/component-tree.twig' with {
                 components: component,
                 componentKey: key,
                 level: level + 1,

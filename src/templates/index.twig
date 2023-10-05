@@ -47,7 +47,7 @@
         <form>
             <input type="text" name="search" id="Search" placeholder="Search Components..."/>
         </form>
-        {% include 'component-library/component-tree.twig' with {
+        {% include 'component-library/component-viewer/component-tree.twig' with {
             components: components,
             componentKey: 'Components',
             level: 1,
