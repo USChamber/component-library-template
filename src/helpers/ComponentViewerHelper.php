@@ -130,8 +130,15 @@ class ComponentViewerHelper
         $componentConfigPath = $componentMap[$componentId];
         $twigString = file_get_contents($componentConfigPath);
         $componentConfig = Json::decode(file_get_contents(self::getComponentConfigPath($componentConfigPath)));
+        $context = self::getComponentContext($componentId, $variant);
+
+        // Override the default context with the variant context
+        if ($context) {
+            $componentConfig['context'] = $context;
+        }
+
         try {
-            $rendered = Craft::$app->view->renderString($twigString, self::getComponentContext($componentId, $variant));
+            $rendered = Craft::$app->view->renderString($twigString, $context);
         } catch (\Exception $e) {
             $rendered = $e->getMessage();
         }
