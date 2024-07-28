@@ -1,4 +1,4 @@
-<article data-component="layout:article" data-behavior="article" class="article{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+<article data-component="layout:article" data-behavior="article" class="article{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
     {% if hero is defined %}
         {% include hero.type with hero.data %}
     {% endif %}

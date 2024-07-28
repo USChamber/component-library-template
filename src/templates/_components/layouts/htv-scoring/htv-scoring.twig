@@ -1,5 +1,5 @@
 {# Component: layout:htv-scoring - NB: top spacing is *most* likely to want to be handled in _blocks.css #}
-<div data-component="layout:htv-scoring" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+<div data-component="layout:htv-scoring" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
     {% for item in items %}
         <div class="grid grid-cols-3 gap-x-24 mt-space-6">
             <div class="col-span-2">

@@ -4,7 +4,7 @@
 
 <div data-component="form:radio"
     class="relative {{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     <input
         class="input{{ error is defined ? " s-error" }}"
         type="radio"

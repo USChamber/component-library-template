@@ -6,7 +6,7 @@
 <span
     data-component="card:stat"
     class="{{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+    {{ attrs is defined ? attr(attrs) }}
 >
     {% if label is defined %}
         <label>

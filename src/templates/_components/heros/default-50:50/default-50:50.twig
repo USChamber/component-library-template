@@ -7,7 +7,7 @@
       background-fill lg:flex lg:flex-row
       lg:h-90vh-minus-header print:flex-col print:h-auto
     "
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     <div
         class="
         flex flex-col lg:pr-48 lg:w-1/2

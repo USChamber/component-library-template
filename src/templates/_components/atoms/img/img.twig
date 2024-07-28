@@ -25,7 +25,7 @@
       <img
           class="{{ ratio is defined and ratio.string is defined ? 'ratio-content object-cover' : 'block w-full h-auto' }} {{ imgClassString is defined ? ' ' ~ imgClassString }}"
           src="{{ element.url ?? element }}"
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        {{ attrs is defined ? attr(attrs) }}
           {# for reference #}
         data-parent="{{ parentComponentName }}"
       />
@@ -62,7 +62,7 @@
         style="{{ objectPositionStr | default }}"
           alt="{% if alt is defined %}{{ alt }}{% endif %}"
           data-lazyloadimg-img
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        {{ attrs is defined ? attr(attrs) }}
           {# for reference #}
         data-srcset-transformer="{{ srcsetTransformer }}"
           data-lqip-transformer="{{ lqipTransformer }}"
@@ -108,7 +108,7 @@
             {% endif %}
         {% endfor %}
         {% set sourceMqs = mqForBp(ratio) %}
-        <picture data-component="atom:img" class="block{{ ratioClassString }}{{ customClasses is defined ? ' ' ~ customClasses }}" data-behavior="lazyloadimg" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        <picture data-component="atom:img" class="block{{ ratioClassString }}{{ customClasses is defined ? ' ' ~ customClasses }}" data-behavior="lazyloadimg" {{ attrs is defined ? attr(attrs) }}>
             {# loop the ratios in reverse now, sources need to be in largest breakpoint source first, else will show the wrong source (probably always show desktop source) #}
             {% for bp, r in ratio|reverse %}
                 {# NB: the sources order will be incorrect in fractal as twigJS doesn't understand the `|reverse` filter as JavaScript objects have no set order and so no `reverse` method #}
