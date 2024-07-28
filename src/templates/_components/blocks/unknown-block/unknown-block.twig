@@ -12,7 +12,7 @@
         {% endif %}
         <p class="f-ui">Block data:</p>
         {% if data is defined %}
-            <pre class="block py-4 px-12 mt-16 bg-code whitespace-pre-wrap">{{ jsonPrettyPrint(data) }}</pre>
+            <pre class="block py-4 px-12 mt-16 bg-code whitespace-pre-wrap">{{ data|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
         {% endif %}
     </div>
 {% endif %}

@@ -139,7 +139,14 @@ class ComponentViewerHelper
         try {
             $readme = file_get_contents(self::getComponentReadmePath($componentId, $componentConfigPath));
         } catch (\Exception) {
-            $readme = 'Tags: {{ tags|join(",") }}<br /><h2> {{ title }}: {{ handle }}</h2><pre><code class="language-twig">&#123;&#37; include "@{{ handle }}" with {{ jsonPrettyPrint(context) }} &#37;&#125;</code></pre>';
+            $readme = 'Tags: {{ tags|join(",") }}<br /><h2> {{ title }}: {{ handle }}</h2><pre><code class="language-twig">&#123;&#37; include \'@{{ handle }}\'';
+            
+            // Only show `with { … }` in the include example if context exists
+            if ($context) {
+                $readme = $readme . ' with {{ context|json_encode(constant(\'JSON_PRETTY_PRINT\')) }}';
+            }
+
+            $readme = $readme . ' &#37;&#125;</code></pre>';
         }
         try {
             $parser = new Markdown();
@@ -151,7 +158,7 @@ class ComponentViewerHelper
 
         return [
             'config' => $componentConfig,
-            'context' => self::getComponentContext($componentId, $variant),
+            'context' => $context,
             'readme' => $readme,
             'twig' => $twigString,
             'rendered' => $rendered,
