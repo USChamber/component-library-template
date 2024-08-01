@@ -1,4 +1,4 @@
-<div data-component="layout:center-column" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+<div data-component="layout:center-column" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
     {% include '@repeater:blocks' with {
         'items': blocks|default([]),
         'customClasses': "article-body-center",

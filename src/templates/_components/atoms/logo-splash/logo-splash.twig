@@ -33,7 +33,7 @@
   "
     style="{{ style }}"
     aria-hidden="true"
-  {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+  {{ attrs is defined ? attr(attrs) }}>
     <span class="{{ imgClassString }}">
       {% include '@foundation:splashes:'~type ignore missing with {
           customClasses: "block w-full h-auto pointer-events-none "~(svgClassString|default('')),

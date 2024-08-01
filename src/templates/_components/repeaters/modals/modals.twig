@@ -1,5 +1,5 @@
 {% if modals is defined and modals|length > 0 %}
-    <div data-component="repeater:modals" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    <div data-component="repeater:modals" class="{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
         {% for modal in modals %}
             {% include '@layout:modal' with modal only %}
         {% endfor %}

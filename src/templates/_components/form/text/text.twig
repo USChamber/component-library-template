@@ -4,7 +4,7 @@
 
 <div data-component="form:text"
     class="{{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     {% if label is defined and label != '' %}
         <label
             class="f-ui-1 block mb-12"

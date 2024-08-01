@@ -1,4 +1,4 @@
-<div data-component="behavior-block:filter-select" aria-live="polite" class="blocks {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }} id="{{ uniqueId
+<div data-component="behavior-block:filter-select" aria-live="polite" class="blocks {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }} id="{{ uniqueId
 ?? '' }}_Listing">
     {% if bar is defined %}
         {% include '@block:title-bar' with bar %}

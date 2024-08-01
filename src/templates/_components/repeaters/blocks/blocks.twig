@@ -6,7 +6,7 @@
   {{ halfLayout is defined and halfLayout == true ? ' blocks--halfLayout' }}
   {{ editorialColumn is defined and editorialColumn == true ? ' blocks--editorial' }}
   {{ customClasses is defined ? ' ' ~ customClasses }}"
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {{ attrs is defined ? attr(attrs) }}>
         {% for item in items %}
             {% if item is string %}
                 {% include '@block:paragraph' ignore missing with { text: item } only %}

@@ -1,6 +1,6 @@
 {% set id = id is defined ? id : label is defined ? label|lower|replace({' ': '-'})|url_encode : '' %}
 
-<div data-component="form:select-filter" data-container-id="{{ id }}" class="filter-select {{ customClasses is defined ? ' ' ~ customClasses }}"{{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+<div data-component="form:select-filter" data-container-id="{{ id }}" class="filter-select {{ customClasses is defined ? ' ' ~ customClasses }}"{{ attrs is defined ? attr(attrs) }}>
     {% if label is defined %}
         <label
             class="f-ui-1 block mb-12"

@@ -4,7 +4,7 @@
 
 <div data-component="form:checkbox"
     class="relative {{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     <input
         class="input{{ error is defined ? " s-error" }}"
         type="checkbox"
@@ -18,7 +18,7 @@
         {% if checked is defined %} checked{% endif %}
         {% if error is defined %} aria-valid="false"{% endif %}
         {% if note is defined %} aria-describedby="note_{{ id is defined ? id : name }}"{% endif %}
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        {{ attrs is defined ? attr(attrs) }}
     />
     {% set errorClasses = "text-error hover:text-primary" %}
     <label
