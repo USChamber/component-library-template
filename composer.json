@@ -3,7 +3,7 @@
     "description": "Component library module for U.S. Chamber Craft applications",
     "type": "craft-module",
     "version": "3.0.0",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "U.S. Chamber of Commerce",
