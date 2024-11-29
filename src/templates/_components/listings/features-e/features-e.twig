@@ -3,7 +3,7 @@
     pt-24 md:pt-32 lg:pt-0 lg:mt-120 xl:mt-144
     border-t border-t-primary lg:border-t-0
     {{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     {% if items is defined %}
         <ul>
             {% for item in items %}

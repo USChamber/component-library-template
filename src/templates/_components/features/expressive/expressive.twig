@@ -4,7 +4,7 @@
     border-t border-t-primary lg:border-t-0
     lg:flex {{ invert is defined and invert == true ? ' flex-row-reverse' : '' }}
     {{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     <div class="w-screen -ml-outer-gutter -mr-outer-gutter mb-24 md:mb-40 lg:mb-0 lg:mx-0 lg:w-half-inc-gutter">
         {% if href is defined and href is not null %}
         <a href="{{ href }}" class="block" tabindex="-1" aria-hidden="true">

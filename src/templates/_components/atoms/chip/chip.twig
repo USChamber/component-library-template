@@ -14,7 +14,7 @@
     h-28
     flex-shrink-0
     {{ customClasses is defined ? ' ' ~ customClasses }}"
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        {{ attrs is defined ? attr(attrs) }}
     >
         {% include '@svg:icon-24-cross' with {
             "customClasses": "block mr-4 h-12 w-12 pointer-events-none	pointer-events-none",

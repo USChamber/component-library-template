@@ -29,7 +29,7 @@
     {% set blocks = [bioBlock]|merge(blocks|default([])) %}
 {% endif %}
 
-<article data-component="layout:bio" class="bio{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+<article data-component="layout:bio" class="bio{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
     {% include '@hero:default' with {
         "title": title,
         "breadcrumb": breadcrumb,

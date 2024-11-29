@@ -12,10 +12,10 @@
 {% endif %}
 {% if href is defined and href is not null %}
 <a data-component="atom:btn" href="{{ href }}" class="{{ variation is defined ? 'btn-' ~ variation : 'btn-primary' }}{{ customClasses is defined ? ' ' ~ customClasses }}"{{ disabled is defined
-? ' disabled' }} {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+? ' disabled' }} {{ attrs is defined ? attr(attrs) }}>
     {% else %}
     <button data-component="atom:btn" class="{{ variation is defined ? 'btn-' ~ variation : 'btn-primary' }}{{ customClasses is defined ? ' ' ~ customClasses }}" type="{{ type is defined ?
-    type : "button" }}"{{ disabled is defined ? ' disabled' }} {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    type : "button" }}"{{ disabled is defined ? ' disabled' }} {{ attrs is defined ? attr(attrs) }}>
         {% endif %}
         {% if iconLeft is defined and iconLeft != null %}
             <span class="btn-icon-left">

@@ -2,7 +2,7 @@
     <div data-component="block:accordion:{{ primary is defined ? 'primary' : 'secondary' }}"
         data-behavior="accordion"
         class="{{ customClasses is defined ? ' ' ~ customClasses }}"
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {{ attrs is defined ? attr(attrs) }}>
         {% for item in items %}
             <button
 

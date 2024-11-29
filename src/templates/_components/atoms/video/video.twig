@@ -20,7 +20,7 @@
     <iframe
         data-component="atom:video"
         class="{{ customClasses is defined ? ' ' ~ customClasses }}"
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+        {{ attrs is defined ? attr(attrs) }}
         id="{{ videoId }}"
         width="{{ width|default('100%') }}"
         height="{{ height|default('100%') }}"

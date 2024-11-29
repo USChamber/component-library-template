@@ -10,7 +10,7 @@
       px-8 pt-5 pb-3 lg:pb-4 uppercase inline-flex justify-center items-center
       {% if href is defined and href != null %}hover:bg-tag hover:text-inverse focus:bg-tag focus:text-inverse{% endif %}
       {{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     {{ text }}
     {% if href is defined and href != null %}
         </a>

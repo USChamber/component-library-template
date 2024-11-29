@@ -3,7 +3,7 @@
     data-component="behavior-block:multi-select"
     {% if filterItems is defined %} {% endif %}
     class="{{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
 
     <div class="flex flex-wrap border-t border-primary pt-space-4">
         <div class="flex w-full justify-between flex-col xl:flex-row 	">

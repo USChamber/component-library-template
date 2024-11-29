@@ -19,7 +19,7 @@
     {% endif %}
 {% endset %}
 
-<figure data-component="{{ componentName }}" class="block{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+<figure data-component="{{ componentName }}" class="block{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
 
     {% if imageLink %}
         {% include '@atom:link' with {

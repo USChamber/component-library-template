@@ -7,7 +7,7 @@
         grid-line-y grid-line-y-primary
         grid-line-xfull grid-line-x-primary grid-line-x-24 md:grid-line-x-32 md:grid-line-x-0
         {{ customClasses is defined ? ' ' ~ customClasses }}"
-        {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+        {{ attrs is defined ? attr(attrs) }}>
         {% for item in items %}
             <li>
                 {% include item.type with mergeResponsiveSettingsWithData({

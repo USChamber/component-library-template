@@ -8,5 +8,5 @@
     name="{{ name }}"
     value="{{ value|default('') }}"
     id="{{ id }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+    {{ attrs is defined ? attr(attrs) }}
 >

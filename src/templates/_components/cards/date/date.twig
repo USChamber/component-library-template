@@ -3,13 +3,13 @@
     block ratio ratio-4x5 group
     {{ inAccentPrimary is not defined ? 'bg-light' }}
     {{ customClasses is defined ? ' ' ~ customClasses }}
-" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+" {{ attrs is defined ? attr(attrs) }}>
     {% else %}
     <div data-component="card:date" href="#" class="
     block ratio ratio-4x5
     {{ inAccentPrimary is not defined ? 'bg-light' }}
     {{ customClasses is defined ? ' ' ~ customClasses }}
-" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+" {{ attrs is defined ? attr(attrs) }}>
         {% endif %}
 
         <span class="

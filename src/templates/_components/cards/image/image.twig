@@ -2,11 +2,11 @@
 {% if href is defined and href is not null %}
 <a data-component="{{ componentName }}" href="{{ href }}" class="
 block ratio ratio-4x5 bg-light group
-{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
     {% else %}
     <div data-component="{{ componentName }}" class="
 block ratio ratio-4x5 bg-light
-{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
         {% endif %}
 
         <span class="ratio-content flex flex-col">

@@ -1,7 +1,7 @@
 {% set componentName = 'hero:default' %}
 <div data-component="{{ componentName }}" class="
     {{ accent is defined ? 'accent-'~accent : 'accent-primary' }} background-fill 
-    {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
 
     <div class="flex flex-col pt-space-9 pb-24 {{ variation is defined and variation == 'generic' ? 'md:pb-28 lg:pb-40 lg:w-11/12' : 'md:pb-32 lg:pb-48' }}  print:pb-0 print:pt-0">
         {% if title is defined and title is not null %}

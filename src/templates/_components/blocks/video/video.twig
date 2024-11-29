@@ -2,7 +2,7 @@
 {% if width is defined %}
     {% set componentName = componentName ~ ":" ~ width %}
 {% endif %}
-<figure data-component="{{ componentName }}" class="{{ width is defined and width == 'fullbleed' ? 'w-screen -ml-outer-gutter xxxl:ml-0 xxxl:w-full' }}{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+<figure data-component="{{ componentName }}" class="{{ width is defined and width == 'fullbleed' ? 'w-screen -ml-outer-gutter xxxl:ml-0 xxxl:w-full' }}{{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}>
     <div class="ratio ratio-16x9">
         <div class="ratio-content" data-videoembed-player>
             {% if img is defined %}

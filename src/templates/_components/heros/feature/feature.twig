@@ -5,7 +5,7 @@
     data-herofeature-rotation="{{ rotation is defined ? rotation : 'clockwise' }}"
     class="accent-primary background-fill{{ customClasses is defined ? ' ' ~ customClasses }}"
     style="--rotate: {{ rotation is defined and rotation == 'anticlockwise' ? '-5deg' : '5deg' }};"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     <div data-herofeature-content class="transition-opacity opacity-0 duration-500 lg:flex lg:flex-wrap">
         <div
             data-herofeature-primaryimage

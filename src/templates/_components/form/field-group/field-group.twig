@@ -1,7 +1,7 @@
 <fieldset
     data-component="form:field-group"
     class="{{ customClasses is defined ? ' ' ~ customClasses }}"
-    {{ attrs is defined ? attrs|arrayToAttributes|raw }}>
+    {{ attrs is defined ? attr(attrs) }}>
     {% if legend is defined %}
         <legend class="f-ui-1">{{ legend }}</legend>{% endif %}
     {% if fields is defined %}

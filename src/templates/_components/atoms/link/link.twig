@@ -7,7 +7,7 @@
           {{ secondary is defined ? '' : 'link-underline hover:link-underline-off' }}
            hover:text-link-off
           {{ group is defined and group == true ? 'group-hover:text-link-off group-hover:link-underline-off' : '' }}
-          {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+          {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}
         >
   {% else %}
         <a
@@ -18,7 +18,7 @@
           {{ secondary is defined ? '' : 'link-underline hover:link-underline-off' }}
           {{ inAccentPrimary is defined ? 'link-underline-light hover:text-inverse hover:link-underline-light-on' : 'hover:text-link-off' }}
           {{ group is defined and group == true ? 'group-hover:text-link-off group-hover:link-underline-off' : '' }}
-          {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attrs|arrayToAttributes|raw }}
+          {{ customClasses is defined ? ' ' ~ customClasses }}" {{ attrs is defined ? attr(attrs) }}
         >
     {% endif %}
     {{ text }}
